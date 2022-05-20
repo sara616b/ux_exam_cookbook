@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="forms-test">
+      <form>
+        <label>
+          <input type="email" placeholder=" " required />
+          <p class="error-message">Pleace enter a valid email</p>
+          <p class="placeholder">Email</p>
+        </label>
+
+        <label>
+          <input type="password" placeholder=" " minlength="8" required />
+          <p class="requirements">A password must be at least 8 characters</p>
+          <p class="placeholder">Password</p>
+        </label>
+
+        <label>
+          <div>
+            <p>Title</p>
+            <p class="counter"><span>0</span>/250</p>
+          </div>
+          <textarea rows="4" placeholder="Step description" minlength="10" maxlength="250" required></textarea>
+          <p class="error_message">Please enter a valid text</p>
+        </label>
+      </form>
+    </main>
+  </body>
+</html>

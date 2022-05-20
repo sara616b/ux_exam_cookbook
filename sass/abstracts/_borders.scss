@@ -1,7 +1,9 @@
+@import "colors";
+
 // Borders
-$main_border: 1px solid $medium_color;
+$main_border: 1px solid $medium;
 
 // Border-radius
-$small_radius: 0.125rem;
+$small_radius: 0.25rem;
 $medium_radius: 0.625rem;
 $rounded_radius: 999px;
