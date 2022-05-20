@@ -1,3 +1,5 @@
+@use 'colors' as colors;
+
 // Shadows
-// main
+$main: 0px 0px 3px lighten(colors.$medium, 30%);
 // down
