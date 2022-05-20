@@ -1,4 +1,5 @@
 @use "../abstracts/colors";
+@use "../abstracts/font_sizes";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
 
 * {
@@ -13,26 +14,26 @@
 h1,
 .main-header {
   @extend %headers;
-  font-size: 2.5rem;
+  font-size: font_sizes.$extra_large;
 }
 
 h2,
 .sub-header-1 {
   @extend %headers;
-  font-size: 2rem;
+  font-size: font_sizes.$large;
 }
 
 h3,
 .sub-header-2 {
   @extend %headers;
-  font-size: 1.5rem;
+  font-size: font_sizes.$medium;
 }
 
 p,
 .text {
-  font-size: 1rem;
+  font-size: font_sizes.$base;
 }
 
 .small-text {
-  font-size: 0.7rem;
+  font-size: font_sizes.$small;
 }
