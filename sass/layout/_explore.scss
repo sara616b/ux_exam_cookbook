@@ -1,0 +1,38 @@
+.explore {
+    max-width: 1024px;
+    max-height: 550px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "biggest biggest big big"
+      "biggest biggest big big"
+      "biggest biggest big big"
+      "biggest biggest small1 small2"
+      "ad ad small1 small2"
+      "ad ad small1 small2";
+    gap: 1rem;
+
+    .card {
+        &:nth-child(1){
+            grid-area: biggest;
+        }
+        &:nth-child(3){
+            grid-area: big;
+        }
+        &:nth-child(4){
+            grid-area: small1;
+        }
+        &:nth-child(5){
+            grid-area: small2;
+        }
+    }
+
+    .ad {
+        &:nth-child(2){
+            grid-area: ad;
+        }
+    }
+}
