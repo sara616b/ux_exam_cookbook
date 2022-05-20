@@ -1,0 +1,104 @@
+@use "../abstracts/borders" as border;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/colors" as color;
+@use "../abstracts/font_sizes" as font_size;
+
+
+// delete
+#forms-test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: color.$bg;
+}
+
+// For resets.scss
+input:focus, textarea:focus {
+    outline: none;
+}
+
+// FORM
+form {
+    width: 100%;
+    max-width: 500px;
+}
+
+// INPUT CONTAINERS
+label {
+    position: relative;
+    display: block;
+    margin-top: 1rem; // spacings?
+    & > div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.25rem;
+        align-items: baseline;
+    }
+}
+
+// GUIDING UI
+.placeholder {
+    position: absolute;
+    top: 1rem;
+    left: 1rem; //spacing?
+    transform-origin: top left;
+    transition: transform 0.3s;
+    color: color.$medium;
+}
+.error-message {
+    margin-top: 0.25rem; // Spacing?
+    font-size: font_size.$small;
+    color: color.$error;
+    display: none;
+}
+.requirements {
+    font-size: font_size.$small;
+    margin-top: 0.25rem; // Spacing?
+    color: color.$medium;
+
+}
+.counter {
+    font-size: font_size.$small;
+    color: color.$medium;;
+}
+
+// INPUTS
+textarea {
+    resize: none;
+    padding: 1rem; // spacings?
+}
+
+input {
+    padding: 1.5rem 1rem 0.5rem 1rem; // spacings?
+
+    &:focus {
+        border-color: color.$secondary_medium;
+    }
+}
+
+// VALIDATION STATES
+input, textarea {
+    width: 100%;
+    max-width: 500px;
+    font-size: font_size.$base; // typography?
+    color: color.$dark; // typography?
+    border: border.$main_border;
+    border-radius: border.$small_radius;
+    transition: border-color 0.3s;
+
+        &:focus ~ .placeholder,
+        &:not(:placeholder-shown) ~ .placeholder {
+            transform: scale(0.7) translateY(-0.7rem);
+            color: color.$secondary_dark;
+        }
+        &:invalid:not(:placeholder-shown):not(:focus) ~ .error_message {
+            display: block;
+        }
+        &:invalid:not(:placeholder-shown):not(:focus) ~ .requirements {
+            color: color.$error;
+        }
+    }
+
+
+
