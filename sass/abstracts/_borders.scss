@@ -1,5 +1,11 @@
+@use "./colors";
+
 // Borders
-$main_border: 1px solid $medium_color;
+$main_border: 1px solid colors.$medium;
+
+@mixin border($color: colors.$medium) {
+  border: 0.1rem solid $color;
+}
 
 // Border-radius
 $small_radius: 0.125rem;

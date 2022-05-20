@@ -1,20 +1,108 @@
-/* Error: There is no module with the namespace "variables".
- *   ,
- * 9 |     border-radius: variables.$rounded_radius;
- *   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   sass\components\_buttons.scss 9:20  button-colors()
- *   sass\components\_buttons.scss 26:5  @forward
- *   sass\components\_index.scss 2:1     @use
- *   sass\main.scss 2:1                  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: There is no module with the namespace "variables".\a   \2577 \a 9 \2502      border-radius: variables.$rounded_radius;\d\a   \2502                     ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\components\\_buttons.scss 9:20  button-colors()\a   sass\\components\\_buttons.scss 26:5  @forward\a   sass\\components\\_index.scss 2:1     @use\a   sass\\main.scss 2:1                  root stylesheet';
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+* {
+  font-family: "Open Sans", sans-serif;
+  color: black;
+}
+
+h3,
+.sub-header-2, h2,
+.sub-header-1, h1,
+.main-header {
+  font-weight: 600;
+}
+
+h1,
+.main-header {
+  font-size: 2.5rem;
+}
+
+h2,
+.sub-header-1 {
+  font-size: 2rem;
+}
+
+h3,
+.sub-header-2 {
+  font-size: 1.5rem;
+}
+
+p,
+.text {
+  font-size: 1rem;
+}
+
+.small-text {
+  font-size: 0.7rem;
+}
+
+.button-primary {
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  transition: 0.2s;
+  font-weight: 600;
+  background-color: #f3654a;
+  color: #fefdfa;
+  border: 0.1rem solid #f3654a;
+}
+.button-primary:hover {
+  color: #fefdfa;
+  background-color: #ff8066;
+  cursor: pointer;
+  border: 0.1rem solid #ff8066;
+}
+
+.button-primary-outlined {
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  transition: 0.2s;
+  font-weight: 600;
+  background-color: #fefdfa;
+  color: #f3654a;
+  border: 0.1rem solid #f3654a;
+}
+.button-primary-outlined:hover {
+  color: #fefdfa;
+  background-color: #ff8066;
+  cursor: pointer;
+  border: 0.1rem solid #ff8066;
+}
+
+.button-secondary {
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  transition: 0.2s;
+  font-weight: 600;
+  background-color: #ccdb4a;
+  color: #5e724f;
+  border: 0.1rem solid #ccdb4a;
+}
+.button-secondary:hover {
+  color: #5e724f;
+  background-color: #bbcb34;
+  cursor: pointer;
+  border: 0.1rem solid #bbcb34;
+}
+
+.button-secondary-outlined {
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  transition: 0.2s;
+  font-weight: 600;
+  background-color: #fefdfa;
+  color: #5e724f;
+  border: 0.1rem solid #ccdb4a;
+}
+.button-secondary-outlined:hover {
+  color: #5e724f;
+  background-color: #ccdb4a;
+  cursor: pointer;
+  border: 0.1rem solid #ccdb4a;
+}
+
+/*# sourceMappingURL=main.css.map */

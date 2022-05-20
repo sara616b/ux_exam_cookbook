@@ -1,53 +1,59 @@
 @use "../abstracts/colors";
+@use "../abstracts/borders";
+@use "../abstracts/spacings";
 
 @mixin button-colors(
-        $bg-color: colors.$primary, 
-        $color: colors.$bg, 
-        $border: $bg-color, 
-        $text-color: $color
-    ) {
-    border-radius: variables.$rounded_radius;
-    padding: 0.5rem 1rem;
-    transition: 0.2s;
-    font-weight: 600;
-    &:hover {
-        cursor: pointer;
-    }
-    background-color: $bg-color;
-    color: $text-color;
-    border: solid 0.1rem $border;
-    &:hover {
-      color: $bg-color;
-      background-color: $color;
-    }
+  $bg-color: colors.$primary,
+  $text-color: colors.$bg,
+  $border: $bg-color,
+  $hover-bg: colors.$primary_light,
+  $hover-border: $hover-bg,
+  $hover-text: $text-color
+) {
+  border-radius: borders.$rounded_radius;
+  padding: spacings.$buttons-y spacings.$buttons-x;
+  transition: 0.2s;
+  font-weight: 600;
+  background-color: $bg-color;
+  color: $text-color;
+  @include borders.border($border);
+
+  &:hover {
+    color: $hover-text;
+    background-color: $hover-bg;
+    cursor: pointer;
+    @include borders.border($hover-border);
+  }
 }
 
 .button-primary {
-    @include button-colors()
+  @include button-colors();
 }
 
 .button-primary-outlined {
-    @include button-colors(
-        variables.$bg-color, 
-        variables.$primary_color, 
-        variables.$primary_color
-        )
+  @include button-colors(
+    $bg-color: colors.$bg,
+    $text-color: colors.$primary,
+    $border: colors.$primary,
+    $hover-text: colors.$bg
+  );
 }
 
 .button-secondary {
-    @include button-colors(
-        variables.$secondary_medium_color,
-        variables.$bg-color, 
-        variables.$secondary_medium_color,
-        variables.$secondary_dark_color
-        )
+  @include button-colors(
+    $text-color: colors.$secondary_dark,
+    $bg-color: colors.$secondary_light,
+    $hover-bg: colors.$secondary_medium,
+    $hover-text: colors.$secondary_dark
+  );
 }
 
 .button-secondary-outlined {
-    @include button-colors(
-        variables.$bg-color, 
-        variables.$secondary_medium_color, 
-        variables.$secondary_medium_color,
-        variables.$secondary_dark_color
-        )
+  @include button-colors(
+    $text-color: colors.$secondary_dark,
+    $bg-color: colors.$bg,
+    $border: colors.$secondary_light,
+    $hover-bg: colors.$secondary_light,
+    $hover-text: colors.$secondary_dark
+  );
 }
