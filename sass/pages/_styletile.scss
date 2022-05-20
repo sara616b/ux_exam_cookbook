@@ -1,0 +1,32 @@
+@use "../abstracts/breakpoints";
+#styletile {
+  background-color: #fefdfa;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1000px;
+  > main {
+    display: grid;
+    grid-gap: 1rem;
+    @include breakpoints.custom("1000px") {
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+  #colors {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, auto));
+    .color-display div {
+      border: 0.05rem solid black;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  #button-section {
+    main {
+      display: grid;
+      grid-gap: 1rem;
+      button {
+        width: fit-content;
+      }
+    }
+  }
+}

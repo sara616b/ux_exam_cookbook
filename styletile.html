@@ -5,9 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="./js/styletile.js" defer></script>
     <title>Styletile</title>
   </head>
-  <body>
-    <main></main>
+  <body id="styletile">
+    <header>
+      <h1>Styletile</h1>
+    </header>
+    <main>
+      <section>
+        <header>
+          <h2>Logo</h2>
+        </header>
+        <main></main>
+      </section>
+      <section>
+        <header>
+          <h2>Typografi</h2>
+        </header>
+        <main>
+          <h1>Header</h1>
+          <h2>Sub header 1</h2>
+          <h3>Sub header 2</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+            quisquam sequi in, ratione tempore, at enim, animi distinctio eum
+            error repellendus rerum accusantium laudantium iusto perspiciatis
+            officia? Soluta, iure odio.
+          </p>
+          <p class="small-text">This is the smaller text</p>
+        </main>
+      </section>
+      <section>
+        <header>
+          <h2>Colors</h2>
+        </header>
+        <main id="colors"></main>
+      </section>
+      <section id="button-section">
+        <header>
+          <h2>Buttons</h2>
+        </header>
+        <main>
+          <p class="small-text">Hover over the buttons</p>
+          <button class="button-primary">Primary</button>
+          <button class="button-primary-outlined">Primary Outlined</button>
+          <button class="button-secondary">Secondary</button>
+          <button class="button-secondary-outlined">Secondary outlined</button>
+        </main>
+      </section>
+      <section>
+        <header>
+          <h2>Shadows</h2>
+        </header>
+      </section>
+      <section>
+        <header>
+          <h2>Icons</h2>
+        </header>
+      </section>
+      <section>
+        <header>
+          <h2>Inputs</h2>
+        </header>
+      </section>
+      <section>
+        <header>
+          <h2>Components</h2>
+        </header>
+      </section>
+    </main>
   </body>
+  <template id="color-template">
+    <article class="color-display">
+      <div></div>
+      <p class="name small-text"></p>
+      <p class="hex small-text"></p>
+    </article>
+  </template>
 </html>
