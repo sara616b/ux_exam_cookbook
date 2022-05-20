@@ -1,22 +1,18 @@
-@use "../abstracts/variables";
-
-%button {
-  border-radius: variables.$rounded_radius;
-  padding: 0.5rem 1rem;
-  transition: 0.2s;
-  font-weight: 600;
-  &:hover {
-      cursor: pointer;
-  }
-}
+@use "../abstracts/colors";
 
 @mixin button-colors(
-        $bg-color: variables.$primary_color, 
-        $color: variables.$bg-color, 
+        $bg-color: colors.$primary, 
+        $color: colors.$bg, 
         $border: $bg-color, 
         $text-color: $color
     ) {
-    @extend %button;
+    border-radius: variables.$rounded_radius;
+    padding: 0.5rem 1rem;
+    transition: 0.2s;
+    font-weight: 600;
+    &:hover {
+        cursor: pointer;
+    }
     background-color: $bg-color;
     color: $text-color;
     border: solid 0.1rem $border;

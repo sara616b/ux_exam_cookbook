@@ -1,51 +1,20 @@
-.button-secondary-outlined, .button-secondary, .button-primary-outlined, .button-primary {
-  border-radius: 999px;
-  padding: 0.5rem 1rem;
-  transition: 0.2s;
-  font-weight: 600;
-}
-.button-secondary-outlined:hover, .button-secondary:hover, .button-primary-outlined:hover, .button-primary:hover {
-  cursor: pointer;
-}
+/* Error: There is no module with the namespace "variables".
+ *   ,
+ * 9 |     border-radius: variables.$rounded_radius;
+ *   |                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   sass\components\_buttons.scss 9:20  button-colors()
+ *   sass\components\_buttons.scss 26:5  @forward
+ *   sass\components\_index.scss 2:1     @use
+ *   sass\main.scss 2:1                  root stylesheet */
 
-.button-primary {
-  background-color: #F3654A;
-  color: #FEFDFA;
-  border: solid 0.1rem #F3654A;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "variables".\a   \2577 \a 9 \2502      border-radius: variables.$rounded_radius;\d\a   \2502                     ^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\components\\_buttons.scss 9:20  button-colors()\a   sass\\components\\_buttons.scss 26:5  @forward\a   sass\\components\\_index.scss 2:1     @use\a   sass\\main.scss 2:1                  root stylesheet';
 }
-.button-primary:hover {
-  color: #F3654A;
-  background-color: #FEFDFA;
-}
-
-.button-primary-outlined {
-  background-color: #FEFDFA;
-  color: #F3654A;
-  border: solid 0.1rem #F3654A;
-}
-.button-primary-outlined:hover {
-  color: #FEFDFA;
-  background-color: #F3654A;
-}
-
-.button-secondary {
-  background-color: #BBCB34;
-  color: #5E724F;
-  border: solid 0.1rem #BBCB34;
-}
-.button-secondary:hover {
-  color: #BBCB34;
-  background-color: #FEFDFA;
-}
-
-.button-secondary-outlined {
-  background-color: #FEFDFA;
-  color: #5E724F;
-  border: solid 0.1rem #BBCB34;
-}
-.button-secondary-outlined:hover {
-  color: #FEFDFA;
-  background-color: #BBCB34;
-}
-
-/*# sourceMappingURL=main.css.map */
