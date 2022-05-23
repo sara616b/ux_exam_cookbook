@@ -1,14 +1,16 @@
-@use "../abstracts/breakpoints";
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/spacings" as spacing;
+
 #styletile {
   background-color: #fefdfa;
-  padding: 1rem;
+  padding: spacing.$medium;
   margin: 0 auto;
   max-width: 1000px;
   > main {
     display: grid;
-    grid-gap: 1rem;
-    @include breakpoints.custom("1000px") {
-      grid-template-columns: repeat(2, 50%);
+    grid-gap: spacing.$medium;
+    @include breakpoint.custom("1000px") {
+      grid-template-columns: repeat(2, calc(50% - (spacing.$medium / 2)));
     }
   }
   #colors {

@@ -1,59 +1,61 @@
-@use "../abstracts/colors";
-@use "../abstracts/borders";
-@use "../abstracts/spacings";
+@use "../abstracts/colors" as color;
+@use "../abstracts/borders" as border;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/font_sizes" as font_size;
 
-@mixin button-colors(
-  $bg-color: colors.$primary,
-  $text-color: colors.$bg,
+@mixin button-styles(
+  $bg-color: color.$primary,
+  $text-color: color.$bg,
   $border: $bg-color,
-  $hover-bg: colors.$primary_light,
+  $hover-bg: color.$primary_light,
   $hover-border: $hover-bg,
   $hover-text: $text-color
 ) {
-  border-radius: borders.$rounded_radius;
-  padding: spacings.$buttons-y spacings.$buttons-x;
+  border-radius: border.$rounded_radius;
+  padding: spacing.$buttons-y spacing.$buttons-x;
   transition: 0.2s;
   font-weight: 600;
+  font-size: font_size.$base;
   background-color: $bg-color;
   color: $text-color;
-  @include borders.border($border);
+  @include border.border($border);
 
   &:hover {
     color: $hover-text;
     background-color: $hover-bg;
     cursor: pointer;
-    @include borders.border($hover-border);
+    @include border.border($hover-border);
   }
 }
 
 .button-primary {
-  @include button-colors();
+  @include button-styles();
 }
 
 .button-primary-outlined {
-  @include button-colors(
-    $bg-color: colors.$bg,
-    $text-color: colors.$primary,
-    $border: colors.$primary,
-    $hover-text: colors.$bg
+  @include button-styles(
+    $bg-color: color.$bg,
+    $text-color: color.$primary,
+    $border: color.$primary,
+    $hover-text: color.$bg
   );
 }
 
 .button-secondary {
-  @include button-colors(
-    $text-color: colors.$secondary_dark,
-    $bg-color: colors.$secondary_light,
-    $hover-bg: colors.$secondary_medium,
-    $hover-text: colors.$secondary_dark
+  @include button-styles(
+    $text-color: color.$secondary_dark,
+    $bg-color: color.$secondary_light,
+    $hover-bg: color.$secondary_medium,
+    $hover-text: color.$secondary_dark
   );
 }
 
 .button-secondary-outlined {
-  @include button-colors(
-    $text-color: colors.$secondary_dark,
-    $bg-color: colors.$bg,
-    $border: colors.$secondary_light,
-    $hover-bg: colors.$secondary_light,
-    $hover-text: colors.$secondary_dark
+  @include button-styles(
+    $text-color: color.$secondary_dark,
+    $bg-color: color.$bg,
+    $border: color.$secondary_light,
+    $hover-bg: color.$secondary_light,
+    $hover-text: color.$secondary_dark
   );
 }
