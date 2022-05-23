@@ -59,7 +59,13 @@ $icon-done: url('../../icons/done.svg');
 }
 
 .icon {
-    @include icon-btn-styles($box-shadow: none);
+    @include icon-btn-styles(
+        $bg-color: transparent,
+        $hover-bg: transparent,
+        $border: transparent,
+        $hover-border: transparent,    
+        $box-shadow: none
+    );
 
     div {
         background-color: color.$medium;
