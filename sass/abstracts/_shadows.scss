@@ -1,4 +1,4 @@
-@use 'colors' as colors;
+@use "colors" as colors;
 
 // Shadows
 $main: 0px 0px 3px lighten(colors.$medium, 30%);

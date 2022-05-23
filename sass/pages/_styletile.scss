@@ -6,8 +6,8 @@
   background-color: #fefdfa;
   padding: spacing.$medium;
   margin: 0 auto;
-  max-width: 1000px;
   > main {
+    max-width: 1000px;
     display: grid;
     grid-gap: spacing.$medium;
     @include breakpoint.custom("1000px") {
