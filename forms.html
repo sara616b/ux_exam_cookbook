@@ -65,9 +65,13 @@
           <div class="input-container">
             <label for="recipe-components">Recipe components</label>
             <div class="form-flex">
-              <button class="amount-btn" data-action="-" disabled>-</button>
+              <button class="icon-primary amount-btn" data-action="-" disabled>
+                <div class="remove"></div>
+              </button>
               <input id="recipe-components" disabled type="number" min="1" max="10" value="1" required />
-              <button class="amount-btn" data-action="+">+</button>
+              <button class="icon-primary amount-btn" data-action="+">
+                <div class="add"></div>
+              </button>
             </div>
           </div>
         </fieldset>
@@ -75,7 +79,9 @@
 
       <form class="search-form">
         <input type="search" placeholder="Recipe, ingredient, cuisine" />
-        <button>O</button>
+        <button class="icon">
+          <div class="search"></div>
+        </button>
       </form>
     </main>
   </body>
