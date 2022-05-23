@@ -42,10 +42,20 @@ fieldset {
     margin-top: 1rem; //spacing?
 }
 
+
+button:disabled {
+    opacity: 0.3;
+}
+
 // INPUT CONTAINERS
 .input-container {
     position: relative;
     display: block;
+
+    button {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 
     &:not(:first-child) {
     margin-top: 1rem; // spacings?
@@ -57,6 +67,7 @@ fieldset {
 
     p:not([class]) {
         color: color.$medium;
+        font-size: font_size.$small;
     }
 }
 .form-flex {
@@ -77,6 +88,7 @@ label {
     transform-origin: top left;
     transition: transform 0.3s;
     color: color.$medium;
+    pointer-events: none;
 }
 .error-message {
     margin-top: 0.25rem; // Spacing?
@@ -136,7 +148,7 @@ input, textarea, select {
     position: relative;
     button {
         position: absolute;
-        top: spacing.$buttons-y;
+        top: 0;
         right: spacing.$buttons-x;
     }
 }
