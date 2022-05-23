@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <link rel="stylesheet" href="css/main.css" />
     <script src="./js/styletile.js" defer></script>
+    <script src="./js/navigation.js"></script>
     <title>Styletile</title>
   </head>
   <body id="styletile">
@@ -18,7 +22,11 @@
         <header>
           <h2>Logo</h2>
         </header>
-        <main></main>
+        <main>
+          <button class="logo">
+            <img alt="cookbook logo" />
+          </button>
+        </main>
       </section>
       <section>
         <header>
@@ -123,28 +131,67 @@
         <header>
           <h2>Components</h2>
         </header>
-        <article class="card" style="grid-area: biggest;">
+        <article class="card" style="grid-area: biggest">
           <a href="#">
-              <img src="image/paella.png" alt="paella">
-              <span class="material-symbols-outlined" onclick="console.log('bookmark clicked')">
-                  bookmark
-              </span>
-              <div>
-                  <header>
-                      <h3>Lorem Ipsum</h3>
-                      <address class="author">
-                          By: John Doe
-                      </address>
-                  </header>
-                  <div class="rating">
-                      <i class="material-symbols-outlined">star</i>
-                      <div>4.9</div>
-                  </div>
+            <img src="image/paella.png" alt="paella" />
+            <span
+              class="material-symbols-outlined"
+              onclick="console.log('bookmark clicked')"
+            >
+              bookmark
+            </span>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">By: John Doe</address>
+              </header>
+              <div class="rating">
+                <i class="material-symbols-outlined">star</i>
+                <div>4.9</div>
               </div>
+            </div>
           </a>
         </article>
       </section>
     </main>
+
+    <hr style="margin-top: 4rem" />
+    <!-- FIRST ATTEMPT AT NAVIGATION MOBILE FIRST -->
+    <header style="margin-bottom: 10rem">
+      <nav>
+        <button class="logo">
+          <img alt="cookbook logo" />
+        </button>
+        <button
+          id="navigation-control"
+          data-to-open="navigation"
+          class="button-primary"
+        >
+          ☰
+        </button>
+        <ul id="navigation" class="closed">
+          <section>
+            <li>
+              <input class="search" type="text" />
+            </li>
+            <li>
+              <a href="#" class="text has-sub-navigation"> Recipes </a>
+              <ul id="sub-navigation" class="closed">
+                <li class="text">Breakfast</li>
+                <li class="text">Lunch</li>
+                <li class="text">Dinner</li>
+                <li class="text">Dessert</li>
+                <li class="text">Snacks</li>
+              </ul>
+            </li>
+          </section>
+          <li>
+            <button class="button-primary-outlined">Log in</button>
+            <button class="button-secondary">Sign up</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
   </body>
   <template id="color-template">
     <article class="color-display">
