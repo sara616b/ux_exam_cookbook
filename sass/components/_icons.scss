@@ -1,6 +1,7 @@
 @use "../abstracts/colors" as color;
 @use "../abstracts/borders" as border;
 @use "../abstracts/spacings" as spacing;
+@use "../abstracts/shadows" as shadow;
 
 $icon-search: url('../../icons/search.svg');
 $icon-info: url('../../icons/info.svg');
@@ -23,6 +24,7 @@ $icon-done: url('../../icons/done.svg');
     $hover-bg: color.$bg,
     $border: color.$bg,
     $hover-border: color.$bg,
+    $box-shadow: shadow.$main
 ){
     background-color: $bg-color;
     transition: .2s;
@@ -31,6 +33,7 @@ $icon-done: url('../../icons/done.svg');
     border-radius: border.$rounded_radius;
     outline: none;
     @include border.border($border);
+    box-shadow: $box-shadow;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -56,7 +59,7 @@ $icon-done: url('../../icons/done.svg');
 }
 
 .icon {
-    @include icon-btn-styles();
+    @include icon-btn-styles($box-shadow: none);
 
     div {
         background-color: color.$medium;
@@ -85,7 +88,7 @@ $icon-done: url('../../icons/done.svg');
 }
 
 .icon-primary-inverted {
-    @include icon-btn-styles();
+    @include icon-btn-styles($box-shadow: none);
 
     div {
         background-color: color.$primary;
@@ -114,7 +117,7 @@ $icon-done: url('../../icons/done.svg');
 }
 
 .icon-secondary-inverted {
-    @include icon-btn-styles();
+    @include icon-btn-styles($box-shadow: none);
 
     div {
         background-color: color.$secondary_light;
