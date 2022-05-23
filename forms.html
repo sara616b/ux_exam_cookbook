@@ -5,31 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
+    <script defer src="js/forms.js"></script>
     <title>Document</title>
   </head>
   <body>
     <main id="forms-test">
       <form>
-        <label>
+        <h2>Form h2 / h1</h2>
+        <div class="input-container">
           <input type="email" placeholder=" " required />
           <p class="error-message">Pleace enter a valid email</p>
           <p class="placeholder">Email</p>
-        </label>
+        </div>
 
-        <label>
+        <div class="input-container">
           <input type="password" placeholder=" " minlength="8" required />
           <p class="requirements">A password must be at least 8 characters</p>
           <p class="placeholder">Password</p>
-        </label>
+        </div>
+      </form>
 
-        <label>
-          <div>
-            <p>Title</p>
+      <form>
+        <fieldset>
+          <legend>Legend</legend>
+          <div class="input-container">
+            <textarea rows="4" minlength="10" placeholder=" " maxlength="250" required></textarea>
+            <p class="error-message">Please enter a valid text</p>
             <p class="counter"><span>0</span>/250</p>
+            <p class="placeholder">Step description</p>
           </div>
-          <textarea rows="4" placeholder="Step description" minlength="10" maxlength="250" required></textarea>
-          <p class="error_message">Please enter a valid text</p>
-        </label>
+
+          <div class="input-container">
+            <label for="cuisine-selector">Select cuisine (label)</label>
+            <select id="cuisine-selector">
+              <option disabled selected>Cuisines</option>
+              <optgroup label="Asian">
+                <option value="asian">All Asian</option>
+                <option value="vietnamese">Vietnamese</option>
+                <option value="thai">Thai</option>
+                <option value="chinese">Chinese</option>
+              </optgroup>
+              <optgroup label="European">
+                <option value="european">All European</option>
+                <option value="french">French</option>
+                <option value="italian">italian</option>
+                <option value="spanish">Spanish</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="input-container">
+            <label for="cooking-time">Cooking time</label>
+            <div class="form-flex">
+              <input id="cooking-time" type="number" min="1" max="400" value="30" />
+              <p>minutes</p>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="recipe-components">Recipe components</label>
+            <div class="form-flex">
+              <button class="amount-btn" data-action="-" disabled>-</button>
+              <input id="recipe-components" disabled type="number" min="1" max="10" value="1" required />
+              <button class="amount-btn" data-action="+">+</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <form class="search-form">
+        <input type="search" placeholder="Recipe, ingredient, cuisine" />
+        <button>O</button>
       </form>
     </main>
   </body>

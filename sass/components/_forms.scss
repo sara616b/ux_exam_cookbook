@@ -1,0 +1,191 @@
+@use "../abstracts/borders" as border;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/colors" as color;
+@use "../abstracts/font_sizes" as font_size;
+@use "../abstracts/shadows" as shadow;
+
+
+// delete
+#forms-test {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: color.$bg;
+    gap: 5rem;
+}
+
+// For resets.scss
+input:focus, textarea:focus {
+    outline: none;
+}
+
+
+// TYPOGRAPHY
+legend {
+    font-size: font_size.$medium;
+}
+
+// FORM
+form {
+    width: 100%;
+    max-width: 500px;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+fieldset {
+    border: 0;
+    margin-top: 1rem; //spacing?
+}
+
+// INPUT CONTAINERS
+.input-container {
+    position: relative;
+    display: block;
+
+    &:not(:first-child) {
+    margin-top: 1rem; // spacings?
+    }
+
+    & > p:first-child {
+        margin-bottom: 0.25rem; // spacings
+    }
+
+    p:not([class]) {
+        color: color.$medium;
+    }
+}
+.form-flex {
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+}
+
+// GUIDING UI elms
+label {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+.placeholder {
+    position: absolute;
+    top: 1rem;
+    left: 1rem; //spacing?
+    transform-origin: top left;
+    transition: transform 0.3s;
+    color: color.$medium;
+}
+.error-message {
+    margin-top: 0.25rem; // Spacing?
+    font-size: font_size.$small;
+    color: color.$error;
+    display: none;
+}
+.requirements {
+    font-size: font_size.$small;
+    margin-top: 0.25rem; // Spacing?
+    color: color.$medium;
+}
+.counter, .counter span {
+    font-size: font_size.$small;
+    color: color.$medium;
+}
+.counter {
+    position: absolute;
+    right: 1rem; //spacing?
+    top: 0.4rem; //spacing?
+}
+
+// INPUT SPECIFICS
+textarea {
+    resize: none; // RESETS??
+    display: block;
+}
+
+
+
+// VALIDATION STATES
+input, textarea, select {
+    width: 100%;
+    max-width: 500px;
+    padding: 1.5rem 1rem 0.5rem 1rem; // spacings?
+    font-size: font_size.$base; // typography?
+    color: color.$dark; // typography?
+    border: border.$main_border;
+    border-radius: border.$small_radius;
+    transition: border-color 0.3s;
+
+        &:focus ~ .placeholder,
+        &:not(:placeholder-shown) ~ .placeholder {
+            transform: scale(0.75) translateY(-0.7rem);
+        }
+        &:invalid:not(:placeholder-shown):not(:focus) ~ .error-message {
+            display: block;
+        }
+        &:invalid:not(:placeholder-shown):not(:focus) ~ .requirements {
+            color: color.$error;
+        }
+    }
+
+
+// SEARCH
+.search-form {
+    position: relative;
+    button {
+        position: absolute;
+        top: spacing.$buttons-y;
+        right: spacing.$buttons-x;
+    }
+}
+
+input[type=search] {
+    padding: 0.5rem 2rem;
+    border-radius: border.$rounded_radius;
+    padding: spacing.$buttons-y spacing.$buttons-x;
+    transition: box-shadow 0.3s;
+
+    &:focus {
+        box-shadow: shadow.$main;
+    }
+
+}
+
+//NUMBERS
+input[type=number] {
+    width: auto;
+    padding: spacing.$buttons-y spacing.$buttons-x;
+}
+.amount-btn {
+    display: block;
+}
+.amount-btn.disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// SELECT 
+select {
+    padding: spacing.$buttons-y spacing.$buttons-x;
+    width: auto;
+}
+
+
+
+
+
+
