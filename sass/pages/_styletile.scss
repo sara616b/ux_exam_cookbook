@@ -1,5 +1,6 @@
 @use "../abstracts/breakpoints" as breakpoint;
 @use "../abstracts/spacings" as spacing;
+@use "../abstracts/shadows" as shadow;
 
 #styletile {
   background-color: #fefdfa;
@@ -31,4 +32,25 @@
       }
     }
   }
+
+  #shadows {
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: spacing.$medium;
+      
+      div {
+        padding: spacing.$medium;
+      }
+
+      .main-shadow {
+        box-shadow: shadow.$main;
+      }
+
+      .down-shadow {
+        box-shadow: shadow.$down;
+      }
+    }
+  }
+
 }
