@@ -1,0 +1,152 @@
+@use "../abstracts/colors" as color;
+@use "../abstracts/borders" as border;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/font_sizes" as font_size;
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: spacing.$medium;
+
+  #navigation-control {
+    // burger menu button
+    right: 0;
+    position: absolute;
+    margin-right: spacing.$small;
+  }
+
+  // main navigation
+  #navigation {
+    width: 100%;
+    &.closed {
+      display: none;
+    }
+
+    section {
+      // contains search field and links
+      display: flex;
+      flex-direction: column;
+      padding: spacing.$small;
+      %link {
+        // nav links
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        padding: spacing.$small;
+        transition: 0.1s all;
+        border-radius: border.$rounded_radius;
+        &:hover {
+          cursor: pointer;
+          background-color: color.$primary;
+          color: color.$bg;
+        }
+      }
+      a {
+        @extend %link;
+        text-decoration: none;
+      }
+      #sub-navigation {
+        // sub navigation under recipes
+        width: 100%;
+        li {
+          @extend %link;
+          margin-left: spacing.$medium;
+        }
+      }
+    }
+
+    > li {
+      &:last-of-type {
+        // log in and sign up buttons
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+    }
+  }
+
+  // when going to desktop
+  @include breakpoint.custom("800px") {
+    justify-content: space-between;
+    align-items: center;
+    #navigation-control {
+      // hidde burger menu icon
+      display: none;
+    }
+
+    #navigation {
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      &.closed {
+        // even if the menu was closed on mobile always display it on desktop
+        display: flex;
+      }
+
+      section {
+        // contains search and recipe link
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+
+        li {
+          // move search field after links
+          &:first-of-type {
+            order: 2;
+          }
+          &:last-of-type {
+            order: 1;
+          }
+        }
+      }
+
+      li {
+        padding: 0 spacing.$small;
+        &:last-of-type {
+          button {
+            margin-right: spacing.$small;
+          }
+        }
+      }
+    }
+
+    .has-sub-navigation {
+      // display dropdown on hover
+      padding: spacing.$medium;
+      &:hover {
+        cursor: pointer;
+        & + #sub-navigation {
+          visibility: visible;
+        }
+      }
+    }
+
+    #sub-navigation {
+      z-index: 3;
+      display: block !important;
+      visibility: hidden;
+      position: absolute;
+      padding: spacing.$medium 0;
+      background-color: color.$bg;
+      margin: spacing.$medium;
+      width: auto !important;
+      margin-left: 0;
+      &:hover {
+        visibility: visible;
+      }
+      li {
+        margin: 0 spacing.$small !important;
+      }
+    }
+  }
+}
