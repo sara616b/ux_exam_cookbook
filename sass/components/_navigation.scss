@@ -3,12 +3,15 @@
 @use "../abstracts/breakpoints" as breakpoint;
 @use "../abstracts/spacings" as spacing;
 @use "../abstracts/font_sizes" as font_size;
+@use "../abstracts/shadows" as shadow;
 
 nav {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: spacing.$medium;
+  padding: spacing.$medium;
+  color: blue;
+  box-shadow: shadow.$down;
 
   #navigation-control {
     // burger menu button
@@ -29,6 +32,7 @@ nav {
       display: flex;
       flex-direction: column;
       padding: spacing.$small;
+
       %link {
         // nav links
         display: flex;
@@ -44,6 +48,7 @@ nav {
           color: color.$bg;
         }
       }
+
       a {
         @extend %link;
         text-decoration: none;
@@ -57,15 +62,22 @@ nav {
         }
       }
     }
-
-    > li {
-      &:last-of-type {
-        // log in and sign up buttons
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        flex-wrap: wrap;
-        justify-content: space-around;
+    .search-form {
+      .icon {
+        border-color: #00000000;
+        top: 0;
+        transform: scale(0.9);
+      }
+    }
+    .buttons {
+      // log in and sign up buttons
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      button:first-of-type {
+        margin-right: spacing.$small;
       }
     }
   }
@@ -85,10 +97,18 @@ nav {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
+      flex-grow: 2;
 
       &.closed {
         // even if the menu was closed on mobile always display it on desktop
         display: flex;
+      }
+      .center {
+        flex-grow: 2;
+        justify-content: center;
+      }
+      .search-form {
+        width: 300px;
       }
 
       section {
@@ -130,17 +150,19 @@ nav {
         }
       }
     }
+    .sub-nav-container {
+      position: relative;
+    }
 
     #sub-navigation {
       z-index: 3;
       display: block !important;
       visibility: hidden;
       position: absolute;
-      padding: spacing.$medium 0;
+      padding: spacing.$small 0;
       background-color: color.$bg;
-      margin: spacing.$medium;
       width: auto !important;
-      margin-left: 0;
+      margin: 0;
       &:hover {
         visibility: visible;
       }
