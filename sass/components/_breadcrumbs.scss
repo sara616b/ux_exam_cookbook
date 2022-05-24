@@ -1,0 +1,28 @@
+@use "../abstracts/colors" as color;
+@use "../abstracts/borders" as border;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/font_sizes" as font_size;
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: spacing.$small;
+  li {
+    &:first-of-type {
+      padding-left: 0;
+    }
+    &::after {
+      content: ">";
+    }
+    &:last-of-type {
+      font-weight: 600;
+      &::after {
+        content: "";
+      }
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

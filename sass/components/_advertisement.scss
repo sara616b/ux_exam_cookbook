@@ -1,0 +1,8 @@
+@use "../abstracts/borders" as border;
+.advertisement {
+  width: 100%;
+  min-height: 200px;
+  background-image: url(../../image/advertisement.png);
+  background-size: contain;
+  @include border.border();
+}

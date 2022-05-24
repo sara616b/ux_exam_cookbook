@@ -5,9 +5,13 @@
 #styletile {
   background-color: #fefdfa;
   padding: spacing.$medium;
-  margin: 0 auto;
+  h1 {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
   > main {
     max-width: 1000px;
+    margin: 0 auto;
     display: grid;
     grid-gap: spacing.$medium;
     @include breakpoint.custom("1000px") {
@@ -38,7 +42,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: spacing.$medium;
-      
+
       div {
         padding: spacing.$medium;
       }
@@ -52,5 +56,4 @@
       }
     }
   }
-
 }

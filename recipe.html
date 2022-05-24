@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paella</title>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/forms.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="logo">
+          <img alt="cookbook logo" />
+        </button>
+        <button
+          id="navigation-control"
+          data-to-open="navigation"
+          class="button-primary"
+        >
+          ☰
+        </button>
+        <ul id="navigation" class="closed">
+          <section class="center">
+            <li>
+              <form class="search-form">
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
+
+                <button class="icon">
+                  <div class="search"></div>
+                </button>
+              </form>
+            </li>
+            <li class="sub-nav-container">
+              <a href="#" class="text has-sub-navigation"> Recipes </a>
+              <ul id="sub-navigation" class="closed">
+                <li class="text">Breakfast</li>
+                <li class="text">Lunch</li>
+                <li class="text">Dinner</li>
+                <li class="text">Dessert</li>
+                <li class="text">Snacks</li>
+              </ul>
+            </li>
+          </section>
+          <li class="buttons">
+            <button class="button-primary-outlined">Log in</button>
+            <button class="button-secondary">Sign up</button>
+          </li>
+        </ul>
+      </nav>
+      <ul class="breadcrumbs">
+        <li class="small-text">
+          <a href="/">Cookbook</a>
+        </li>
+        <li class="small-text">
+          <a href="/search">Recipes</a>
+        </li>
+        <li class="small-text">
+          <a href="/dinner">Dinner</a>
+        </li>
+        <li class="small-text">
+          <a href="#">Classic Paella</a>
+        </li>
+      </ul>
+    </header>
+    <main id="recipe-content">
+      <header>
+        <section id="left-info">
+          <div class="action-icon-container">
+            <button class="icon-primary">
+              <div class="bookmark"></div>
+            </button>
+            <button class="icon">
+              <div class="more"></div>
+            </button>
+          </div>
+          <h1 class="title">Classic Paella</h1>
+          <h3 class="author">By Rikke P. Dahl</h3>
+          <section class="star-rating">
+            <p>4.5</p>
+            <section class="star-container">
+              <button class="icon-primary-inverted">
+                <div class="star"></div>
+              </button>
+              <button class="icon-primary-inverted">
+                <div class="star"></div>
+              </button>
+              <button class="icon-primary-inverted">
+                <div class="star"></div>
+              </button>
+              <button class="icon-primary-inverted">
+                <div class="star"></div>
+              </button>
+              <button class="icon-primary-inverted">
+                <div class="star"></div>
+              </button>
+            </section>
+          </section>
+          <p class="estimated-time">90 min</p>
+          <p class="servings">Serves 10 people</p>
+          <p class="description">Sausage, chicken, shrimp and rice dish!</p>
+        </section>
+        <section id="right-img">
+          <img class="img" src="./image/paella.png" alt="Paella" />
+        </section>
+      </header>
+      <main>
+        <section id="ingredients">
+          <h2>Ingredients</h2>
+          <ul class="small-text">
+            <li>8 ounce mild Italian sausage, cut into 1 inch pieces</li>
+            <li>15 raw chicken tenders or strips</li>
+            <li>2 pounds large shrimp - peeled and deveined</li>
+            <li>1 onion, chopped</li>
+            <li>1 green bell pepper, seeded and cut into strips</li>
+            <li>1 large stalk celery, with leaves, finely chopped</li>
+            <li>2 cups uncooked long grain rice</li>
+            <li>2 (14.5 ounce) cans peeled and diced tomatoes</li>
+            <li>2 bay leaves</li>
+            <li>2 teaspoons salt</li>
+            <li>1 teaspoon dried oregano</li>
+            <li>¾ teaspoon ground turmeric</li>
+            <li>3 ½ cups chicken broth</li>
+          </ul>
+        </section>
+        <section class="advertisement"></section>
+        <section id="instructions">
+          <h2>Instructions</h2>
+          <ol>
+            <li>
+              Heat a wok over medium-high heat. Fry hot and mild Italian sausage
+              pieces in the wok until brown on all sides.
+            </li>
+            <li>
+              Remove sausage, and fry the chicken strips in the sausage
+              drippings until browned.
+            </li>
+            <li>
+              Remove chicken and saute onions, green pepper, celery, and garlic
+              for 5 minutes, or until tender.
+            </li>
+            <li>
+              Stir in the uncooked rice, tomatoes, bay leaves, salt, oregano and
+              turmeric.
+            </li>
+            <li>
+              Cook and stir for 1 minute, then mix in the reserved tomato juice
+              and chicken broth.
+            </li>
+            <li>Add chicken pieces, cover and simmer for about 20 minutes.</li>
+            <li>
+              Add sausage to the mixture, and continue to simmer for 15 minutes,
+              then stir in the shrimp; cover and cook for 5 to 10 more minutes,
+              or until shrimp is cooked through.
+            </li>
+          </ol>
+          <p class="end">###</p>
+        </section>
+      </main>
+      <footer>
+        <section>
+          <form class="comment">
+            <img
+              class="profile-image"
+              src="./image/profiles/rikke.png"
+              alt="profile image"
+            />
+            <section class="comment-content">
+              <div class="input-container">
+                <textarea
+                  rows="4"
+                  minlength="10"
+                  placeholder=" "
+                  maxlength="250"
+                  required
+                ></textarea>
+                <p class="error-message">Please enter a valid text</p>
+                <p class="counter"><span>0</span>/250</p>
+                <p class="placeholder">Comment</p>
+              </div>
+              <input
+                class="button-primary"
+                type="submit"
+                value="Post comment"
+              />
+            </section>
+          </form>
+        </section>
+        <section class="advertisement"></section>
+        <section class="all-comments">
+          <h2>Comments</h2>
+          <article class="comment">
+            <img
+              class="profile-image"
+              src="./image/profiles/nasih.jpg"
+              alt="profile image"
+            />
+            <section class="comment-content">
+              <section>
+                <p class="small-text">John Doe</p>
+                <p class="small-text">2nd March 2022</p>
+              </section>
+              <p>Wow! Great recipe!</p>
+            </section>
+          </article>
+          <article class="comment">
+            <img
+              class="profile-image"
+              src="./image/profiles/ethan.jpg"
+              alt="profile image"
+            />
+            <section class="comment-content">
+              <section>
+                <p class="small-text">Gorgon Ramsay</p>
+                <p class="small-text">22nd March 2022</p>
+              </section>
+              <p>Beautiful picture. Looks good</p>
+            </section>
+          </article>
+          <article class="comment">
+            <img
+              class="profile-image"
+              src="./image/profiles/girl.jpg"
+              alt="profile image"
+            />
+            <section class="comment-content">
+              <section>
+                <p class="small-text">Top Chef</p>
+                <p class="small-text">3rd February 2022</p>
+              </section>
+              <p>Mmm, delicious!</p>
+            </section>
+          </article>
+        </section>
+      </footer>
+    </main>
+    <footer></footer>
+  </body>
+</html>
