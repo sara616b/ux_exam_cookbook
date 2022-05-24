@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/navigation.js" defer></script>
-
+    <script src="./js/filtering.js" defer></script>
 </head>
 <body>
     <header class="nav-container">
@@ -124,10 +124,34 @@
         <section>
             <header>
                 <h1>Recipes</h1>
+                <select></select>
             </header>
-
+            
         </section>
     </main>
+    <template id="recipe">
+        <article class="card">
+          <a href="#">
+            <img src="image/paella.png" alt="paella" />
+            <button class="icon-primary">
+                <div class="bookmark"></div>
+            </button>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">By: John Doe</address>
+              </header>
+              <div class="rating">
+                <button class="icon-primary-inverted">
+                    <div class="star"></div>
+                </button>
+                <div>4.9</div>
+              </div>
+            </div>
+          </a>
+        </article>
+
+    </template>
     <template id="include-temp">
         <button class="button-secondary-outlined" data-target="#include-container" data-value="">
             <span class="value"></span>
@@ -142,53 +166,13 @@
     </template>
 </body>
 <script>
-    document.querySelectorAll('button[data-toggle="collapse"').forEach(btn => {
-        btn.addEventListener('click', toggleCollapse);
+    window.addEventListener("DOMContentLoaded", () => {
+        for (let i = 0; i < 10; i++) {
+            const dest = document.querySelector("#recipes section");
+            const temp = document.querySelector("#recipe");
+            const clone = temp.cloneNode(true).content;
+            dest.appendChild(clone)
+        }
     })
-    document.querySelectorAll('button[data-toggle="ingredient-filter"]').forEach(btn => {
-        btn.addEventListener('click', addIngredientFilter);
-    })
-
-    function toggleCollapse() {
-        const elem = event.target;
-        document.querySelector(elem.dataset.target).classList.toggle(elem.dataset.toggle);
-    }
-
-    function addIngredientFilter() {
-        const elem = event.target;
-        const input = document.querySelector(elem.dataset.input);
-        
-        if (input.value === "") {return false;}
-
-        document.querySelectorAll(`${elem.dataset.counterTarget} button`).forEach(btn => {
-            if (btn.dataset.value === input.value) {
-                btn.remove();
-            }
-        })
-        
-        const valLowCase = input.value.toLowerCase();
-        const valCapCase = input.value.substring(0,1).toUpperCase() + input.value.substring(1).toLowerCase();
-        
-        const dest = document.querySelector(elem.dataset.target);
-        const temp = document.querySelector(elem.dataset.temp);
-        const clone = temp.cloneNode(true).content;
-        clone.querySelector('.value').textContent = valCapCase;
-        clone.querySelector('button').setAttribute('data-value', valLowCase);
-        clone.querySelector('button').addEventListener('click', removeIngredientFilter);
-        dest.appendChild(clone);
-
-        input.value = "";
-
-        // TODO: Call function to apply filter changes
-    }
-
-    function removeIngredientFilter() {
-        const elem = event.target;
-        const value = elem.dataset.value;
-        console.log(value);
-        elem.remove();
-
-        // TODO: Call function to apply filter changes
-    }
 </script>
 </html>
