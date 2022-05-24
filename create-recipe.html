@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <button class="logo">
+            <img alt="cookbook logo" />
+          </button>
+          <button id="navigation-control" data-to-open="navigation" class="button-primary">☰</button>
+          <ul id="navigation" class="closed">
+            <section class="center">
+              <li>
+                <form class="search-form">
+                  <input type="search" placeholder="Recipe, ingredient, cuisine" />
+  
+                  <button class="icon">
+                    <div class="search"></div>
+                  </button>
+                </form>
+              </li>
+              <li class="sub-nav-container">
+                <a href="#" class="text has-sub-navigation"> Recipes </a>
+                <ul id="sub-navigation" class="closed">
+                  <li class="text">Breakfast</li>
+                  <li class="text">Lunch</li>
+                  <li class="text">Dinner</li>
+                  <li class="text">Dessert</li>
+                  <li class="text">Snacks</li>
+                </ul>
+              </li>
+            </section>
+            <li class="buttons">
+              <button class="button-primary-outlined">Log in</button>
+              <button class="button-secondary">Sign up</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main class="new-recipe">
+        <ul class="breadcrumbs">
+            <li><a href="#">Cookbook</a></li>
+            <li><a href="#">Add recipe</a></li>
+        </ul>
+        <h1>Add a new recipe</h1>
+        <section class="recipe-info">
+            <div class="input-container">
+                <input type="text" placeholder=" " required />
+                <p class="error-message">Pleace enter a title</p>
+                <p class="placeholder">Title</p>
+            </div>
+            <div class="input-container">
+                <textarea rows="4" minlength="10" placeholder=" " maxlength="250" required></textarea>
+                <p class="error-message">Please enter a valid text</p>
+                <p class="counter"><span>0</span>/250</p>
+                <p class="placeholder">Introduction</p>
+              </div>
+            <div class="image-upload">
+                <div class="image-temp"></div>
+                <input type="file">
+            </div>
+            <div class="input-container">
+              <label for="cooking-time">Cooking time</label>
+              <div class="form-flex">
+                <input id="cooking-time" name="cooking-time" type="number" min="1" max="400" value="30" />
+                <p>minutes</p>
+              </div>
+            </div>
+            <div class="input-container">
+              <label for="serves">Serves</label>
+              <div class="form-flex">
+                <input id="serves" name="serves" type="number" min="1" max="400" value="2" />
+                <p>people</p>
+              </div>
+            </div>
+
+        </section>
+        <section class="ingredients">
+            <h2>Ingredients</h2>
+            <div class="ingredient-input">
+                <input type="text">
+                <input type="text" name="" id="">
+                <button>
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+            <div class="ingredient-input">
+                <input type="text">
+                <input type="text" name="" id="">
+                <button>
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+            <div class="ingredient-input">
+                <input type="text">
+                <input type="text" name="" id="">
+                <button>
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+        </section>
+      </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/font_sizes' as font-sizes;
+
+ul.breadcrumbs {
+  list-style: none;
+
+  li {
+    display: inline;
+
+    a {
+      color: colors.$primary;
+      text-decoration: none;
+
+      &:hover {
+        color: colors.$dark;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  li + li:before {
+    padding: .5rem;
+    color: colors.$dark;
+    content: "\003E";
+  }
+  
+}

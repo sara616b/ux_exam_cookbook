@@ -1,0 +1,63 @@
+@use '../abstracts/colors' as colors;
+@use '../abstracts/borders' as borders;
+@use '../abstracts/breakpoints' as breakpoint;
+
+.new-recipe {
+    width: 100%;
+    max-width: 872px;
+    margin: auto;
+    padding: 1rem .75rem;
+
+    input {
+        // max-width: unset;
+
+        &[type=file]{
+            border: none;
+            padding: .25rem;
+            width: unset;
+        }
+    }
+
+    // .input-container {
+    //     display: flex;
+
+    //     input {
+    //         width: 100%;
+    //     }
+    // }
+
+    > section {
+        background: lighten(colors.$medium, 45%);
+        margin-bottom: 1rem;
+        padding: .5rem;
+        border-radius: borders.$small_radius;
+    }
+
+    .recipe-info {
+        display: flex;
+        flex-direction: column;
+        
+
+        .image-upload {
+            margin-top: 1rem;
+            .image-temp {
+                background: colors.$medium;
+                width: 100%;
+                max-width: 400px;
+                height: 250px;
+                border-radius: borders.$small_radius;
+                margin-bottom: .5rem;
+            }
+            input [type=file]{
+                border: none;
+                padding: .25rem;
+                width: unset;
+            }
+        }
+    }
+
+    .recipe-ingredients {
+        
+        
+    }
+}
