@@ -1,0 +1,121 @@
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/colors" as color;
+@use "../abstracts/shadows" as shadow;
+
+#recipes-filter {
+    padding: spacing.$small;
+    min-height: calc(100vh - #{spacing.$navigation-height});
+    width: 100%;
+    position: fixed;
+    top: spacing.$navigation-height;
+    // left: -100%;
+    background-color: color.$light;
+    box-shadow: shadow.$right;
+
+    &.collapse {
+        display: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    form {
+        max-width: unset;
+        
+        .input-container {
+            width: 100%;
+            position: relative;
+            margin-top: spacing.$small;
+
+            select {
+                width: 100%;
+                max-width: unset;
+            }
+
+            input {
+                padding: spacing.$buttons-y spacing.$buttons-x;
+                max-width: unset;
+            }
+
+            button {
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin: spacing.$buttons-y;
+            }
+        }
+
+        legend {
+            margin-top: spacing.$medium;
+        }
+
+        .button-primary-outlined, .button-secondary-outlined {
+            display: inline-flex;
+            align-items: center;
+            margin-top: spacing.$small;
+
+            .value {
+                color: inherit;
+            }
+
+            .close {
+                width: 1.2rem;
+                height: 1.2rem;
+                display: inline-block;
+                margin-left: spacing.$small;
+            }
+            
+            &:not(.button-primary-outlined) .close {
+                background-color: color.$secondary_dark;
+            }
+
+            &:not(.button-secondary-outlined) .close {
+                background-color: color.$primary;
+            }
+
+            &:not(.button-secondary-outlined):hover .close {
+                background-color: color.$light;
+            }
+
+        }
+    }
+
+    @include breakpoint.small {
+        max-width: 80%;
+    }
+
+    @include breakpoint.medium {
+        max-width: 60%;
+        padding: spacing.$medium;
+    }
+
+    @include breakpoint.large {
+        box-shadow: none;
+        max-width: unset;
+        position: sticky;
+        bottom: 0;
+        max-height: calc(100vh - #{spacing.$navigation-height});
+        // max-width: 500px;
+
+        &.collapse {
+            display: block;
+        }
+    }
+}
+
+#recipes-filter-button {
+    position: fixed;
+    top: spacing.$navigation-height + spacing.$small;
+    left: spacing.$small;
+}
+
+button[data-toggle='collapse'][data-target='#recipes-filter'] {
+    @include breakpoint.large {
+        display: none;
+    }
+}
+

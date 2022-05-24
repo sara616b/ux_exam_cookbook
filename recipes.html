@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <script src="./js/navigation.js" defer></script>
+
+</head>
+<body>
+    <header class="nav-container">
+        <nav>
+          <button class="logo">
+            <img alt="cookbook logo" />
+          </button>
+          <button id="navigation-control" data-to-open="navigation" class="button-primary">☰</button>
+          <ul id="navigation" class="closed">
+            <section class="center">
+              <li>
+                <form class="search-form">
+                  <input type="search" placeholder="Recipe, ingredient, cuisine" />
+  
+                  <button class="icon">
+                    <div class="search"></div>
+                  </button>
+                </form>
+              </li>
+              <li class="sub-nav-container">
+                <a href="#" class="text has-sub-navigation"> Recipes </a>
+                <ul id="sub-navigation" class="closed">
+                  <li class="text">Breakfast</li>
+                  <li class="text">Lunch</li>
+                  <li class="text">Dinner</li>
+                  <li class="text">Dessert</li>
+                  <li class="text">Snacks</li>
+                </ul>
+              </li>
+            </section>
+            <li class="buttons">
+              <button class="button-primary-outlined">Log in</button>
+              <button class="button-secondary">Sign up</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    <main id="recipes">
+        <button id="recipes-filter-button" class="icon-secondary" data-toggle="collapse" data-target="#recipes-filter">
+            <div class="filter"></div>
+        </button>
+        <aside id="recipes-filter" class="collapse">
+            <header>
+                <h3>Filters</h3>
+                <button class="icon" data-toggle="collapse" data-target="#recipes-filter">
+                    <div class="close"></div>
+                </button>
+            </header>
+            <form onsubmit="return false;">
+                <fieldset>
+                    <div class="input-container">
+                        <label for="cuisine-selector">Select cuisine</label>
+                        <select id="cuisine-selector">
+                            <option disabled selected>Cuisines</option>
+                            <optgroup label="Asian">
+                                <option value="asian">All Asian</option>
+                                <option value="vietnamese">Vietnamese</option>
+                                <option value="thai">Thai</option>
+                                <option value="chinese">Chinese</option>
+                            </optgroup>
+                            <optgroup label="European">
+                                <option value="european">All European</option>
+                                <option value="french">French</option>
+                                <option value="italian">italian</option>
+                                <option value="spanish">Spanish</option>
+                            </optgroup>
+                        </select>
+                    </div>    
+                    <div class="input-container">
+                        <label for="dietary-selector">Select dietary constrains</label>
+                        <select id="dietary-selector">
+                            <option disabled selected>Dietary constrains</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="lactose-free">Lactose free</option>
+                            <option value="gluten-free">Gluten free</option>
+                        </select>
+                    </div>
+                    <div class="input-container">
+                        <label for="dish-selector">Select dish type</label>
+                        <select id="dish-selector">
+                            <option disabled selected>Dish types</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="brunch">Brunch</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="desert">Desert</option>
+                            <option value="snacks">Snacks</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Include</legend>
+                    <div class="input-container">
+                        <input id="include-ingredient" type="text" placeholder="Type ingredient...">
+                        <button class="icon-primary" data-toggle="ingredient-filter" data-target="#include-container" data-counter-target="#exclude-container" data-input="#include-ingredient" data-temp="#include-temp">
+                            <div class="add"></div>
+                        </button>
+                    </div>
+                    <div id="include-container"></div>
+                </fieldset>
+                <legend>Exclude</legend>
+                <div class="input-container">
+                    <input id="exclude-ingredient" type="text" placeholder="Type ingredient...">
+                    <button class="icon-primary" data-toggle="ingredient-filter" data-target="#exclude-container" data-counter-target="#include-container" data-input="#exclude-ingredient" data-temp="#exclude-temp">
+                        <div class="add"></div>
+                    </button>
+                </div>
+                <div id="exclude-container"></div>
+            </fieldset>
+            </form>
+        </aside>
+        <section>
+            <header>
+                <h1>Recipes</h1>
+            </header>
+
+        </section>
+    </main>
+    <template id="include-temp">
+        <button class="button-secondary-outlined" data-target="#include-container" data-value="">
+            <span class="value"></span>
+            <div class="close"></div>
+        </button>
+    </template>
+    <template id="exclude-temp">
+        <button class="button-primary-outlined" data-target="#exclude-container" data-value="">
+            <span class="value"></span>
+            <div class="close"></div>
+        </button>
+    </template>
+</body>
+<script>
+    document.querySelectorAll('button[data-toggle="collapse"').forEach(btn => {
+        btn.addEventListener('click', toggleCollapse);
+    })
+    document.querySelectorAll('button[data-toggle="ingredient-filter"]').forEach(btn => {
+        btn.addEventListener('click', addIngredientFilter);
+    })
+
+    function toggleCollapse() {
+        const elem = event.target;
+        document.querySelector(elem.dataset.target).classList.toggle(elem.dataset.toggle);
+    }
+
+    function addIngredientFilter() {
+        const elem = event.target;
+        const input = document.querySelector(elem.dataset.input);
+        
+        if (input.value === "") {return false;}
+
+        document.querySelectorAll(`${elem.dataset.counterTarget} button`).forEach(btn => {
+            if (btn.dataset.value === input.value) {
+                btn.remove();
+            }
+        })
+        
+        const valLowCase = input.value.toLowerCase();
+        const valCapCase = input.value.substring(0,1).toUpperCase() + input.value.substring(1).toLowerCase();
+        
+        const dest = document.querySelector(elem.dataset.target);
+        const temp = document.querySelector(elem.dataset.temp);
+        const clone = temp.cloneNode(true).content;
+        clone.querySelector('.value').textContent = valCapCase;
+        clone.querySelector('button').setAttribute('data-value', valLowCase);
+        clone.querySelector('button').addEventListener('click', removeIngredientFilter);
+        dest.appendChild(clone);
+
+        input.value = "";
+
+        // TODO: Call function to apply filter changes
+    }
+
+    function removeIngredientFilter() {
+        const elem = event.target;
+        const value = elem.dataset.value;
+        console.log(value);
+        elem.remove();
+
+        // TODO: Call function to apply filter changes
+    }
+</script>
+</html>
