@@ -51,66 +51,143 @@
         </ul>
         <h1>Add a new recipe</h1>
         <section class="recipe-info">
-            <div class="input-container">
-                <input type="text" placeholder=" " required />
-                <p class="error-message">Pleace enter a title</p>
-                <p class="placeholder">Title</p>
-            </div>
-            <div class="input-container">
-                <textarea rows="4" minlength="10" placeholder=" " maxlength="250" required></textarea>
-                <p class="error-message">Please enter a valid text</p>
-                <p class="counter"><span>0</span>/250</p>
-                <p class="placeholder">Introduction</p>
+            <div>
+              <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter a title</p>
+                  <p class="placeholder">Title</p>
               </div>
+              <div class="input-container">
+                  <textarea rows="7" minlength="10" placeholder=" " maxlength="250" required></textarea>
+                  <p class="error-message">Please enter a valid text</p>
+                  <p class="counter"><span>0</span>/250</p>
+                  <p class="placeholder">Introduction</p>
+              </div>
+            </div>
             <div class="image-upload">
                 <div class="image-temp"></div>
                 <input type="file">
             </div>
-            <div class="input-container">
-              <label for="cooking-time">Cooking time</label>
-              <div class="form-flex">
-                <input id="cooking-time" name="cooking-time" type="number" min="1" max="400" value="30" />
-                <p>minutes</p>
+            <div>
+              <div class="input-container">
+                <label for="cooking-time">Cooking time</label>
+                <div class="form-flex">
+                  <input id="cooking-time" name="cooking-time" type="number" min="1" max="400" value="30" />
+                  <p>minutes</p>
+                </div>
+              </div>
+              <div class="input-container">
+                <label for="serves">Serves</label>
+                <div class="form-flex">
+                  <input id="serves" name="serves" type="number" min="1" max="400" value="2" />
+                  <p>people</p>
+                </div>
               </div>
             </div>
             <div class="input-container">
-              <label for="serves">Serves</label>
+              <label for="recipe-components">Recipe components</label>
               <div class="form-flex">
-                <input id="serves" name="serves" type="number" min="1" max="400" value="2" />
-                <p>people</p>
-              </div>
+                <button class="icon-primary amount-btn" data-action="-" disabled>
+                  <div class="remove"></div>
+                </button>
+                <input id="recipe-components" disabled type="number" min="1" max="10" value="1" required />
+                <button class="icon-primary amount-btn" data-action="+">
+                  <div class="add"></div>
+                </button>
             </div>
-
         </section>
-        <section class="ingredients">
-            <h2>Ingredients</h2>
-            <div class="ingredient-input">
-                <input type="text">
-                <input type="text" name="" id="">
-                <button>
-                    <span class="material-symbols-outlined">
-                        close
-                    </span>
+        <section class="recipe-component">
+          <div>
+            <div>
+              <h3>Ingredients</h3>
+              <div class="ingredient-input">
+                <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter an ingredient</p>
+                  <p class="placeholder">Ingredient</p>
+                </div>
+                <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter an amount</p>
+                  <p class="placeholder">Amount</p>
+                </div>
+                <button class="icon">
+                  <div class="close"></div>
                 </button>
-            </div>
-            <div class="ingredient-input">
-                <input type="text">
-                <input type="text" name="" id="">
-                <button>
-                    <span class="material-symbols-outlined">
-                        close
-                    </span>
+              </div>
+              <div class="ingredient-input">
+                <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter an ingredient</p>
+                  <p class="placeholder">Ingredient</p>
+                </div>
+                <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter an amount</p>
+                  <p class="placeholder">Amount</p>
+                </div>
+                <button class="icon">
+                  <div class="close"></div>
                 </button>
-            </div>
-            <div class="ingredient-input">
-                <input type="text">
-                <input type="text" name="" id="">
-                <button>
-                    <span class="material-symbols-outlined">
-                        close
-                    </span>
+              </div>
+              <div class="ingredient-input">
+                <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter an ingredient</p>
+                  <p class="placeholder">Ingredient</p>
+                </div>
+                <div class="input-container">
+                  <input type="text" placeholder=" " required />
+                  <p class="error-message">Pleace enter an amount</p>
+                  <p class="placeholder">Amount</p>
+                </div>
+                <button class="icon">
+                  <div class="close"></div>
                 </button>
+              </div>
+              <button class="button-secondary">
+                <span class="icon-secondary">
+                  <div class="add">
+
+                  </div>
+                </span>
+                <span>Add Ingredient</span>
+              </button>
             </div>
+            <div>
+              <h3>Instructions</h3>
+              <div class="instruction-input">
+                <div class="input-container">
+                  <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
+                  <p class="error-message">Please enter an instruction</p>
+                  <p class="counter"><span>0</span>/250</p>
+                  <p class="placeholder">Step instructions</p>
+                </div>
+                <div class="image-upload">
+                  <div class="image-temp"></div>
+                  <input type="file">
+                </div>
+              </div>
+              <button class="button-secondary">
+                <span class="icon-secondary">
+                  <div class="add">
+
+                  </div>
+                </span>
+                <span>Add step</span>
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="form-buttons">
+          <button class="button-primary-outlined">
+            <span>Cancel</span>
+            <span> and delete recipe</span>
+          </button>
+          <button class="button-primary">
+            <span>Publish</span>
+            <span> recipe</span>
+          </button>
         </section>
       </main>
 </body>
