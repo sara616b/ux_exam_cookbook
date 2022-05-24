@@ -20,6 +20,10 @@
   color: $text-color;
   @include border.border($border);
 
+  * {
+    color: $text-color;
+  }
+
   &:hover {
     color: $hover-text;
     background-color: $hover-bg;

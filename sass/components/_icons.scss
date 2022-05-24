@@ -81,7 +81,7 @@ $icon-done: url('../../icons/done.svg');
         $bg-color: color.$primary,
         $hover-bg: color.$primary_light,
         $border: color.$primary,
-        $hover-border: color.$primary_light
+        $hover-border: none
     );
 
     div {
