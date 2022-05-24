@@ -1,0 +1,84 @@
+@use "../abstracts/colors" as color;
+@use "../abstracts/borders" as border;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/font_sizes" as font_size;
+@use "../abstracts/shadows" as shadow;
+@use "../abstracts/breakpoints" as breakpoint;
+
+#profile-container {
+  padding: spacing.$small;
+  max-width: 1000px;
+  margin: auto;
+  #profile-info {
+    img {
+      width: 100%;
+      border-radius: border.$rounded-radius;
+    }
+    h2 {
+      padding: spacing.$small 0;
+    }
+    #profile-details {
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+    }
+    #preferences-container {
+      display: flex;
+      flex-direction: row;
+      div {
+        margin-right: spacing.$small;
+      }
+    }
+    @include breakpoint.custom("500px") {
+      display: flex;
+      flex-direction: row;
+      section {
+        flex-grow: 1;
+        flex-basis: 500px;
+        &:first-of-type {
+          margin-right: spacing.$medium;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+  #profile-recipes {
+    margin-top: spacing.$large;
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      h2 {
+        background-color: color.$primary-light;
+        border-radius: border.$medium_radius border.$medium_radius 0 0;
+        padding: spacing.$small spacing.$medium;
+        color: color.$bg;
+        @include border.border(color.$primary-light);
+        &.closed {
+          background-color: color.$bg;
+          @include border.border(color.$primary-light);
+          color: color.$medium;
+          &:hover {
+            background-color: color.$primary-light;
+            color: color.$bg;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    main {
+      background-color: color.$primary-light;
+      border-radius: 0 0 border.$medium_radius border.$medium_radius;
+      padding: spacing.$x-small;
+      article {
+        padding: spacing.$small spacing.$medium;
+        background-color: color.$bg;
+        border-radius: border.$medium_radius;
+      }
+    }
+  }
+}

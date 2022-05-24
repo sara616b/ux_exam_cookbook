@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User profile</title>
+    <script src="./js/navigation.js"></script>
+    <script src="./js/forms.js"></script>
+    <script src="./js/profile.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="logo">
+          <img alt="cookbook logo" />
+        </button>
+        <button
+          id="navigation-control"
+          data-to-open="navigation"
+          class="button-primary"
+        >
+          ☰
+        </button>
+        <ul id="navigation" class="closed">
+          <section class="center">
+            <li>
+              <form class="search-form">
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
+
+                <button class="icon">
+                  <div class="search"></div>
+                </button>
+              </form>
+            </li>
+            <li class="sub-nav-container">
+              <a href="#" class="text has-sub-navigation"> Recipes </a>
+              <ul id="sub-navigation" class="closed">
+                <li class="text">Breakfast</li>
+                <li class="text">Lunch</li>
+                <li class="text">Dinner</li>
+                <li class="text">Dessert</li>
+                <li class="text">Snacks</li>
+              </ul>
+            </li>
+          </section>
+          <li class="buttons">
+            <button class="button-primary-outlined">Log in</button>
+            <button class="button-secondary">Sign up</button>
+          </li>
+        </ul>
+      </nav>
+      <!-- TODO - change with real breadcrumbs -->
+      <ul class="breadcrumbs">
+        <li class="small-text">
+          <a href="/">Cookbook</a>
+        </li>
+        <li class="small-text">
+          <a href="/profile.html">Profile</a>
+        </li>
+      </ul>
+    </header>
+    <main id="profile-container">
+      <header id="profile-info">
+        <section>
+          <img src="./image/profiles/rikke.png" alt="Rikke's profile image" />
+        </section>
+        <section id="profile-details">
+          <header>
+            <h1>Rikke P. Dahl</h1>
+            <button class="button-primary">Edit profile</button>
+          </header>
+          <h2 class="sub-header-2">Bio</h2>
+          <p>
+            Hi! I love cooking and creating recipes from scratch.Right now my
+            deep fascination is with the wondrous world of paella recipes.
+          </p>
+          <h2 class="sub-header-2">Preferences</h2>
+          <section id="preferences-container">
+            <div class="button-primary-outlined">Vegan</div>
+            <div class="button-primary-outlined">Nut allergy</div>
+          </section>
+        </section>
+      </header>
+      <main id="profile-recipes">
+        <header>
+          <h2 class="recipe-control sub-header-2">My recipes</h2>
+          <h2 class="recipe-control sub-header-2 closed">Saved recipes</h2>
+        </header>
+        <main>
+          <article>TO DO ADD RECIPE CARDS</article>
+        </main>
+      </main>
+    </main>
+    <footer></footer>
+  </body>
+</html>
