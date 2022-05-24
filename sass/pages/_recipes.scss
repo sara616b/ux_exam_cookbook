@@ -1,0 +1,13 @@
+@use "../abstracts/spacings" as spacing;
+
+#recipes {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: spacing.$medium;
+
+    aside {
+        grid-column: 1;
+    }
+}
+

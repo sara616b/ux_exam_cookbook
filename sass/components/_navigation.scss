@@ -5,24 +5,42 @@
 @use "../abstracts/font_sizes" as font_size;
 @use "../abstracts/shadows" as shadow;
 
+.nav-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: color.$bg;
+}
+
 nav {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: spacing.$medium;
+  align-items: center;
+  padding: 0 spacing.$medium;
+  height: spacing.$navigation-height;
   color: blue;
   box-shadow: shadow.$down;
 
   #navigation-control {
     // burger menu button
-    right: 0;
+    right: spacing.$medium;
     position: absolute;
-    margin-right: spacing.$small;
+    // margin-right: spacing.$small;
   }
 
   // main navigation
   #navigation {
+    position:absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
+    background-color: color.$light;
+    box-shadow: shadow.$down;
+    padding-bottom: spacing.$medium;
     &.closed {
       display: none;
     }
@@ -83,7 +101,7 @@ nav {
   }
 
   // when going to desktop
-  @include breakpoint.custom("800px") {
+  @include breakpoint.large {
     justify-content: space-between;
     align-items: center;
     #navigation-control {
@@ -92,12 +110,16 @@ nav {
     }
 
     #navigation {
+      position: relative;
+      top: 0;
       width: auto;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-between;
       flex-grow: 2;
+      padding-bottom: 0;
+      box-shadow: none;
 
       &.closed {
         // even if the menu was closed on mobile always display it on desktop
@@ -133,8 +155,9 @@ nav {
       li {
         padding: 0 spacing.$small;
         &:last-of-type {
+          padding-right: 0;
           button {
-            margin-right: spacing.$small;
+            margin-right: 0;
           }
         }
       }
