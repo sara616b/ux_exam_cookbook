@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User profile</title>
-    <script src="./js/navigation.js"></script>
-    <script src="./js/forms.js"></script>
-    <script src="./js/profile.js"></script>
-    <script src="./js/checkLogIn.js"></script>
+    <title>User profile | CookBook</title>
+    <script src="./js/navigation.js" defer></script>
+    <script src="./js/forms.js" defer></script>
+    <script src="./js/profile.js" defer></script>
+    <script src="./js/checkLogIn.js" defer></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body data-logged-in="false">
-    <header>
+    <header class="nav-container">
       <nav>
         <button class="logo">
           <a href="/">
@@ -20,7 +20,7 @@
           </a>
         </button>
         <button id="navigation-control" data-to-open="navigation" class="icon">
-          <div class="menu"></div>
+          <span class="menu"></span>
         </button>
         <ul id="navigation" class="closed">
           <section class="center">
@@ -61,17 +61,32 @@
             <button data-show-logged-in="true" class="button-secondary hidden">
               Create recipe
             </button>
-            <button
-              data-show-logged-in="true"
-              class="hidden icon"
-              id="profile-icon"
-            >
-              <div class="account"></div>
+            <button data-show-logged-in="true" class="hidden sub-nav-container">
+              <a
+                data-show-logged-in="true"
+                href="/profile.html"
+                class="text has-sub-navigation"
+              >
+                <button class="icon" id="profile-icon">
+                  <span class="account"></span>
+                </button>
+              </a>
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
+                <li class="text"><a href="/settings.html">Settings</a></li>
+                <li class="text">
+                  <a onclick="toggleLogInStatus()">Log out</a>
+                </li>
+              </ul>
             </button>
           </li>
         </ul>
       </nav>
-      <!-- TODO - change with real breadcrumbs -->
+    </header>
+    <main id="profile-container">
       <ul class="breadcrumbs">
         <li class="small-text">
           <a href="/">Cookbook</a>
@@ -80,15 +95,13 @@
           <a href="/profile.html">Profile</a>
         </li>
       </ul>
-    </header>
-    <main id="profile-container">
       <header id="profile-info">
         <section>
           <img src="./image/profiles/rikke.png" alt="Rikke's profile image" />
         </section>
         <section id="profile-details">
           <header>
-            <div class="input-container not-input">
+            <div class="input-container profile not-input">
               <input
                 type="text"
                 placeholder=" "
@@ -108,9 +121,7 @@
               Edit profile
             </button>
           </header>
-          <h2 class="sub-header-2">Bio</h2>
-
-          <div class="input-container not-input">
+          <div id="bio" class="input-container profile not-input">
             <textarea
               minlength="10"
               rows="4"
@@ -134,9 +145,36 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
             data-show-logged-in="true"
             class="hidden"
           >
-            <div class="button-primary-outlined">Vegan</div>
-            <div class="button-primary-outlined">Nut allergy</div>
+            <button class="button-primary-outlined" disabled data-delete="true">
+              <span class="value">Vegan</span>
+              <div class="close hidden" data-show-editing="true"></div>
+            </button>
+            <button class="button-primary-outlined" disabled data-delete="true">
+              <span class="value">Gluten free</span>
+              <div class="close hidden" data-show-editing="true"></div>
+            </button>
           </section>
+          <div id="preference-input-container">
+            <div class="input-container hidden" data-show-editing="true">
+              <input
+                id="preference-input"
+                type="text"
+                placeholder=" "
+                required
+                class="not-input"
+                disabled
+              />
+              <p class="error-message">Pleace enter a preference</p>
+              <p class="placeholder">Preference</p>
+            </div>
+            <button
+              id="add-preference"
+              class="button-primary hidden"
+              data-show-editing="true"
+            >
+              Add
+            </button>
+          </div>
         </section>
       </header>
       <main id="profile-recipes">
@@ -145,30 +183,42 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
           <h2 class="recipe-control sub-header-2 closed">Saved recipes</h2>
         </header>
         <main>
-          <div id="recipes-holder"></div>
+          <div id="recipes-holder" class="main-grid"></div>
         </main>
       </main>
     </main>
+    <!-- TODO - ADD FOOTER -->
     <footer></footer>
     <template id="recipe">
       <article class="card">
         <a href="#">
-          <img src="image/paella.png" alt="paella" />
-
-          <div>
-            <header>
-              <h3>Lorem Ipsum</h3>
-              <address class="author">By: John Doe</address>
-            </header>
-            <div class="rating">
-              <button class="icon-primary-inverted">
-                <div class="star"></div>
-              </button>
-              <div>4.9</div>
-            </div>
-          </div>
+          <img src="../image/paella.png" alt="paella" />
         </a>
+        <div>
+          <header>
+            <h3>Lorem Ipsum</h3>
+            <address class="author">
+              <a rel="author" href="#">By: John Doe</a>
+            </address>
+          </header>
+          <figure>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path
+                  d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                />
+              </svg>
+            </div>
+            <figcaption>4.9</figcaption>
+          </figure>
+        </div>
       </article>
+    </template>
+    <template id="preference-template">
+      <button class="button-primary-outlined" data-delete="true">
+        <span class="value"></span>
+        <div class="close" data-show-editing="true"></div>
+      </button>
     </template>
   </body>
 </html>
