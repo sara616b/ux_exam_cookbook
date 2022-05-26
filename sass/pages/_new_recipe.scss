@@ -1,0 +1,291 @@
+@use "../abstracts/colors" as color;
+@use "../abstracts/borders" as border;
+@use "../abstracts/breakpoints" as breakpoint;
+@use "../abstracts/shadows" as shadow;
+
+%form-section {
+  padding: 2%;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  background: lighten(color.$medium, 45%);
+  border-radius: border.$small_radius;
+}
+
+%grid-defaults {
+  display: grid;
+  gap: 1rem;
+}
+
+@mixin component-count($count, $color, $background) {
+  &::before {
+    content: "#{$count}";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    color: $color;
+    background: $background;
+    $aspect: clamp(1.5rem, 5vw, 2rem);
+    width: $aspect;
+    height: $aspect;
+    border-radius: border.$rounded_radius;
+  }
+}
+
+main.new-recipe {
+  width: 98%;
+  max-width: 1024px;
+  margin: auto;
+  margin-bottom: 10rem;
+  padding: 0.75rem 0;
+
+  h1 {
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    @include breakpoint.medium {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  form {
+    max-width: unset;
+  }
+
+  .input-container {
+    max-width: unset;
+    margin-top: 0;
+
+    input {
+      max-width: unset;
+    }
+
+    textarea {
+      max-width: unset;
+    }
+  }
+}
+
+.recipe-info {
+  @extend %form-section;
+  @extend %grid-defaults;
+
+  @include breakpoint.medium {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 1rem;
+  }
+
+  > * {
+    &:first-child {
+      @extend %grid-defaults;
+      grid-template-rows: auto 1fr;
+
+      textarea {
+        height: 100%;
+      }
+    }
+    &:nth-child(3) {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 1rem;
+
+      > * {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.image-upload {
+  .image-temp {
+    background: color.$medium;
+    aspect-ratio: 9 / 5;
+    border-radius: border.$small_radius;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    &[type=file] {
+      border: none;
+      padding: 0;
+      width: clamp(calc(100% - 2.5rem), 2.5vw, 100%);
+    }
+  }
+}
+
+.recipe-component {
+  box-shadow: shadow.$down;
+  margin-bottom: 1rem;
+
+  &:not(:only-child) {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+
+    @for $i from 1 through 10 {
+      &:nth-of-type(#{$i}) {
+        @include component-count(#{$i}, color.$light, color.$primary);
+      }
+    }
+  }
+
+  > div > div {
+    @extend %form-section;
+    @extend %grid-defaults;
+    display: grid;
+
+    fieldset {
+      margin: 0;
+      @extend %grid-defaults;
+    }
+
+    > button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      width: fit-content;
+      margin: auto;
+      margin-top: 0.5rem;
+      padding: 0;
+
+      span {
+        box-shadow: none;
+
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+
+      @include breakpoint.small {
+        padding: 0.3rem 1rem;
+        span:nth-child(2) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.ingredient-input {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr auto;
+
+  align-items: center;
+  justify-content: space-between;
+
+  @include breakpoint.small {
+    grid-template-columns: 2fr 1fr auto;
+    gap: 1rem;
+  }
+
+  .input-container {
+    margin: 0;
+
+    &:last-of-type {
+      grid-row: 2;
+
+      @include breakpoint.small {
+        grid-row: 1;
+        grid-column: 2;
+      }
+    }
+  }
+
+  button {
+    margin-left: auto;
+  }
+}
+
+.instruction-input {
+  @extend %grid-defaults;
+  grid-template-columns: auto 1fr auto;
+  grid-auto-flow: column;
+
+  &:not(:nth-of-type(1)) {
+    margin-top: 1rem;
+  }
+
+  .input-container {
+    grid-column: 2;
+  }
+
+  .image-upload {
+    grid-column: 2;
+  }
+
+  button {
+    grid-column: 3;
+  }
+
+  @include breakpoint.medium {
+    grid-template-columns: auto 1fr 1fr auto;
+
+    .image-upload {
+      grid-column: 3;
+      margin-top: 0;
+    }
+
+    .input-container textarea {
+      height: 100%;
+    }
+
+    button {
+      grid-column: 4;
+    }
+  }
+
+  @for $i from 1 through 10 {
+    &:nth-of-type(#{$i}) {
+      @include component-count(
+        #{$i},
+        color.$secondary_dark,
+        color.$secondary_light
+      );
+    }
+  }
+}
+
+.form-buttons {
+  @extend %grid-defaults;
+  gap: 1rem;
+
+  @include breakpoint.small {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
+
+  button {
+    width: 75%;
+    margin: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include breakpoint.small {
+      width: auto;
+      margin: 0;
+      padding: 0.5rem 1rem;
+
+      &:first-child {
+        grid-column: 2;
+      }
+      &:last-child {
+        grid-column: 1;
+      }
+    }
+
+    span:last-child {
+      display: none;
+
+      @include breakpoint.small {
+        display: initial;
+      }
+    }
+  }
+}
