@@ -26,18 +26,22 @@
 }
 
 #delete-modal {
-  position: absolute;
+  position: fixed;
+  overflow: hidden;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   .background {
+    top: 0;
+    left: 0;
     background-color: color.$primary;
     opacity: 0.3;
     width: 100vw;
+    overflow: hidden;
     height: 100vh;
     position: absolute;
     z-index: 1;
