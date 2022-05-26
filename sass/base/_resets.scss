@@ -9,10 +9,9 @@
 
 body {
   background-color: color.$bg;
-}
-
-main {
-  margin-top: spacing.$navigation-height;
+  > main {
+    margin-top: spacing.$navigation-height;
+  }
 }
 
 li {
@@ -21,4 +20,9 @@ li {
 
 body {
   background-color: color.$bg;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }

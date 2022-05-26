@@ -6,11 +6,11 @@
   background-color: #fefdfa;
   padding: spacing.$medium;
   h1 {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: breakpoint.$max-width-content;
+    margin: spacing.$medium auto;
   }
   > main {
-    max-width: 1000px;
+    max-width: breakpoint.$max-width-content;
     margin: 0 auto;
     display: grid;
     grid-gap: spacing.$medium;
