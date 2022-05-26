@@ -8,7 +8,7 @@
 #recipe-content {
   padding: 0 spacing.$small;
   display: block;
-  max-width: 1000px;
+  max-width: breakpoint.$max-width-content;
   margin: auto;
   header {
     .action-icon-container {

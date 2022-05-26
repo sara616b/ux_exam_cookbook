@@ -9,10 +9,9 @@
 
 body {
   background-color: color.$bg;
-}
-
-main {
-  margin-top: spacing.$navigation-height;
+  > main {
+    margin-top: spacing.$navigation-height;
+  }
 }
 
 li {
@@ -29,4 +28,9 @@ img {
 
 a {
   text-decoration: none;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }

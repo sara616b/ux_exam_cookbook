@@ -8,20 +8,19 @@
     <script src="./js/navigation.js"></script>
     <script src="./js/forms.js"></script>
     <script src="./js/profile.js"></script>
+    <script src="./js/checkLogIn.js"></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body>
+  <body data-logged-in="false">
     <header>
       <nav>
         <button class="logo">
-          <img alt="cookbook logo" />
+          <a href="/">
+            <img alt="cookbook logo" />
+          </a>
         </button>
-        <button
-          id="navigation-control"
-          data-to-open="navigation"
-          class="button-primary"
-        >
-          ☰
+        <button id="navigation-control" data-to-open="navigation" class="icon">
+          <div class="menu"></div>
         </button>
         <ul id="navigation" class="closed">
           <section class="center">
@@ -49,8 +48,26 @@
             </li>
           </section>
           <li class="buttons">
-            <button class="button-primary-outlined">Log in</button>
-            <button class="button-secondary">Sign up</button>
+            <button
+              id="login"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
+            >
+              Log in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <button data-show-logged-in="true" class="button-secondary hidden">
+              Create recipe
+            </button>
+            <button
+              data-show-logged-in="true"
+              class="hidden icon"
+              id="profile-icon"
+            >
+              <div class="account"></div>
+            </button>
           </li>
         </ul>
       </nav>
@@ -71,16 +88,52 @@
         </section>
         <section id="profile-details">
           <header>
-            <h1>Rikke P. Dahl</h1>
-            <button class="button-primary">Edit profile</button>
+            <div class="input-container not-input">
+              <input
+                type="text"
+                placeholder=" "
+                required
+                value="Rikke P. Dahl"
+                disabled
+                class="main-header"
+              />
+              <p class="error-message">Pleace enter a valid name</p>
+              <p class="placeholder">Name</p>
+            </div>
+            <button
+              id="edit-profile"
+              class="button-primary saved hidden"
+              data-show-logged-in="true"
+            >
+              Edit profile
+            </button>
           </header>
           <h2 class="sub-header-2">Bio</h2>
-          <p>
-            Hi! I love cooking and creating recipes from scratch.Right now my
-            deep fascination is with the wondrous world of paella recipes.
-          </p>
-          <h2 class="sub-header-2">Preferences</h2>
-          <section id="preferences-container">
+
+          <div class="input-container not-input">
+            <textarea
+              minlength="10"
+              rows="4"
+              placeholder=" "
+              maxlength="250"
+              required
+              disabled
+              class="text"
+            >
+Hi! I love cooking and creating recipes from scratch. Right now my deep fascination is with the wondrous world of paella recipes.</textarea
+            >
+            <p class="error-message">Please enter a valid text</p>
+            <p class="counter"><span>0</span>/250</p>
+            <p class="placeholder">Bio</p>
+          </div>
+          <h2 class="sub-header-2" data-show-logged-in="true" class="hidden">
+            Preferences
+          </h2>
+          <section
+            id="preferences-container"
+            data-show-logged-in="true"
+            class="hidden"
+          >
             <div class="button-primary-outlined">Vegan</div>
             <div class="button-primary-outlined">Nut allergy</div>
           </section>
@@ -92,10 +145,30 @@
           <h2 class="recipe-control sub-header-2 closed">Saved recipes</h2>
         </header>
         <main>
-          <article>TO DO ADD RECIPE CARDS</article>
+          <div id="recipes-holder"></div>
         </main>
       </main>
     </main>
     <footer></footer>
+    <template id="recipe">
+      <article class="card">
+        <a href="#">
+          <img src="image/paella.png" alt="paella" />
+
+          <div>
+            <header>
+              <h3>Lorem Ipsum</h3>
+              <address class="author">By: John Doe</address>
+            </header>
+            <div class="rating">
+              <button class="icon-primary-inverted">
+                <div class="star"></div>
+              </button>
+              <div>4.9</div>
+            </div>
+          </div>
+        </a>
+      </article>
+    </template>
   </body>
 </html>

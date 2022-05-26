@@ -2,12 +2,15 @@
 @use "../abstracts/borders" as border;
 @use "../abstracts/spacings" as spacing;
 @use "../abstracts/font_sizes" as font_size;
+@use "../abstracts/breakpoints" as breakpoint;
 
 .breadcrumbs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: spacing.$small;
+  max-width: breakpoint.$max-width-content;
+  margin: auto;
   li {
     &:first-of-type {
       padding-left: 0;

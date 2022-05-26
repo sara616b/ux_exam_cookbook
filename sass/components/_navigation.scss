@@ -6,7 +6,7 @@
 @use "../abstracts/shadows" as shadow;
 
 .nav-container {
-  position: fixed; 
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
@@ -24,6 +24,7 @@ nav {
   height: spacing.$navigation-height;
   color: blue;
   box-shadow: shadow.$down;
+  background-color: color.$bg;
 
   #navigation-control {
     // burger menu button
@@ -34,13 +35,14 @@ nav {
 
   // main navigation
   #navigation {
-    position:absolute;
+    position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background-color: color.$light;
     box-shadow: shadow.$down;
     padding-bottom: spacing.$medium;
+    background-color: color.$bg;
     &.closed {
       display: none;
     }
