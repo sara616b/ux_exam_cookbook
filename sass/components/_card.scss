@@ -1,5 +1,6 @@
 @use "../abstracts/borders" as borders;
 @use "../abstracts/colors" as colors;
+@use "../abstracts/colors" as color;
 @use "../abstracts/font_sizes" as font-size;
 @use "../abstracts/shadows" as shadow;
 @use "../abstracts/spacings" as spacing;
@@ -92,10 +93,8 @@
         font-size: 0.8rem; // Variables?
       }
     }
-    
   }
 }
-
 
 // .card {
 //   width: 100%;
