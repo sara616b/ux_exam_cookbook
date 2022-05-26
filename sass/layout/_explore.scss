@@ -1,38 +1,110 @@
-.explore {
-    max-width: 1024px;
-    max-height: 550px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-      "biggest biggest big big"
-      "biggest biggest big big"
-      "biggest biggest big big"
-      "biggest biggest small1 small2"
-      "ad ad small1 small2"
-      "ad ad small1 small2";
-    gap: 1rem;
+@use "../abstracts/breakpoints" as breakpoint;
 
-    .card {
-        &:nth-child(1){
-            grid-area: biggest;
-        }
-        &:nth-child(3){
-            grid-area: big;
-        }
-        &:nth-child(4){
-            grid-area: small1;
-        }
-        &:nth-child(5){
-            grid-area: small2;
+.explore-section {
+    max-width: 1400px;
+    margin: 3.5rem auto 0 auto;
+
+    h2 {
+        margin-left: 1rem;
+    }
+    @include breakpoint.large {
+        padding: 0 5rem;
+
+    }
+}
+
+.explore {
+    display: grid;
+    grid-template-columns: repeat(5, 82%);
+    width: 100%;
+    overflow-x: scroll;
+    gap: 2rem;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;  //IE and Edge
+    scrollbar-width: none;  // Firefox
+    &::-webkit-scrollbar {
+        display: none;
+      }
+
+    > * {
+        scroll-snap-align: center;
+    }
+
+    @include breakpoint.small {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 2fr 2fr 1fr;
+        grid-template-areas: "a b" "c d" "ad ad";
+        > * {
+            &:nth-child(2) {
+                grid-area: ad;
+            }
         }
     }
 
-    .ad {
-        &:nth-child(2){
-            grid-area: ad;
+    @include breakpoint.medium {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, auto) 1fr;
+        grid-template-areas:
+        "biggest biggest big big"
+        "biggest biggest big big"
+        "biggest biggest big big"
+        "biggest biggest small1 small2"
+        "ad ad small1 small2"
+        "ad ad small1 small2";
+        gap: 2rem;
+
+        > * {
+            &:nth-child(1){
+                grid-area: biggest;
+                img {
+                    aspect-ratio: 1.5;
+                }
+            }
+            &:nth-child(3){
+                grid-area: big;
+                img {
+                    aspect-ratio: 2.7;
+                }
+            }
+            &:nth-child(4){
+                grid-area: small1;
+                img {
+                    aspect-ratio: 1.25;
+                };
+            }
+            &:nth-child(5){
+                grid-area: small2;
+                img {
+                    aspect-ratio: 1.25;
+                };
+            }
+        }
+
+    }
+
+    @include breakpoint.large {
+        > * {
+            &:nth-child(1){
+                img {
+                    aspect-ratio: 1.9;
+                }
+            }
+            &:nth-child(3){
+                img {
+                    aspect-ratio: 2.8;
+                }
+            }
+            &:nth-child(4){
+                img {
+                    aspect-ratio: 1.33;
+                };
+            }
+            &:nth-child(5){
+                img {
+                    aspect-ratio: 1.33;
+                };
+            }
         }
     }
 }

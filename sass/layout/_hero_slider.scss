@@ -1,0 +1,83 @@
+@use "../abstracts/font_sizes" as font_size;
+@use "../abstracts/colors" as color;
+@use "../abstracts/spacings" as spacing;
+@use "../abstracts/borders" as border;
+@use "../abstracts/shadows" as shadow;
+
+.hero-slider {
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 1400px;
+    margin: auto;
+ 
+    .slider {
+        display: flex;
+        width: 300%;
+    }
+
+    a {
+        width: 100%;
+    }
+
+    article {
+        position: relative;
+    }
+
+    img {
+        height: 70vw;
+        max-height: 290px;
+        object-fit: cover;
+    }
+
+    .text {
+        position: absolute;
+        bottom: spacing.$medium;
+        left: spacing.$medium;
+        left: 5rem;
+    }
+
+    h1, h2 {
+        font-size: font_size.$medium;
+        color: color.$bg;
+        display: inline-block;
+        background-color: color.$primary;
+        padding: spacing.$small spacing.$medium;
+        border-radius: border.$small_radius;
+        transform-origin: bottom left;
+        transform: rotate(-1.5deg) translate(0.5rem, 1rem);
+        box-shadow: shadow.$main;
+    }
+    p {
+        font-size: font_size.$large;
+        background-color: color.$bg;
+        padding: spacing.$medium 4ch spacing.$small spacing.$large;
+        border-radius: border.$small_radius;
+        box-shadow: shadow.$main;
+        font-weight: 600;
+    }
+
+    button {
+        background: none;
+        border: none;
+        outline: none;
+    }
+
+    .dots {
+        display: flex;
+        justify-content: center;
+        margin-top: spacing.$small;
+    }
+
+    .dot {
+        width: 0.55rem;
+        height: 0.55rem;
+        border: 1px solid color.$dark;
+        border-radius: border.$rounded_radius;
+        margin: spacing.$x-small;
+        cursor: pointer;
+
+        &.current {
+            background-color: color.$dark;
+        }
+    }
+}
