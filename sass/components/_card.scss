@@ -51,6 +51,11 @@
       flex: 1;
       min-width: 0px; // Needed for text-overflow
 
+      h3 {
+        font-size: 1.2rem;
+        // font-size: font-size.$base;
+      }
+
       > * {
         text-overflow: ellipsis;
         white-space: nowrap;

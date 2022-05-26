@@ -3,6 +3,7 @@
 @use "../abstracts/spacings" as spacing;
 @use "../abstracts/borders" as border;
 @use "../abstracts/shadows" as shadow;
+@use  "../abstracts/breakpoints" as breakpoint;
 
 .hero-slider {
     width: 100%;
@@ -25,15 +26,20 @@
 
     img {
         height: 70vw;
-        max-height: 290px;
+        max-height: 300px;
         object-fit: cover;
+        @include breakpoint.medium {
+            max-height: 350px;
+        }
     }
 
     .text {
         position: absolute;
         bottom: spacing.$medium;
         left: spacing.$medium;
-        left: 5rem;
+        @include breakpoint.large {
+            left: 5rem;
+        }
     }
 
     h1, h2 {
@@ -54,6 +60,9 @@
         border-radius: border.$small_radius;
         box-shadow: shadow.$main;
         font-weight: 600;
+        @include breakpoint.medium {
+            font-size: font_size.$extra_large;
+        }
     }
 
     button {

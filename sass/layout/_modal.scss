@@ -1,0 +1,36 @@
+@use "../abstracts/colors" as color;
+@use "../abstracts/borders" as border;
+@use "../abstracts/shadows" as shadow;
+@use "../abstracts/spacings" as spacing;
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    padding: spacing.$medium;
+    display: none;
+
+    &.show {
+        display: flex;
+    }
+
+    section {
+        width: 100%;
+        max-width: 500px;
+        padding: spacing.$large;
+        border-radius: border.$medium_radius;
+        box-shadow: shadow.$main;
+        background-color: color.$bg;
+        position: relative;
+        > button {
+            position: absolute;
+            top: spacing.$small;
+            right: spacing.$small;
+        }
+    }
+}

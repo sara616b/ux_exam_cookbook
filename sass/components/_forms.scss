@@ -34,7 +34,31 @@ form {
 
     h2 {
         text-align: center;
+        padding-bottom: 1rem;
     }
+
+    .center-button {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: center;
+
+        button {
+            font-size: font_size.$medium;
+            padding: 0.3rem 2rem;
+        }
+
+        + p {
+            font-size: 0.9rem;
+            text-align: center;
+            color: color.$medium;
+            margin-top: spacing.$medium;
+
+            a {
+                color: color.$primary;
+            }
+        }
+    }
+
 }
 
 fieldset {
@@ -118,9 +142,12 @@ textarea {
     display: block;
 }
 
-
-
 // VALIDATION STATES
+
+form:invalid .submit {
+    pointer-events: none;
+    opacity: 0.5;
+}
 input, textarea, select {
     width: 100%;
     max-width: 500px;

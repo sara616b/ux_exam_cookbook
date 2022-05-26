@@ -1,0 +1,41 @@
+@use "../abstracts/colors" as color;
+
+footer {
+    margin: 5rem auto 0 auto;
+    max-width: 1400px;
+
+    > div {
+        // background-color: lighten(color.$medium, 45%);
+        border-top: 1px solid lighten(color.$medium, 35%);
+        padding: 3rem 0 1rem 0;
+
+        .flexer {
+            display: flex;
+            justify-content: center;
+
+            > * {
+                margin: 0 2rem;
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+            li:first-child {
+                font-size: 1rem;
+                font-weight: 700;
+            }
+            li:not(:first-child) {
+                cursor: pointer;
+            }
+        }
+        img {
+            max-width: 10rem;
+            margin: 2rem auto 0 auto;
+        }
+    }
+
+    > p {
+        text-align: center;
+        color: color.$medium;
+        padding: 1rem;
+        font-size: 0.6rem;
+    }
+}

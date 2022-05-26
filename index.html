@@ -583,6 +583,87 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <div>
+        <div class="flexer">
+          <ul>
+            <li>Practical:</li>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>Privacy policy</li>
+            <li>Cookie settings</li>
+          </ul>
+          <ul>
+            <li>Follow us:</li>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+          </ul>
+        </div>
+        <img src="./image/logo.svg" alt="Cook Book logo" />
+      </div>
+      <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
+    </footer>
+    <div id="sign-in-modal" class="modal">
+      <section>
+        <button class="icon"><span class="close"></span></button>
+        <form>
+          <header>
+            <h2>Sign in</h2>
+          </header>
+          <div class="input-container">
+            <input type="email" placeholder=" " required />
+            <p class="error-message">Pleace enter a valid email</p>
+            <p class="placeholder">Email</p>
+          </div>
+
+          <div class="input-container">
+            <input type="password" placeholder=" " minlength="8" required />
+            <p class="requirements">A password must be at least 8 characters</p>
+            <p class="placeholder">Password</p>
+          </div>
+          <div class="center-button">
+            <button class="button-primary submit">Sign in</button>
+          </div>
+          <p>Don't have an account? <a href="#">Sign up</a></p>
+        </form>
+      </section>
+    </div>
+
+    <div id="sign-up-modal" class="modal">
+      <section>
+        <button class="icon"><span class="close"></span></button>
+        <form>
+          <header>
+            <h2>Sign up</h2>
+          </header>
+          <div class="input-container">
+            <input type="text" placeholder=" " minlength="2" required />
+            <p class="error-message">A username must contain at least 2 characters</p>
+            <p class="placeholder">Username</p>
+          </div>
+          <div class="input-container">
+            <input type="email" placeholder=" " required />
+            <p class="error-message">Pleace enter a valid email</p>
+            <p class="placeholder">Email</p>
+          </div>
+
+          <div class="input-container">
+            <input type="password" placeholder=" " minlength="8" required />
+            <p class="requirements">A password must be at least 8 characters</p>
+            <p class="placeholder">Password</p>
+          </div>
+
+          <div class="input-container">
+            <input type="password" placeholder=" " minlength="8" required />
+            <p class="placeholder">Repeat password</p>
+          </div>
+          <div class="center-button">
+            <button class="button-primary submit">Sign up</button>
+          </div>
+          <p>Already have an account? <a href="#">Sign in</a></p>
+        </form>
+      </section>
+    </div>
   </body>
 </html>
