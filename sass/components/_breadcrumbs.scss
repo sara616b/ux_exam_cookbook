@@ -9,14 +9,22 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: spacing.$small;
-  max-width: breakpoint.$max-width-content;
+  @include breakpoint.medium {
+    padding: spacing.$small 0;
+  }
+
+  // max-width: breakpoint.$max-width-content;
   margin: auto;
   li {
+    a {
+      color: color.$primary_light;
+    }
     &:first-of-type {
       padding-left: 0;
     }
     &::after {
       content: ">";
+      padding: 0 .5rem;
     }
     &:last-of-type {
       font-weight: 600;
