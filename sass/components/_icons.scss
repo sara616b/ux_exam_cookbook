@@ -67,11 +67,12 @@ $icon-done: url('../../icons/done.svg');
         $box-shadow: none
     );
 
-    div {
+    div, span {
         background-color: color.$medium;
     }
 
-    &:hover div {
+    &:hover div,
+    &:hover span {
         background-color: color.$dark;
     }
 }
@@ -84,11 +85,13 @@ $icon-done: url('../../icons/done.svg');
         $hover-border: none
     );
 
-    div {
+    div,
+    span {
         background-color: color.$light;
     }
 
-    &:hover div {
+    &:hover div,
+    &:hover span {
         background-color: color.$light;
     }
 }
@@ -96,11 +99,13 @@ $icon-done: url('../../icons/done.svg');
 .icon-primary-inverted {
     @include icon-btn-styles($box-shadow: none);
 
-    div {
+    div,
+    span {
         background-color: color.$primary;
     }
 
-    &:hover div {
+    &:hover div,
+    &:hover span {
         background-color: color.$primary_light;
     }
 }
@@ -113,11 +118,13 @@ $icon-done: url('../../icons/done.svg');
         $hover-border: color.$secondary_medium
     );
 
-    div {
+    div,
+    span {
         background-color: color.$secondary_dark
     }
 
-    &:hover div {
+    &:hover div,
+    &:hover span {
         background-color: color.$secondary_dark;
     }
 }
@@ -125,11 +132,13 @@ $icon-done: url('../../icons/done.svg');
 .icon-secondary-inverted {
     @include icon-btn-styles($box-shadow: none);
 
-    div {
+    div,
+    span {
         background-color: color.$secondary_light;
     }
 
-    &:hover div {
+    &:hover div,
+    &:hover span {
         background-color: color.$secondary_medium;
     }
 }

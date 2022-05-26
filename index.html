@@ -4,8 +4,585 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <script defer src="js/front.js"></script>
+    <title>CookBook</title>
+    <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <header>
+        <nav>
+          <button class="logo">
+            <img alt="cookbook logo" />
+          </button>
+          <button id="navigation-control" data-to-open="navigation" class="button-primary">☰</button>
+          <ul id="navigation" class="closed">
+            <section class="center">
+              <li>
+                <form class="search-form">
+                  <input type="search" placeholder="Recipe, ingredient, cuisine" />
+
+                  <button class="icon">
+                    <div class="search"></div>
+                  </button>
+                </form>
+              </li>
+              <li class="sub-nav-container">
+                <a href="#" class="text has-sub-navigation"> Recipes </a>
+                <ul id="sub-navigation" class="closed">
+                  <li class="text">Breakfast</li>
+                  <li class="text">Lunch</li>
+                  <li class="text">Dinner</li>
+                  <li class="text">Dessert</li>
+                  <li class="text">Snacks</li>
+                </ul>
+              </li>
+            </section>
+            <li class="buttons">
+              <button class="button-primary-outlined">Log in</button>
+              <button class="button-secondary">Sign up</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </header>
+    <main>
+      <section class="hero-slider">
+        <div class="slider">
+          <a href="">
+            <article data-nr="1">
+              <img src="./image/paella_splash.jpg" alt="Classic Paella" />
+              <div class="text">
+                <h1>Recipe of the day</h1>
+                <p>Classic paella</p>
+              </div>
+            </article>
+          </a>
+          <a href="">
+            <article data-nr="2">
+              <img src="./image/paella.png" alt="Classic Paella" />
+              <div class="text">
+                <h2>Let's make soup</h2>
+                <p>Creamy chickpie soup</p>
+              </div>
+            </article>
+          </a>
+          <a href="">
+            <article data-nr="3">
+              <img src="./image/paella.png" alt="Classic Paella" />
+              <div class="text">
+                <h2>Explore the middleeast</h2>
+                <p>Crunchy fallafel</p>
+              </div>
+            </article>
+          </a>
+        </div>
+        <div class="dots">
+          <button>
+            <div class="dot current" data-nr="1"></div>
+          </button>
+          <button>
+            <div class="dot" data-nr="2"></div>
+          </button>
+          <button>
+            <div class="dot" data-nr="3"></div>
+          </button>
+        </div>
+      </section>
+
+      <section class="carousel-section">
+        <h2>Explore Asia</h2>
+        <div class="carousel">
+          <button disabled data-action="back"><</button>
+          <div class="overflow-container">
+            <div class="slider">
+              <article class="card">
+                <a href="#">
+                  <img src="./image/green_curry.jpg" alt="Green curry" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Green curry</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: Tiago Tate</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.7</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="./image/tuna_salad.jpg" alt="Tuna salad" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Asian tuna salad</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: Gordon Cohen</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>3.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="./image/fried_rice.jpg" alt="Fried rice" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Fried rice</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: Gordon Cohen</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="./image/ramen.jpg" alt="Ramen" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Veggie ramen</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: Morten Gross</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="../image/paella.png" alt="paella" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Lorem Ipsum</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: John Doe</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="../image/paella.png" alt="paella" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Lorem Ipsum</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: John Doe</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="../image/paella.png" alt="paella" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Lorem Ipsum</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: John Doe</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+              <article class="card">
+                <a href="#">
+                  <img src="../image/paella.png" alt="paella" />
+                </a>
+                <form>
+                  <button class="icon-primary">
+                    <span class="bookmark"></span>
+                  </button>
+                </form>
+                <div>
+                  <header>
+                    <h3>Lorem Ipsum</h3>
+                    <address class="author">
+                      <a rel="author" href="#">By: John Doe</a>
+                    </address>
+                  </header>
+                  <figure>
+                    <div>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      </svg>
+                    </div>
+                    <figcaption>4.9</figcaption>
+                  </figure>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button data-action="forward">></button>
+        </div>
+      </section>
+
+      <section class="explore-section">
+        <h2>Recommended for you</h2>
+        <div class="explore">
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <div style="background-color: beige"></div>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="popular-recipes">
+        <h2>Popular recipes</h2>
+        <div class="main-grid">
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="card">
+            <a href="#">
+              <img src="../image/paella.png" alt="paella" />
+            </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="#">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
 </html>
