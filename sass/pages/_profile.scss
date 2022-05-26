@@ -5,11 +5,15 @@
 @use "../abstracts/shadows" as shadow;
 @use "../abstracts/breakpoints" as breakpoint;
 
+$border-color: lighten(color.$medium, 45%);
+
 #profile-container {
   padding: spacing.$small;
   max-width: breakpoint.$max-width-content;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   #profile-info {
+    margin-top: spacing.$horizontal;
     img {
       width: 100%;
       border-radius: border.$rounded-radius;
@@ -24,6 +28,9 @@
         justify-content: space-between;
         flex-wrap: wrap;
         align-items: center;
+      }
+      #bio {
+        margin-top: spacing.$medium;
       }
       .input-container.not-input {
         margin: 0;
@@ -42,63 +49,80 @@
     #preferences-container {
       display: flex;
       flex-direction: row;
-      div {
+      max-width: initial;
+      button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
         margin-right: spacing.$small;
+        .close {
+          background-color: color.$primary;
+          width: 20px;
+        }
+        &:disabled {
+          opacity: 1;
+        }
+      }
+    }
+    #preference-input-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-top: spacing.$small;
+      input {
+        width: 200px;
+      }
+      button {
+        transform: translateX(calc(-100% - spacing.$small));
       }
     }
     @include breakpoint.custom("500px") {
       display: flex;
       flex-direction: row;
+      justify-content: center;
       section {
         flex-grow: 1;
-        flex-basis: 500px;
+        flex-basis: 700px;
+
         &:first-of-type {
-          margin-right: spacing.$medium;
+          margin-right: spacing.$vertical;
           max-width: 300px;
         }
       }
     }
   }
   #profile-recipes {
-    margin-top: spacing.$large;
+    margin-top: spacing.$horizontal;
     > header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       h2 {
-        background-color: color.$primary;
+        background-color: $border-color;
         border-radius: border.$medium_radius border.$medium_radius 0 0;
         padding: spacing.$small spacing.$medium;
-        color: color.$bg;
-        @include border.border(color.$primary);
+        color: color.$dark;
+        @include border.border($border-color);
         &.closed {
           background-color: color.$bg;
-          @include border.border(color.$primary);
+          @include border.border($border-color);
           color: color.$medium;
           &:hover {
-            background-color: color.$primary;
-            color: color.$bg;
+            background-color: $border-color;
+            color: color.$medium;
             cursor: pointer;
           }
         }
       }
     }
     main {
-      background-color: color.$primary;
+      background-color: $border-color;
       padding: spacing.$x-small;
       border-radius: 0 0 border.$medium_radius border.$medium_radius;
       #recipes-holder {
-        display: flex;
-        flex-wrap: wrap;
-        gap: spacing.$small;
         background-color: color.$bg;
         padding: spacing.$medium;
         border-radius: border.$medium_radius;
-        article {
-          background-color: color.$bg;
-          flex-grow: 1;
-          flex-basis: 250px;
-        }
       }
     }
   }

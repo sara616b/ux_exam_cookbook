@@ -18,26 +18,27 @@ window.addEventListener("DOMContentLoaded", ()=> {
 
 const setLayoutBasedOnLogInStatus = () => {
     const isLoggedIn = document.body.dataset.loggedIn;
-    console.log(isLoggedIn);
     const toShow = document.querySelectorAll("[data-show-logged-in='true']");
-    console.log(toShow)
     const toHide = document.querySelectorAll("[data-show-logged-in='false']");
-    console.log(toHide)
 
-    toShow.forEach((element) => {
-        if (isLoggedIn == 'true') {
-            element.classList.remove('hidden')
-        } else {
-            element.classList.add('hidden')
-        }
-    })
-    toHide.forEach((element) => {
-        if (isLoggedIn == 'false') {
-            element.classList.remove('hidden')
-        } else {
-            element.classList.add('hidden')
-        }
-    })
+    if (toShow) {
+        toShow.forEach((element) => {
+            if (isLoggedIn == 'true') {
+                element.classList.remove('hidden')
+            } else {
+                element.classList.add('hidden')
+            }
+        })
+    }
+    if (toHide) {
+        toHide.forEach((element) => {
+            if (isLoggedIn == 'false') {
+                element.classList.remove('hidden')
+            } else {
+                element.classList.add('hidden')
+            }
+        })
+    }
 }
 
 const toggleLogInStatus = () => {

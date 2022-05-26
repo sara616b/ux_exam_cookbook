@@ -168,9 +168,13 @@ nav {
     .has-sub-navigation {
       // display dropdown on hover
       padding: spacing.$medium;
+      &:last-of-type {
+        padding: 0;
+      }
       &:hover {
         cursor: pointer;
-        & + #sub-navigation {
+        & + #sub-navigation,
+        & + .sub-navigation {
           visibility: visible;
         }
       }
@@ -179,9 +183,10 @@ nav {
       position: relative;
     }
 
-    #sub-navigation {
+    #sub-navigation,
+    .sub-navigation {
       z-index: 3;
-      display: block !important;
+      display: block;
       visibility: hidden;
       position: absolute;
       padding: spacing.$small 0;
@@ -193,6 +198,19 @@ nav {
       }
       li {
         margin: 0 spacing.$small !important;
+      }
+    }
+    .sub-navigation {
+      top: spacing.$navigation-height - 1rem;
+      right: 0;
+      button {
+        padding: 0;
+      }
+      li {
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
       }
     }
   }
