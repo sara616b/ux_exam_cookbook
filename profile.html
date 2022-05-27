@@ -14,16 +14,14 @@
   <body data-logged-in="false">
     <header class="nav-container">
       <nav>
-        <button class="logo">
-          <a href="/">
-            <img alt="cookbook logo" />
-          </a>
-        </button>
+        <a href="/">
+          <img src="./image/logo.svg" alt="logo" />
+        </a>
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
         </button>
         <ul id="navigation" class="closed">
-          <section class="center">
+          <div class="center">
             <li>
               <form class="search-form">
                 <input
@@ -48,7 +46,7 @@
                 <a href="/recipes.html"><li class="text">Snacks</li></a>
               </ul>
             </li>
-          </section>
+          </div>
           <li class="buttons">
             <button
               id="login"
@@ -60,18 +58,24 @@
             <button data-show-logged-in="false" class="button-secondary">
               Sign up
             </button>
-            <button data-show-logged-in="true" class="button-secondary hidden">
-              <a href="/new-recipe.html">Create recipe</a>
-            </button>
-            <button data-show-logged-in="true" class="hidden sub-nav-container">
+            <a
+              href="/new-recipe.html"
+              data-show-logged-in="true"
+              class="button-secondary hidden"
+            >
+              Create recipe
+            </a>
+            <div
+              data-show-logged-in="true"
+              class="hidden sub-nav-container profile-sub-nav"
+            >
               <a
                 data-show-logged-in="true"
                 href="/profile.html"
-                class="text has-sub-navigation"
+                class="text has-sub-navigation icon hidden"
+                id="profile-icon"
               >
-                <button class="icon" id="profile-icon">
-                  <span class="account"></span>
-                </button>
+                <span class="account"></span>
               </a>
               <ul
                 data-show-logged-in="true"
@@ -83,7 +87,7 @@
                   <a onclick="toggleLogInStatus()">Log out</a>
                 </li>
               </ul>
-            </button>
+            </div>
           </li>
         </ul>
       </nav>
@@ -104,7 +108,7 @@
           <img src="./image/profiles/rikke.png" alt="Rikke's profile image" />
         </section>
         <section id="profile-details">
-          <header>
+          <div class="top">
             <div class="input-container profile not-input">
               <input
                 type="text"
@@ -124,7 +128,7 @@
             >
               Edit profile
             </button>
-          </header>
+          </div>
           <div id="bio" class="input-container profile not-input">
             <textarea
               minlength="10"
@@ -141,7 +145,7 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
             <p class="counter"><span>0</span>/250</p>
             <p class="placeholder">Bio</p>
           </div>
-          <h2 class="sub-header-2" data-show-logged-in="true" class="hidden">
+          <h2 class="sub-header-2 hidden" data-show-logged-in="true">
             Preferences
           </h2>
           <section
@@ -149,18 +153,24 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
             data-show-logged-in="true"
             class="hidden"
           >
-            <button class="button-primary-outlined" disabled data-delete="true">
+            <section
+              class="preference button-primary-outlined"
+              data-delete="true"
+            >
               <a href="/recipes.html">
                 <span class="value">Vegan</span>
               </a>
-              <div class="close hidden" data-show-editing="true"></div>
-            </button>
-            <button class="button-primary-outlined" disabled data-delete="true">
+              <button class="close hidden" data-show-editing="true"></button>
+            </section>
+            <section
+              class="preference button-primary-outlined"
+              data-delete="true"
+            >
               <a href="/recipes.html">
                 <span class="value">Gluten free</span>
               </a>
-              <div class="close hidden" data-show-editing="true"></div>
-            </button>
+              <button class="close hidden" data-show-editing="true"></button>
+            </section>
           </section>
           <div id="preference-input-container">
             <div class="input-container hidden" data-show-editing="true">
@@ -185,15 +195,15 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
           </div>
         </section>
       </header>
-      <main id="profile-recipes">
+      <section id="profile-recipes">
         <header>
           <h2 class="recipe-control sub-header-2">My recipes</h2>
           <h2 class="recipe-control sub-header-2 closed">Saved recipes</h2>
         </header>
-        <main>
+        <section id="recipe-section">
           <div id="recipes-holder" class="main-grid"></div>
-        </main>
-      </main>
+        </section>
+      </section>
     </main>
     <footer>
       <div>
@@ -220,34 +230,32 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
       <article class="card">
         <a href="/recipe.html">
           <img src="../image/paella.png" alt="paella" />
-          <div>
-            <header>
-              <h3>Lorem Ipsum</h3>
-              <address class="author">
-                <a rel="author" href="/profile.html">By: John Doe</a>
-              </address>
-            </header>
-            <figure>
-              <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                  <path
-                    d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
-                  />
-                </svg>
-              </div>
-              <figcaption>4.9</figcaption>
-            </figure>
-          </div>
         </a>
+        <div>
+          <header>
+            <h3>Lorem Ipsum</h3>
+            <a class="author" href="/profile.html">By: John Doe</a>
+          </header>
+          <figure>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path
+                  d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                />
+              </svg>
+            </div>
+            <figcaption>4.9</figcaption>
+          </figure>
+        </div>
       </article>
     </template>
     <template id="preference-template">
-      <button class="button-primary-outlined" data-delete="true">
+      <section class="preference button-primary-outlined" data-delete="true">
         <a href="/recipes.html">
           <span class="value"></span>
         </a>
-        <div class="close" data-show-editing="true"></div>
-      </button>
+        <button class="close" data-show-editing="true"></button>
+      </section>
     </template>
   </body>
 </html>

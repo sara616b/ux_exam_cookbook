@@ -47,7 +47,7 @@
       display: none;
     }
 
-    section {
+    div {
       // contains search field and links
       display: flex;
       flex-direction: column;
@@ -66,6 +66,13 @@
           cursor: pointer;
           background-color: color.$primary;
           color: color.$bg;
+        }
+        &#profile-icon {
+          padding: 0;
+          &:hover {
+            background-color: color.$bg;
+            color: color.$primary;
+          }
         }
       }
 
@@ -110,6 +117,10 @@
         margin-right: spacing.$small;
       }
     }
+    .profile-sub-nav {
+      flex-direction: row;
+      align-items: center;
+    }
   }
 
   // when going to desktop
@@ -145,7 +156,7 @@
         width: 300px;
       }
 
-      section {
+      div {
         // contains search and recipe link
         display: flex;
         justify-content: space-between;
@@ -219,7 +230,6 @@
       li {
         &:hover {
           cursor: pointer;
-          opacity: 0.8;
         }
       }
     }

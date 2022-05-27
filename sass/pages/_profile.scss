@@ -22,7 +22,7 @@ $border-color: lighten(color.$medium, 45%);
       padding: spacing.$medium 0 spacing.$small 0;
     }
     #profile-details {
-      header {
+      div.top {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -50,7 +50,9 @@ $border-color: lighten(color.$medium, 45%);
       display: flex;
       flex-direction: row;
       max-width: initial;
-      button {
+      .preference {
+        flex-basis: auto;
+        flex-grow: unset;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -115,7 +117,7 @@ $border-color: lighten(color.$medium, 45%);
         }
       }
     }
-    main {
+    #recipe-section {
       background-color: $border-color;
       padding: spacing.$x-small;
       border-radius: 0 0 border.$medium_radius border.$medium_radius;

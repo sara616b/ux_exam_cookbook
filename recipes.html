@@ -9,19 +9,16 @@
     <script src="./js/filtering.js" defer></script>
     <script src="./js/checkLogIn.js" defer></script>
 </head>
-<body data-logged-in="false">
-  <header class="nav-container">
+<body data-logged-in="false"><header class="nav-container">
     <nav>
-      <button class="logo">
-        <a href="/">
-          <img alt="cookbook logo" />
-        </a>
-      </button>
+      <a href="/">
+        <img src="./image/logo.svg" alt="logo" />
+      </a>
       <button id="navigation-control" data-to-open="navigation" class="icon">
         <span class="menu"></span>
       </button>
       <ul id="navigation" class="closed">
-        <section class="center">
+        <div class="center">
           <li>
             <form class="search-form">
               <input
@@ -46,7 +43,7 @@
               <a href="/recipes.html"><li class="text">Snacks</li></a>
             </ul>
           </li>
-        </section>
+        </div>
         <li class="buttons">
           <button
             id="login"
@@ -58,18 +55,24 @@
           <button data-show-logged-in="false" class="button-secondary">
             Sign up
           </button>
-          <button data-show-logged-in="true" class="button-secondary hidden">
-            <a href="/new-recipe.html">Create recipe</a>
-          </button>
-          <button data-show-logged-in="true" class="hidden sub-nav-container">
+          <a
+            href="/new-recipe.html"
+            data-show-logged-in="true"
+            class="button-secondary hidden"
+          >
+            Create recipe
+          </a>
+          <div
+            data-show-logged-in="true"
+            class="hidden sub-nav-container profile-sub-nav"
+          >
             <a
               data-show-logged-in="true"
               href="/profile.html"
-              class="text has-sub-navigation"
+              class="text has-sub-navigation icon hidden"
+              id="profile-icon"
             >
-              <button class="icon" id="profile-icon">
-                <span class="account"></span>
-              </button>
+              <span class="account"></span>
             </a>
             <ul
               data-show-logged-in="true"
@@ -81,7 +84,7 @@
                 <a onclick="toggleLogInStatus()">Log out</a>
               </li>
             </ul>
-          </button>
+          </div>
         </li>
       </ul>
     </nav>

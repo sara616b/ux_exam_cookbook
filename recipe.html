@@ -13,16 +13,14 @@
   <body data-logged-in="false">
     <header class="nav-container">
       <nav>
-        <button class="logo">
-          <a href="/">
-            <img alt="cookbook logo" />
-          </a>
-        </button>
+        <a href="/">
+          <img src="./image/logo.svg" alt="logo" />
+        </a>
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
         </button>
         <ul id="navigation" class="closed">
-          <section class="center">
+          <div class="center">
             <li>
               <form class="search-form">
                 <input
@@ -47,7 +45,7 @@
                 <a href="/recipes.html"><li class="text">Snacks</li></a>
               </ul>
             </li>
-          </section>
+          </div>
           <li class="buttons">
             <button
               id="login"
@@ -59,18 +57,24 @@
             <button data-show-logged-in="false" class="button-secondary">
               Sign up
             </button>
-            <button data-show-logged-in="true" class="button-secondary hidden">
-              <a href="/new-recipe.html">Create recipe</a>
-            </button>
-            <button data-show-logged-in="true" class="hidden sub-nav-container">
+            <a
+              href="/new-recipe.html"
+              data-show-logged-in="true"
+              class="button-secondary hidden"
+            >
+              Create recipe
+            </a>
+            <div
+              data-show-logged-in="true"
+              class="hidden sub-nav-container profile-sub-nav"
+            >
               <a
                 data-show-logged-in="true"
                 href="/profile.html"
-                class="text has-sub-navigation"
+                class="text has-sub-navigation icon hidden"
+                id="profile-icon"
               >
-                <button class="icon" id="profile-icon">
-                  <span class="account"></span>
-                </button>
+                <span class="account"></span>
               </a>
               <ul
                 data-show-logged-in="true"
@@ -82,7 +86,7 @@
                   <a onclick="toggleLogInStatus()">Log out</a>
                 </li>
               </ul>
-            </button>
+            </div>
           </li>
         </ul>
       </nav>
@@ -108,10 +112,10 @@
         <section id="left-info">
           <div class="action-icon-container hidden" data-show-logged-in="true">
             <button class="icon-primary">
-              <div class="bookmark"></div>
+              <span class="bookmark"></span>
             </button>
             <button class="icon">
-              <div class="more"></div>
+              <span class="more"></span>
             </button>
           </div>
           <h1 class="title">Classic Paella</h1>
@@ -122,19 +126,19 @@
             <p>4.5</p>
             <section class="star-container">
               <button class="icon-primary-inverted">
-                <div class="star"></div>
+                <span class="star"></span>
               </button>
               <button class="icon-primary-inverted">
-                <div class="star"></div>
+                <span class="star"></span>
               </button>
               <button class="icon-primary-inverted">
-                <div class="star"></div>
+                <span class="star"></span>
               </button>
               <button class="icon-primary-inverted">
-                <div class="star"></div>
+                <span class="star"></span>
               </button>
               <button class="icon-primary-inverted half">
-                <div class="star"></div>
+                <span class="star"></span>
               </button>
             </section>
           </section>
@@ -146,7 +150,7 @@
           <img class="img" src="./image/paella.png" alt="Paella" />
         </section>
       </header>
-      <main>
+      <section id="content">
         <section id="ingredients">
           <h2>Ingredients</h2>
           <ul class="small-text">
@@ -198,7 +202,7 @@
           </ol>
           <p class="end">###</p>
         </section>
-      </main>
+      </section>
       <footer>
         <section>
           <form class="comment">
@@ -237,13 +241,13 @@
               src="./image/profiles/nasih.jpg"
               alt="profile image"
             />
-            <main class="comment-content">
+            <section class="comment-content">
               <section>
                 <address class="small-text">John Doe</address>
                 <p class="small-text">2nd March 2022</p>
               </section>
               <p>Wow! Great recipe!</p>
-            </main>
+            </section>
           </article>
           <article class="comment">
             <img
@@ -251,13 +255,13 @@
               src="./image/profiles/ethan.jpg"
               alt="profile image"
             />
-            <main class="comment-content">
+            <section class="comment-content">
               <section>
                 <address class="small-text">Gorgon Ramsay</address>
                 <p class="small-text">22nd March 2022</p>
               </section>
               <p>Beautiful picture. Looks good</p>
-            </main>
+            </section>
           </article>
           <article class="comment">
             <img
@@ -265,13 +269,13 @@
               src="./image/profiles/girl.jpg"
               alt="profile image"
             />
-            <main class="comment-content">
+            <section class="comment-content">
               <section>
                 <address class="small-text">Top Chef</address>
                 <p class="small-text">3rd February 2022</p>
               </section>
               <p>Mmm, delicious!</p>
-            </main>
+            </section>
           </article>
         </section>
       </footer>
