@@ -5,18 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Paella</title>
-    <script src="./js/navigation.js"></script>
-    <script src="./js/forms.js"></script>
+    <script src="./js/navigation.js" defer></script>
+    <script src="./js/forms.js" defer></script>
+    <script src="./js/checkLogIn.js" defer></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body>
-    <header>
+  <body data-logged-in="false">
+    <header class="nav-container">
       <nav>
         <button class="logo">
-          <img alt="cookbook logo" />
+          <a href="/">
+            <img alt="cookbook logo" />
+          </a>
         </button>
         <button id="navigation-control" data-to-open="navigation" class="icon">
-          <div class="menu"></div>
+          <span class="menu"></span>
         </button>
         <ul id="navigation" class="closed">
           <section class="center">
@@ -33,42 +36,77 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="#" class="text has-sub-navigation"> Recipes </a>
+              <a href="/recipes.html" class="text has-sub-navigation">
+                Recipes
+              </a>
               <ul id="sub-navigation" class="closed">
-                <li class="text">Breakfast</li>
-                <li class="text">Lunch</li>
-                <li class="text">Dinner</li>
-                <li class="text">Dessert</li>
-                <li class="text">Snacks</li>
+                <a href="/recipes.html"><li class="text">Breakfast</li></a>
+                <a href="/recipes.html"><li class="text">Lunch</li></a>
+                <a href="/recipes.html"><li class="text">Dinner</li></a>
+                <a href="/recipes.html"><li class="text">Dessert</li></a>
+                <a href="/recipes.html"><li class="text">Snacks</li></a>
               </ul>
             </li>
           </section>
           <li class="buttons">
-            <button class="button-primary-outlined">Log in</button>
-            <button class="button-secondary">Sign up</button>
+            <button
+              id="login"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
+            >
+              Log in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <button data-show-logged-in="true" class="button-secondary hidden">
+              <a href="/new-recipe.html">Create recipe</a>
+            </button>
+            <button data-show-logged-in="true" class="hidden sub-nav-container">
+              <a
+                data-show-logged-in="true"
+                href="/profile.html"
+                class="text has-sub-navigation"
+              >
+                <button class="icon" id="profile-icon">
+                  <span class="account"></span>
+                </button>
+              </a>
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
+                <li class="text"><a href="/settings.html">Settings</a></li>
+                <li class="text">
+                  <a onclick="toggleLogInStatus()">Log out</a>
+                </li>
+              </ul>
+            </button>
           </li>
         </ul>
       </nav>
-      <!-- TODO - change with real breadcrumbs -->
-      <ul class="breadcrumbs">
-        <li class="small-text">
-          <a href="/">Cookbook</a>
-        </li>
-        <li class="small-text">
-          <a href="/search">Recipes</a>
-        </li>
-        <li class="small-text">
-          <a href="/dinner">Dinner</a>
-        </li>
-        <li class="small-text">
-          <a href="#">Classic Paella</a>
-        </li>
-      </ul>
     </header>
     <main id="recipe-content">
+      <nav class="breadcrumbs">
+        <ul>
+          <li class="small-text">
+            <a href="/">Cookbook</a>
+          </li>
+          <li class="small-text">
+            <a href="/recipes.html">Recipes</a>
+          </li>
+          <li class="small-text">
+            <a href="/recipes.html">Dinner</a>
+          </li>
+          <li class="small-text">
+            <a href="#">Classic Paella</a>
+          </li>
+        </ul>
+      </nav>
       <header>
         <section id="left-info">
-          <div class="action-icon-container">
+          <div class="action-icon-container hidden" data-show-logged-in="true">
             <button class="icon-primary">
               <div class="bookmark"></div>
             </button>
@@ -77,7 +115,9 @@
             </button>
           </div>
           <h1 class="title">Classic Paella</h1>
-          <h3 class="author">By Rikke P. Dahl</h3>
+          <address class="sub-header-2 author">
+            <a href="/profile.html">By Rikke P. Dahl</a>
+          </address>
           <section class="star-rating">
             <p>4.5</p>
             <section class="star-container">
@@ -93,7 +133,7 @@
               <button class="icon-primary-inverted">
                 <div class="star"></div>
               </button>
-              <button class="icon-primary-inverted">
+              <button class="icon-primary-inverted half">
                 <div class="star"></div>
               </button>
             </section>
@@ -197,13 +237,13 @@
               src="./image/profiles/nasih.jpg"
               alt="profile image"
             />
-            <section class="comment-content">
+            <main class="comment-content">
               <section>
-                <p class="small-text">John Doe</p>
+                <address class="small-text">John Doe</address>
                 <p class="small-text">2nd March 2022</p>
               </section>
               <p>Wow! Great recipe!</p>
-            </section>
+            </main>
           </article>
           <article class="comment">
             <img
@@ -211,13 +251,13 @@
               src="./image/profiles/ethan.jpg"
               alt="profile image"
             />
-            <section class="comment-content">
+            <main class="comment-content">
               <section>
-                <p class="small-text">Gorgon Ramsay</p>
+                <address class="small-text">Gorgon Ramsay</address>
                 <p class="small-text">22nd March 2022</p>
               </section>
               <p>Beautiful picture. Looks good</p>
-            </section>
+            </main>
           </article>
           <article class="comment">
             <img
@@ -225,13 +265,13 @@
               src="./image/profiles/girl.jpg"
               alt="profile image"
             />
-            <section class="comment-content">
+            <main class="comment-content">
               <section>
-                <p class="small-text">Top Chef</p>
+                <address class="small-text">Top Chef</address>
                 <p class="small-text">3rd February 2022</p>
               </section>
               <p>Mmm, delicious!</p>
-            </section>
+            </main>
           </article>
         </section>
       </footer>

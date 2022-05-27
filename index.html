@@ -5,23 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="js/front.js"></script>
+    <script src="./js/checkLogIn.js" defer></script>
+    <script src="./js/navigation.js" defer></script>
     <title>CookBook</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body data-logged-in="false">
     <header class="nav-container">
       <nav>
         <button class="logo">
-          <img alt="cookbook logo" />
+          <a href="/">
+            <img alt="cookbook logo" />
+          </a>
         </button>
         <button id="navigation-control" data-to-open="navigation" class="icon">
-          <div class="menu"></div>
+          <span class="menu"></span>
         </button>
         <ul id="navigation" class="closed">
           <section class="center">
             <li>
               <form class="search-form">
-                <input type="search" placeholder="Recipe, ingredient, cuisine" />
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
 
                 <button class="icon">
                   <div class="search"></div>
@@ -29,19 +36,53 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="#" class="text has-sub-navigation"> Recipes </a>
+              <a href="/recipes.html" class="text has-sub-navigation">
+                Recipes
+              </a>
               <ul id="sub-navigation" class="closed">
-                <li class="text">Breakfast</li>
-                <li class="text">Lunch</li>
-                <li class="text">Dinner</li>
-                <li class="text">Dessert</li>
-                <li class="text">Snacks</li>
+                <a href="/recipes.html"><li class="text">Breakfast</li></a>
+                <a href="/recipes.html"><li class="text">Lunch</li></a>
+                <a href="/recipes.html"><li class="text">Dinner</li></a>
+                <a href="/recipes.html"><li class="text">Dessert</li></a>
+                <a href="/recipes.html"><li class="text">Snacks</li></a>
               </ul>
             </li>
           </section>
           <li class="buttons">
-            <button class="button-primary-outlined">Log in</button>
-            <button class="button-secondary">Sign up</button>
+            <button
+              id="login"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
+            >
+              Log in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <button data-show-logged-in="true" class="button-secondary hidden">
+              <a href="/new-recipe.html">Create recipe</a>
+            </button>
+            <button data-show-logged-in="true" class="hidden sub-nav-container">
+              <a
+                data-show-logged-in="true"
+                href="/profile.html"
+                class="text has-sub-navigation"
+              >
+                <button class="icon" id="profile-icon">
+                  <span class="account"></span>
+                </button>
+              </a>
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
+                <li class="text"><a href="/settings.html">Settings</a></li>
+                <li class="text">
+                  <a onclick="toggleLogInStatus()">Log out</a>
+                </li>
+              </ul>
+            </button>
           </li>
         </ul>
       </nav>
@@ -114,8 +155,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.7</figcaption>
@@ -140,8 +186,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>3.9</figcaption>
@@ -166,8 +217,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -192,8 +248,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -218,8 +279,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -244,8 +310,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -270,8 +341,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -296,8 +372,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -332,7 +413,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -359,7 +442,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -385,7 +470,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -411,7 +498,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -443,7 +532,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -469,7 +560,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -495,7 +588,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -521,7 +616,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -547,7 +644,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -573,7 +672,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -639,7 +740,9 @@
           </header>
           <div class="input-container">
             <input type="text" placeholder=" " minlength="2" required />
-            <p class="error-message">A username must contain at least 2 characters</p>
+            <p class="error-message">
+              A username must contain at least 2 characters
+            </p>
             <p class="placeholder">Username</p>
           </div>
           <div class="input-container">

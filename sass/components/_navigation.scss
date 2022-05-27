@@ -14,7 +14,7 @@
   background-color: color.$light;
 }
 
-nav {
+.nav-container nav {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -79,6 +79,16 @@ nav {
         li {
           @extend %link;
           margin-left: spacing.$medium;
+          list-style: none;
+        }
+        a {
+          padding: 0;
+          &:hover {
+            color: color.$light;
+            li {
+              color: color.$light;
+            }
+          }
         }
       }
     }

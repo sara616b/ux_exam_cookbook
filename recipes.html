@@ -7,45 +7,85 @@
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/navigation.js" defer></script>
     <script src="./js/filtering.js" defer></script>
+    <script src="./js/checkLogIn.js" defer></script>
 </head>
-<body>
-    <header class="nav-container">
-        <nav>
-          <button class="logo">
-            <img alt="cookbook logo" />
+<body data-logged-in="false">
+  <header class="nav-container">
+    <nav>
+      <button class="logo">
+        <a href="/">
+          <img alt="cookbook logo" />
+        </a>
+      </button>
+      <button id="navigation-control" data-to-open="navigation" class="icon">
+        <span class="menu"></span>
+      </button>
+      <ul id="navigation" class="closed">
+        <section class="center">
+          <li>
+            <form class="search-form">
+              <input
+                type="search"
+                placeholder="Recipe, ingredient, cuisine"
+              />
+
+              <button class="icon">
+                <div class="search"></div>
+              </button>
+            </form>
+          </li>
+          <li class="sub-nav-container">
+            <a href="/recipes.html" class="text has-sub-navigation">
+              Recipes
+            </a>
+            <ul id="sub-navigation" class="closed">
+              <a href="/recipes.html"><li class="text">Breakfast</li></a>
+              <a href="/recipes.html"><li class="text">Lunch</li></a>
+              <a href="/recipes.html"><li class="text">Dinner</li></a>
+              <a href="/recipes.html"><li class="text">Dessert</li></a>
+              <a href="/recipes.html"><li class="text">Snacks</li></a>
+            </ul>
+          </li>
+        </section>
+        <li class="buttons">
+          <button
+            id="login"
+            data-show-logged-in="false"
+            class="button-primary-outlined"
+          >
+            Log in
           </button>
-          <button id="navigation-control" data-to-open="navigation" class="icon">
-            <div class="menu"></div>
+          <button data-show-logged-in="false" class="button-secondary">
+            Sign up
           </button>
-          <ul id="navigation" class="closed">
-            <section class="center">
-              <li>
-                <form class="search-form">
-                  <input type="search" placeholder="Recipe, ingredient, cuisine" />
-  
-                  <button class="icon">
-                    <div class="search"></div>
-                  </button>
-                </form>
+          <button data-show-logged-in="true" class="button-secondary hidden">
+            <a href="/new-recipe.html">Create recipe</a>
+          </button>
+          <button data-show-logged-in="true" class="hidden sub-nav-container">
+            <a
+              data-show-logged-in="true"
+              href="/profile.html"
+              class="text has-sub-navigation"
+            >
+              <button class="icon" id="profile-icon">
+                <span class="account"></span>
+              </button>
+            </a>
+            <ul
+              data-show-logged-in="true"
+              id="sub-navigation-2"
+              class="closed sub-navigation"
+            >
+              <li class="text"><a href="/settings.html">Settings</a></li>
+              <li class="text">
+                <a onclick="toggleLogInStatus()">Log out</a>
               </li>
-              <li class="sub-nav-container">
-                <a href="#" class="text has-sub-navigation"> Recipes </a>
-                <ul id="sub-navigation" class="closed">
-                  <li class="text">Breakfast</li>
-                  <li class="text">Lunch</li>
-                  <li class="text">Dinner</li>
-                  <li class="text">Dessert</li>
-                  <li class="text">Snacks</li>
-                </ul>
-              </li>
-            </section>
-            <li class="buttons">
-              <button class="button-primary-outlined">Log in</button>
-              <button class="button-secondary">Sign up</button>
-            </li>
-          </ul>
-        </nav>
-      </header>
+            </ul>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
     <main id="recipes">
         <button id="recipes-filter-button" class="icon-secondary" data-toggle="collapse" data-target="#recipes-filter">
             <div class="filter"></div>

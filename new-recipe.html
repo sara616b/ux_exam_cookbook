@@ -1,89 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="js/forms.js" defer></script>
     <script src="js/recipe.js" defer></script>
+    <script src="./js/checkLogIn.js" defer></script>
+    <script src="./js/navigation.js" defer></script>
     <title>Document</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <button class="logo">
-        <img alt="cookbook logo" />
-      </button>
-      <button id="navigation-control" data-to-open="navigation" class="icon">
-        <div class="menu"></div>
-      </button>
-      <ul id="navigation" class="closed">
-        <section class="center">
-          <li>
-            <form class="search-form">
-              <input type="search" placeholder="Recipe, ingredient, cuisine" />
-              <button class="icon">
-                <div class="search"></div>
-              </button>
-            </form>
+  </head>
+  <body data-logged-in="false">
+    <header class="nav-container">
+      <nav>
+        <button class="logo">
+          <a href="/">
+            <img alt="cookbook logo" />
+          </a>
+        </button>
+        <button id="navigation-control" data-to-open="navigation" class="icon">
+          <span class="menu"></span>
+        </button>
+        <ul id="navigation" class="closed">
+          <section class="center">
+            <li>
+              <form class="search-form">
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
+
+                <button class="icon">
+                  <div class="search"></div>
+                </button>
+              </form>
+            </li>
+            <li class="sub-nav-container">
+              <a href="/recipes.html" class="text has-sub-navigation">
+                Recipes
+              </a>
+              <ul id="sub-navigation" class="closed">
+                <a href="/recipes.html"><li class="text">Breakfast</li></a>
+                <a href="/recipes.html"><li class="text">Lunch</li></a>
+                <a href="/recipes.html"><li class="text">Dinner</li></a>
+                <a href="/recipes.html"><li class="text">Dessert</li></a>
+                <a href="/recipes.html"><li class="text">Snacks</li></a>
+              </ul>
+            </li>
+          </section>
+          <li class="buttons">
+            <button
+              id="login"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
+            >
+              Log in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <button data-show-logged-in="true" class="button-secondary hidden">
+              <a href="/new-recipe.html">Create recipe</a>
+            </button>
+            <button data-show-logged-in="true" class="hidden sub-nav-container">
+              <a
+                data-show-logged-in="true"
+                href="/profile.html"
+                class="text has-sub-navigation"
+              >
+                <button class="icon" id="profile-icon">
+                  <span class="account"></span>
+                </button>
+              </a>
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
+                <li class="text"><a href="/settings.html">Settings</a></li>
+                <li class="text">
+                  <a onclick="toggleLogInStatus()">Log out</a>
+                </li>
+              </ul>
+            </button>
           </li>
-          <li class="sub-nav-container">
-            <a href="#" class="text has-sub-navigation"> Recipes </a>
-            <ul id="sub-navigation" class="closed">
-              <li class="text">Breakfast</li>
-              <li class="text">Lunch</li>
-              <li class="text">Dinner</li>
-              <li class="text">Dessert</li>
-              <li class="text">Snacks</li>
-            </ul>
-          </li>
-        </section>
-        <li class="buttons">
-          <button class="button-primary-outlined">Log in</button>
-          <button class="button-secondary">Sign up</button>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main class="new-recipe">
-    <ul class="breadcrumbs">
+        </ul>
+      </nav>
+    </header>
+    <main class="new-recipe">
+      <ul class="breadcrumbs">
         <li><a href="#">Cookbook</a></li>
         <li><a href="#">Add recipe</a></li>
-    </ul>
-    <h1>Add a new recipe</h1>
-    <form action="">
-      <section class="recipe-info">
+      </ul>
+      <h1>Add a new recipe</h1>
+      <form action="">
+        <section class="recipe-info">
           <div>
             <div class="input-container">
-                <input type="text" placeholder=" " required />
-                <p class="error-message">Pleace enter a title</p>
-                <p class="placeholder">Title</p>
+              <input type="text" placeholder=" " required />
+              <p class="error-message">Pleace enter a title</p>
+              <p class="placeholder">Title</p>
             </div>
             <div class="input-container">
-                <textarea rows="7" minlength="10" placeholder=" " maxlength="250" required></textarea>
-                <p class="error-message">Please enter a valid text</p>
-                <p class="counter"><span>0</span>/250</p>
-                <p class="placeholder">Introduction</p>
+              <textarea
+                rows="7"
+                minlength="10"
+                placeholder=" "
+                maxlength="250"
+                required
+              ></textarea>
+              <p class="error-message">Please enter a valid text</p>
+              <p class="counter"><span>0</span>/250</p>
+              <p class="placeholder">Introduction</p>
             </div>
           </div>
           <div class="image-upload">
-              <div class="image-temp"></div>
-              <input type="file">
+            <div class="image-temp"></div>
+            <input type="file" />
           </div>
           <div>
             <div class="input-container">
               <label for="cooking-time">Cooking time</label>
               <div class="form-flex">
-                <input id="cooking-time" name="cooking-time" type="number" min="1" max="400" value="30" />
+                <input
+                  id="cooking-time"
+                  name="cooking-time"
+                  type="number"
+                  min="1"
+                  max="400"
+                  value="30"
+                />
                 <p>minutes</p>
               </div>
             </div>
             <div class="input-container">
               <label for="serves">Serves</label>
               <div class="form-flex">
-                <input id="serves" name="serves" type="number" min="1" max="400" value="2" />
+                <input
+                  id="serves"
+                  name="serves"
+                  type="number"
+                  min="1"
+                  max="400"
+                  value="2"
+                />
                 <p>people</p>
               </div>
             </div>
@@ -92,278 +157,315 @@
             <div class="input-container">
               <label for="recipe-components">Recipe components</label>
               <div class="form-flex">
-                <button class="icon-primary" data-id="increment" data-action="-" disabled>
+                <button
+                  class="icon-primary"
+                  data-id="increment"
+                  data-action="-"
+                  disabled
+                >
                   <div class="remove"></div>
                 </button>
-                <input data-id="amount" disabled type="number" min="1" max="10" value="1" required />
-                <button class="icon-primary" data-id="increment" data-action="+">
+                <input
+                  data-id="amount"
+                  disabled
+                  type="number"
+                  min="1"
+                  max="10"
+                  value="1"
+                  required
+                />
+                <button
+                  class="icon-primary"
+                  data-id="increment"
+                  data-action="+"
+                >
                   <div class="add"></div>
                 </button>
               </div>
             </div>
           </div>
-      </section>
-      <div id="recipe-components">
-        <section class="recipe-component">
-          <div>
-            <div>
-              <h3>Ingredients</h3>
-              <fieldset>
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
-                  </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
-                  </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
-                  </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
-                  </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
-                  </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
-                  </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </fieldset>
-              <button class="button-secondary" data-action="add-ingredient">
-                <span class="icon-secondary">
-                  <div class="add">
-                  </div>
-                </span>
-                <span>Add Ingredient</span>
-              </button>
-              <template data-id="ingredient">
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
-                  </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
-                  </div>
-        
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </template>
-            </div>
-            <div>
-              <h3>Instructions</h3>
-              <fieldset>
-                <div class="instruction-input">
-                  <div class="input-container">
-                    <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
-                    <p class="error-message">Please enter an instruction</p>
-                    <p class="counter"><span>0</span>/250</p>
-                    <p class="placeholder">Instructions text here</p>
-                  </div>
-                  <div class="image-upload">
-                    <div class="image-temp"></div>
-                    <input type="file">
-                  </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </fieldset>
-              <button class="button-secondary" data-action="add-instruction">
-                <span class="icon-secondary">
-                  <div class="add">
-                  </div>
-                </span>
-                <span>Add step</span>
-              </button>
-              <template data-id="instruction">
-                <div class="instruction-input">
-                  <div class="input-container">
-                    <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
-                    <p class="error-message">Please enter an instruction</p>
-                    <p class="counter"><span>0</span>/250</p>
-                    <p class="placeholder">Instructions text here</p>
-                  </div>
-                  <div class="image-upload">
-                    <div class="image-temp"></div>
-                    <input type="file">
-                  </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </template>
-            </div>
-          </div>
         </section>
-      </div>
-      <template data-id="component">
-        <section class="recipe-component">
-          <div>
+        <div id="recipe-components">
+          <section class="recipe-component">
             <div>
-              <h3>Ingredients</h3>
-              <fieldset data-id="ingredients">
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
+              <div>
+                <h3>Ingredients</h3>
+                <fieldset>
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
+                </fieldset>
+                <button class="button-secondary" data-action="add-ingredient">
+                  <span class="icon-secondary">
+                    <div class="add"></div>
+                  </span>
+                  <span>Add Ingredient</span>
+                </button>
+                <template data-id="ingredient">
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
+                </template>
+              </div>
+              <div>
+                <h3>Instructions</h3>
+                <fieldset>
+                  <div class="instruction-input">
+                    <div class="input-container">
+                      <textarea
+                        rows="4"
+                        minlength="5"
+                        placeholder=" "
+                        maxlength="250"
+                        required
+                      ></textarea>
+                      <p class="error-message">Please enter an instruction</p>
+                      <p class="counter"><span>0</span>/250</p>
+                      <p class="placeholder">Instructions text here</p>
+                    </div>
+                    <div class="image-upload">
+                      <div class="image-temp"></div>
+                      <input type="file" />
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
+                </fieldset>
+                <button class="button-secondary" data-action="add-instruction">
+                  <span class="icon-secondary">
+                    <div class="add"></div>
+                  </span>
+                  <span>Add step</span>
+                </button>
+                <template data-id="instruction">
+                  <div class="instruction-input">
+                    <div class="input-container">
+                      <textarea
+                        rows="4"
+                        minlength="5"
+                        placeholder=" "
+                        maxlength="250"
+                        required
+                      ></textarea>
+                      <p class="error-message">Please enter an instruction</p>
+                      <p class="counter"><span>0</span>/250</p>
+                      <p class="placeholder">Instructions text here</p>
+                    </div>
+                    <div class="image-upload">
+                      <div class="image-temp"></div>
+                      <input type="file" />
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </fieldset>
-              <button class="button-secondary" data-action="add-ingredient">
-                <span class="icon-secondary">
-                  <div class="add">
-                  </div>
-                </span>
-                <span>Add Ingredient</span>
-              </button>
-              <template data-id="ingredient">
-                <div class="ingredient-input">
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an ingredient</p>
-                    <p class="placeholder">Ingredient</p>
-                  </div>
-                  <div class="input-container">
-                    <input type="text" placeholder=" " required />
-                    <p class="error-message">Pleace enter an amount</p>
-                    <p class="placeholder">Amount</p>
-                  </div>
-        
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </template>
+                </template>
+              </div>
             </div>
+          </section>
+        </div>
+        <template data-id="component">
+          <section class="recipe-component">
             <div>
-              <h3>Instructions</h3>
-              <fieldset data-id="instructions">
-                <div class="instruction-input">
-                  <div class="input-container">
-                    <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
-                    <p class="error-message">Please enter an instruction</p>
-                    <p class="counter"><span>0</span>/250</p>
-                    <p class="placeholder">Instructions text here</p>
+              <div>
+                <h3>Ingredients</h3>
+                <fieldset data-id="ingredients">
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <div class="image-upload">
-                    <div class="image-temp"></div>
-                    <input type="file">
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </fieldset>
-              <button class="button-secondary" data-action="add-instruction">
-                <span class="icon-secondary">
-                  <div class="add">
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                </span>
-                <span>Add step</span>
-              </button>
-              <template data-id="instruction">
-                <div class="instruction-input">
-                  <div class="input-container">
-                    <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
-                    <p class="error-message">Please enter an instruction</p>
-                    <p class="counter"><span>0</span>/250</p>
-                    <p class="placeholder">Instructions text here</p>
+                </fieldset>
+                <button class="button-secondary" data-action="add-ingredient">
+                  <span class="icon-secondary">
+                    <div class="add"></div>
+                  </span>
+                  <span>Add Ingredient</span>
+                </button>
+                <template data-id="ingredient">
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input type="text" placeholder=" " required />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <div class="image-upload">
-                    <div class="image-temp"></div>
-                    <input type="file">
+                </template>
+              </div>
+              <div>
+                <h3>Instructions</h3>
+                <fieldset data-id="instructions">
+                  <div class="instruction-input">
+                    <div class="input-container">
+                      <textarea
+                        rows="4"
+                        minlength="5"
+                        placeholder=" "
+                        maxlength="250"
+                        required
+                      ></textarea>
+                      <p class="error-message">Please enter an instruction</p>
+                      <p class="counter"><span>0</span>/250</p>
+                      <p class="placeholder">Instructions text here</p>
+                    </div>
+                    <div class="image-upload">
+                      <div class="image-temp"></div>
+                      <input type="file" />
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
                   </div>
-                  <button class="icon" data-action="remove">
-                    <div class="close"></div>
-                  </button>
-                </div>
-              </template>
+                </fieldset>
+                <button class="button-secondary" data-action="add-instruction">
+                  <span class="icon-secondary">
+                    <div class="add"></div>
+                  </span>
+                  <span>Add step</span>
+                </button>
+                <template data-id="instruction">
+                  <div class="instruction-input">
+                    <div class="input-container">
+                      <textarea
+                        rows="4"
+                        minlength="5"
+                        placeholder=" "
+                        maxlength="250"
+                        required
+                      ></textarea>
+                      <p class="error-message">Please enter an instruction</p>
+                      <p class="counter"><span>0</span>/250</p>
+                      <p class="placeholder">Instructions text here</p>
+                    </div>
+                    <div class="image-upload">
+                      <div class="image-temp"></div>
+                      <input type="file" />
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <div class="close"></div>
+                    </button>
+                  </div>
+                </template>
+              </div>
             </div>
-          </div>
+          </section>
+        </template>
+        <section class="form-buttons">
+          <button class="button-primary">
+            <span>Publish</span>
+            <span> recipe</span>
+          </button>
+          <button class="button-primary-outlined">
+            <span>Cancel</span>
+            <span> and delete recipe</span>
+          </button>
         </section>
-      </template>
-      <section class="form-buttons">
-        <button class="button-primary">
-          <span>Publish</span>
-          <span> recipe</span>
-        </button>
-        <button class="button-primary-outlined">
-          <span>Cancel</span>
-          <span> and delete recipe</span>
-        </button>
-      </section>
-    </form>
-  </main>
-</body>
+      </form>
+    </main>
+  </body>
 </html>

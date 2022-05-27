@@ -5,34 +5,32 @@
 @use "../abstracts/breakpoints" as breakpoint;
 
 .breadcrumbs {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  padding: spacing.$small;
-  @include breakpoint.medium {
+  ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: spacing.$small 0;
-  }
-
-  // max-width: breakpoint.$max-width-content;
-  margin: auto;
-  li {
-    a {
-      color: color.$primary_light;
-    }
-    &:first-of-type {
-      padding-left: 0;
-    }
-    &::after {
-      content: ">";
-      padding: 0 .5rem;
-    }
-    &:last-of-type {
-      font-weight: 600;
-      &::after {
-        content: "";
-      }
+    max-width: breakpoint.$max-width-content;
+    margin: auto;
+    li {
       a {
-        text-decoration: none;
+        color: color.$primary_light;
+      }
+      &:first-of-type {
+        padding-left: 0;
+      }
+      &::after {
+        content: ">";
+        padding: 0 0.5rem;
+      }
+      &:last-of-type {
+        font-weight: 600;
+        &::after {
+          content: "";
+        }
+        a {
+          text-decoration: none;
+        }
       }
     }
   }
