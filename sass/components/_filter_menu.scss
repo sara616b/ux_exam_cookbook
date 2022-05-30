@@ -70,18 +70,6 @@
         display: inline-block;
         margin-left: spacing.$small;
       }
-
-      &:not(.button-primary-outlined) .close {
-        background-color: color.$secondary_dark;
-      }
-
-      &:not(.button-secondary-outlined) .close {
-        background-color: color.$primary;
-      }
-
-      &:not(.button-secondary-outlined):hover .close {
-        background-color: color.$light;
-      }
     }
   }
 

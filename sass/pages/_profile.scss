@@ -57,10 +57,6 @@ $border-color: lighten(color.$medium, 45%);
         flex-direction: row;
         align-items: center;
         margin-right: spacing.$small;
-        .close {
-          background-color: color.$primary;
-          width: 20px;
-        }
         &:disabled {
           opacity: 1;
         }
@@ -106,7 +102,6 @@ $border-color: lighten(color.$medium, 45%);
         color: color.$dark;
         @include border.border($border-color);
         &.closed {
-          background-color: color.$bg;
           @include border.border($border-color);
           color: color.$medium;
           &:hover {
