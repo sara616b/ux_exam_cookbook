@@ -167,7 +167,7 @@
             </form>
         </aside>
         
-        <section class="main-grid">
+        <section>
           <nav class="breadcrumbs">
             <ul>
               <li class="small-text">
@@ -188,6 +188,7 @@
                 </select>
             </header>
             
+            <div class="main-grid"></div>
         </section>
     </main>
     <footer>
@@ -215,7 +216,7 @@
     <template id="recipe">
       <article class="card">
         <a href="/recipe.html">
-          <img src="./image/paella.png" alt="paella" />
+          <img src="./image/paella.jpg" alt="paella" />
         </a>
         <form>
           <button class="icon-primary">
@@ -259,7 +260,7 @@
 <script>
         window.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 10; i++) {
-            const dest = document.querySelector("#recipes section");
+            const dest = document.querySelector(".main-grid");
             const temp = document.querySelector("#recipe");
             const clone = temp.cloneNode(true).content;
             if (i === 4 || i === 9) {
