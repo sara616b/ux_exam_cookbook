@@ -95,13 +95,13 @@
   </header>
     <main id="recipes">
         <button id="recipes-filter-button" class="icon-secondary" data-toggle="collapse" data-target="#recipes-filter">
-            <div class="filter"></div>
+            <span class="filter"></span>
         </button>
         <aside id="recipes-filter" class="collapse">
             <header>
                 <h3>Filters</h3>
                 <button class="icon" data-toggle="collapse" data-target="#recipes-filter">
-                    <div class="close"></div>
+                    <span class="close"></span>
                 </button>
             </header>
             <form onsubmit="return false;">
@@ -152,20 +152,21 @@
                     <div class="input-container">
                         <input id="include-ingredient" type="text" placeholder="Type ingredient...">
                         <button class="icon-primary" data-toggle="ingredient-filter" data-target="#include-container" data-counter-target="#exclude-container" data-input="#include-ingredient" data-temp="#include-temp">
-                            <div class="add"></div>
+                            <span class="add"></span>
                         </button>
                     </div>
                     <div id="include-container"></div>
                 </fieldset>
-                <legend>Exclude</legend>
-                <div class="input-container">
+                <fieldset>
+                  <legend>Exclude</legend>
+                  <div class="input-container">
                     <input id="exclude-ingredient" type="text" placeholder="Type ingredient...">
                     <button class="icon-primary" data-toggle="ingredient-filter" data-target="#exclude-container" data-counter-target="#include-container" data-input="#exclude-ingredient" data-temp="#exclude-temp">
-                        <div class="add"></div>
+                        <span class="add"></span>
                     </button>
-                </div>
-                <div id="exclude-container"></div>
-            </fieldset>
+                  </div>
+                  <div id="exclude-container"></div>
+                </fieldset>
             </form>
         </aside>
         
