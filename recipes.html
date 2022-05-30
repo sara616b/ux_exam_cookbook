@@ -255,12 +255,19 @@
     </template>
 </body>
 <script>
-    window.addEventListener("DOMContentLoaded", () => {
+        window.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 10; i++) {
             const dest = document.querySelector("#recipes section");
             const temp = document.querySelector("#recipe");
             const clone = temp.cloneNode(true).content;
-            dest.appendChild(clone)
+            if (i === 3 || i === 6 || i === 9) {
+              const ad = document.createElement("article");
+              ad.classList.add("advertisement")
+              ad.innerHTML = "";
+              dest.appendChild(ad);
+            } else {
+              dest.appendChild(clone)
+            }  
         }
     })
 </script>
