@@ -171,17 +171,18 @@
         </aside>
         
         <section>
-          <nav class="breadcrumbs">
-            <ul>
-              <li class="small-text">
-                <a href="/">Cookbook</a>
-              </li>
-              <li class="small-text">
-                <a href="/recipes.html">Recipes</a>
-              </li>
-            </ul>
-          </nav>
             <header>
+              <nav class="breadcrumbs">
+                <ul>
+                  <li class="small-text">
+                    <a href="/">Cookbook</a>
+                  </li>
+                  <li class="small-text">
+                    <a href="/recipes.html">Recipes</a>
+                  </li>
+                </ul>
+              </nav>
+              <div>
                 <h1>Recipes</h1>
                 <select>
                   <option disabled selected>Sort recipes...</option>
@@ -189,17 +190,24 @@
                   <option>Date (Old to new)</option>
                   <option>Rating</option>
                 </select>
+
+              </div>
             </header>
             
             <div class="main-grid"></div>
         </section>
         <section class="modal">
-          <article class="">
-            <h3>Recipe added to favorites!</h3>
-            <button class="icon-secondary-inverted">
-              <span class="done"></span>
-            </button>
-          </article>
+          <div class="">
+            <header class="">
+              <h3>Recipe added to favorites!</h3>
+            </header>
+            <div class="">
+              <button class="icon-secondary-inverted">
+                <span class="done"></span>
+              </button>
+            </div>
+
+          </div>
         </section>
     </main>
     <footer>
