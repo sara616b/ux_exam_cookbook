@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Paella</title>
+    <title>Paella | CookBook</title>
     <script src="./js/navigation.js" defer></script>
     <script src="./js/forms.js" defer></script>
     <script src="./js/checkLogIn.js" defer></script>
@@ -74,7 +74,6 @@
                 href="/profile.html"
                 class="text has-sub-navigation icon hidden"
                 id="profile-icon"
-                data-toggles-login="true"
               >
                 <span class="account"></span>
               </a>
@@ -116,14 +115,23 @@
             <button class="icon-primary">
               <span class="bookmark"></span>
             </button>
-            <button class="icon">
-              <span class="more"></span>
-            </button>
+            <div class="sub-nav-container">
+              <button class="has-sub-navigation icon">
+                <span class="more"></span>
+              </button>
+              <ul class="closed sub-navigation">
+                <li class="text"><a href="/edit-recipe.html">Edit</a></li>
+                <li class="text">
+                  <a href="/index.html">Delete</a>
+                </li>
+              </ul>
+            </div>
           </div>
           <h1 class="title">Classic Paella</h1>
           <address class="sub-header-2 author">
             <a href="/profile.html">By Rikke P. Dahl</a>
           </address>
+          <p>January 4th 2022</p>
           <div class="star-rating">
             <p>4.5</p>
             <div class="star-container">
