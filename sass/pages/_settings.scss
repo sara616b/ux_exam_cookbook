@@ -46,7 +46,8 @@
     position: absolute;
     z-index: 1;
   }
-  #content {
+  #content,
+  .content {
     display: flex;
     border-radius: border.$medium_radius;
     margin: spacing.$small;

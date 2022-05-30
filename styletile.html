@@ -23,8 +23,8 @@
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
         </button>
-        <ul id="navigation" class="closed">
-          <div class="center">
+        <div id="navigation" class="closed">
+          <ul class="center">
             <li>
               <form class="search-form">
                 <input
@@ -33,7 +33,7 @@
                 />
 
                 <button class="icon">
-                  <div class="search"></div>
+                  <span class="search"></span>
                 </button>
               </form>
             </li>
@@ -42,15 +42,15 @@
                 Recipes
               </a>
               <ul id="sub-navigation" class="closed">
-                <a href="/recipes.html"><li class="text">Breakfast</li></a>
-                <a href="/recipes.html"><li class="text">Lunch</li></a>
-                <a href="/recipes.html"><li class="text">Dinner</li></a>
-                <a href="/recipes.html"><li class="text">Dessert</li></a>
-                <a href="/recipes.html"><li class="text">Snacks</li></a>
+                <li class="text"><a href="/recipes.html">Breakfast</a></li>
+                <li class="text"><a href="/recipes.html">Lunch</a></li>
+                <li class="text"><a href="/recipes.html">Dinner</a></li>
+                <li class="text"><a href="/recipes.html">Dessert</a></li>
+                <li class="text"><a href="/recipes.html">Snacks</a></li>
               </ul>
             </li>
-          </div>
-          <li class="buttons">
+          </ul>
+          <div class="buttons">
             <button
               id="login"
               data-toggles-login="true"
@@ -93,29 +93,27 @@
                 </li>
               </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </header>
     <main id="styletile">
       <header>
         <h1>Styletile</h1>
       </header>
-      <main>
+      <div id="main-content">
         <section>
           <header>
             <h2>Logo</h2>
           </header>
-          <main>
-            <img src="./image/logo.svg" alt="logo" />
-          </main>
+          <img src="./image/logo.svg" alt="logo" />
         </section>
         <section>
           <header>
             <h2>Typografi</h2>
           </header>
-          <main>
-            <h1>Header</h1>
+          <div>
+            <h2 class="main-header">Header</h2>
             <h2>Sub header 1</h2>
             <h3>Sub header 2</h3>
             <p>
@@ -125,19 +123,19 @@
               officia? Soluta, iure odio.
             </p>
             <p class="small-text">This is the smaller text</p>
-          </main>
+          </div>
         </section>
         <section>
           <header>
             <h2>Colors</h2>
           </header>
-          <main id="colors"></main>
+          <div id="colors"></div>
         </section>
         <section id="button-section">
           <header>
             <h2>Buttons</h2>
           </header>
-          <main>
+          <div>
             <p class="small-text">Hover over the buttons</p>
             <button class="button-primary">Primary</button>
             <button class="button-primary-outlined">Primary Outlined</button>
@@ -145,13 +143,13 @@
             <button class="button-secondary-outlined">
               Secondary outlined
             </button>
-          </main>
+          </div>
         </section>
         <section id="shadows">
           <header>
             <h2>Shadows</h2>
           </header>
-          <main>
+          <div>
             <div class="main-shadow">
               <p class="small-text">
                 Main: 0px 0px 3px lighten(colors.$medium, 30%);
@@ -163,61 +161,61 @@
               </p>
               <p></p>
             </div>
-          </main>
+          </div>
         </section>
         <section>
           <header>
             <h2>Icons</h2>
           </header>
-          <main>
+          <div>
             <button class="icon">
-              <div class="search"></div>
+              <span class="search"></span>
             </button>
             <button class="icon-primary">
-              <div class="info"></div>
+              <span class="info"></span>
             </button>
             <button class="icon-primary">
-              <div class="add"></div>
+              <span class="add"></span>
             </button>
             <button class="icon-primary">
-              <div class="remove"></div>
+              <span class="remove"></span>
             </button>
             <button class="icon-primary">
-              <div class="bookmark"></div>
+              <span class="bookmark"></span>
             </button>
             <button class="icon">
-              <div class="menu"></div>
+              <span class="menu"></span>
             </button>
             <button class="icon">
-              <div class="more"></div>
+              <span class="more"></span>
             </button>
             <button class="icon">
-              <div class="close"></div>
+              <span class="close"></span>
             </button>
             <button class="icon">
-              <div class="account"></div>
+              <span class="account"></span>
             </button>
             <button class="icon-primary-inverted">
-              <div class="star"></div>
+              <span class="star"></span>
             </button>
             <button class="icon">
-              <div class="arrow-back"></div>
+              <span class="arrow-back"></span>
             </button>
             <button class="icon">
-              <div class="arrow-forward"></div>
+              <span class="arrow-forward"></span>
             </button>
             <button class="icon-secondary">
-              <div class="filter"></div>
+              <span class="filter"></span>
             </button>
             <button class="icon">
-              <div class="edit"></div>
+              <span class="edit"></span>
             </button>
             <button class="icon-secondary">
-              <div class="done"></div>
+              <span class="done"></span>
             </button>
             <p>input icons</p>
             <i class="material-symbols-outlined">arrow_drop_down</i>
-          </main>
+          </div>
         </section>
         <section>
           <header>
@@ -296,7 +294,7 @@
                       data-action="-"
                       disabled
                     >
-                      <div class="remove"></div>
+                      <span class="remove"></span>
                     </button>
                     <input
                       id="recipe-components"
@@ -308,7 +306,7 @@
                       required
                     />
                     <button class="icon-primary amount-btn" data-action="+">
-                      <div class="add"></div>
+                      <span class="add"></span>
                     </button>
                   </div>
                 </div>
@@ -318,7 +316,7 @@
             <form class="search-form">
               <input type="search" placeholder="Recipe, ingredient, cuisine" />
               <button class="icon">
-                <div class="search"></div>
+                <span class="search"></span>
               </button>
             </form>
           </header>
@@ -356,7 +354,7 @@
             </div>
           </article>
         </section>
-      </main>
+      </div>
     </main>
 
     <footer>
@@ -380,12 +378,12 @@
       </div>
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
+    <template id="color-template">
+      <article class="color-display">
+        <div></div>
+        <p class="name small-text"></p>
+        <p class="hex small-text"></p>
+      </article>
+    </template>
   </body>
-  <template id="color-template">
-    <article class="color-display">
-      <div></div>
-      <p class="name small-text"></p>
-      <p class="hex small-text"></p>
-    </article>
-  </template>
 </html>

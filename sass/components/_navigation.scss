@@ -47,7 +47,7 @@
       display: none;
     }
 
-    div {
+    .center {
       // contains search field and links
       display: flex;
       flex-direction: column;
@@ -86,12 +86,10 @@
           @extend %link;
           margin-left: spacing.$medium;
           list-style: none;
-        }
-        a {
           padding: 0;
           &:hover {
             color: color.$light;
-            li {
+            a {
               color: color.$light;
             }
           }
@@ -155,10 +153,9 @@
         width: 300px;
       }
 
-      div {
+      .center {
         // contains search and recipe link
         display: flex;
-        justify-content: space-between;
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
