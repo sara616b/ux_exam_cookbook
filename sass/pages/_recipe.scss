@@ -14,7 +14,74 @@
   header {
     // bookmark and more icon align to the right
     .action-icon-container {
-      text-align: end;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
+      .sub-nav-container {
+        .icon {
+          display: none;
+          visibility: hidden;
+
+          @include breakpoint.large() {
+            display: inline-flex !important;
+            visibility: visible !important;
+          }
+        }
+        .sub-navigation {
+          display: flex;
+          flex-direction: row;
+          li {
+            padding: 0 spacing.$small;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+      @include breakpoint.large() {
+        .has-sub-navigation {
+          // display dropdown on hover
+          &:hover {
+            cursor: pointer;
+            & + #sub-navigation,
+            & + .sub-navigation {
+              visibility: visible;
+            }
+          }
+        }
+        .sub-nav-container {
+          position: relative;
+        }
+        .sub-navigation {
+          z-index: 3;
+          display: block !important;
+          visibility: hidden;
+          top: 80%;
+          background-color: color.$bg;
+          position: absolute;
+          width: auto;
+          margin: 0;
+          transform: translateX(-50%);
+          &:hover {
+            visibility: visible;
+          }
+          li {
+            padding: spacing.$small !important;
+            border-radius: border.$rounded_radius;
+            &:hover {
+              cursor: pointer;
+              visibility: visible;
+              background-color: color.$primary;
+              color: color.$bg;
+              opacity: 1;
+              a {
+                color: color.$bg;
+              }
+            }
+          }
+        }
+      }
     }
     // padding between recipe info
     .description,
@@ -42,6 +109,7 @@
     @include breakpoint.custom("700px") {
       display: flex;
       flex-direction: row;
+      #right-img,
       section {
         flex-grow: 1;
         flex-basis: 500px;
@@ -52,7 +120,7 @@
     }
   }
   // container for recipe and instructions (and an ad)
-  section#content {
+  div#content {
     #ingredients {
       margin-top: spacing.$horizontal;
       margin-bottom: spacing.$horizontal;
@@ -115,6 +183,10 @@
     form.comment {
       margin-top: 0;
     }
+    div:first-of-type {
+      padding: 0;
+      border: none;
+    }
     h2,
     .advertisement {
       margin-top: spacing.$horizontal;
@@ -145,7 +217,7 @@
           text-align: start;
         }
         // name and date - flex to row
-        section {
+        div {
           margin-bottom: spacing.$small;
           display: flex;
           flex-direction: row;
