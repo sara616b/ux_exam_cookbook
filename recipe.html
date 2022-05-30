@@ -49,6 +49,7 @@
           <li class="buttons">
             <button
               id="login"
+              data-toggles-login="true"
               data-show-logged-in="false"
               class="button-primary-outlined"
             >
@@ -73,6 +74,7 @@
                 href="/profile.html"
                 class="text has-sub-navigation icon hidden"
                 id="profile-icon"
+                data-toggles-login="true"
               >
                 <span class="account"></span>
               </a>
@@ -83,7 +85,7 @@
               >
                 <li class="text"><a href="/settings.html">Settings</a></li>
                 <li class="text">
-                  <a onclick="toggleLogInStatus()">Log out</a>
+                  <a data-toggles-login="true">Log out</a>
                 </li>
               </ul>
             </div>
