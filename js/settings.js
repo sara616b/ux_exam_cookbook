@@ -37,5 +37,5 @@ const closeModal = () => {
 
 const deleteAccount = () => {
   toggleLogInStatus();
-  window.location.href = "/";
+  window.location.href = "index.html";
 };

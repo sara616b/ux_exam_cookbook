@@ -18,7 +18,7 @@
           <img src="image/logo.svg" alt="logo" />
         </a>
         <button id="navigation-control" data-to-open="navigation" class="icon">
-          <span class="menu"></span>
+          <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z" /></svg>
         </button>
         <div id="navigation" class="closed">
           <ul class="center">
@@ -27,7 +27,25 @@
                 <input type="search" placeholder="Recipe, ingredient, cuisine" />
 
                 <button class="icon">
-                  <span class="search"></span>
+                  <svg
+                    class="search"
+                    version="1.1"
+                    id="Layer_1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px"
+                    y="0px"
+                    viewBox="0 0 48 48"
+                    style="enable-background: new 0 0 48 48"
+                    xml:space="preserve"
+                  >
+                    <path
+                      d="M39.8,42L26.6,28.8c-1,0.9-2.2,1.5-3.5,2c-1.3,0.5-2.8,0.7-4.2,0.7c-3.6,0-6.6-1.3-9.1-3.8c-2.5-2.5-3.8-5.5-3.8-9
+                 s1.2-6.5,3.8-9S15.3,6,18.9,6c3.5,0,6.5,1.2,9,3.8s3.7,5.5,3.7,9c0,1.4-0.2,2.8-0.7,4.1c-0.5,1.3-1.2,2.6-2.1,3.8L42,39.8L39.8,42z
+                  M18.9,28.6c2.7,0,5-1,6.9-2.9s2.9-4.2,2.9-6.9s-1-5-2.9-6.9S21.6,9,18.9,9c-2.7,0-5.1,1-7,2.9S9,16.1,9,18.8s1,5,2.9,6.9
+                 S16.1,28.6,18.9,28.6z"
+                    />
+                  </svg>
                 </button>
               </form>
             </li>
@@ -48,7 +66,11 @@
             <a href="new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
             <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
               <a data-show-logged-in="true" href="profile.html" class="text has-sub-navigation icon hidden" id="profile-icon" data-toggles-login="true">
-                <span class="account"></span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="account">
+                  <path
+                    d="M11.1 35.25Q14.25 33.05 17.35 31.875Q20.45 30.7 24 30.7Q27.55 30.7 30.675 31.875Q33.8 33.05 36.95 35.25Q39.15 32.55 40.075 29.8Q41 27.05 41 24Q41 16.75 36.125 11.875Q31.25 7 24 7Q16.75 7 11.875 11.875Q7 16.75 7 24Q7 27.05 7.95 29.8Q8.9 32.55 11.1 35.25ZM24 25.5Q21.1 25.5 19.125 23.525Q17.15 21.55 17.15 18.65Q17.15 15.75 19.125 13.775Q21.1 11.8 24 11.8Q26.9 11.8 28.875 13.775Q30.85 15.75 30.85 18.65Q30.85 21.55 28.875 23.525Q26.9 25.5 24 25.5ZM24 44Q19.9 44 16.25 42.425Q12.6 40.85 9.875 38.125Q7.15 35.4 5.575 31.75Q4 28.1 4 24Q4 19.85 5.575 16.225Q7.15 12.6 9.875 9.875Q12.6 7.15 16.25 5.575Q19.9 4 24 4Q28.15 4 31.775 5.575Q35.4 7.15 38.125 9.875Q40.85 12.6 42.425 16.225Q44 19.85 44 24Q44 28.1 42.425 31.75Q40.85 35.4 38.125 38.125Q35.4 40.85 31.775 42.425Q28.15 44 24 44ZM24 41Q26.75 41 29.375 40.2Q32 39.4 34.55 37.4Q32 35.6 29.35 34.65Q26.7 33.7 24 33.7Q21.3 33.7 18.65 34.65Q16 35.6 13.45 37.4Q16 39.4 18.625 40.2Q21.25 41 24 41ZM24 22.5Q25.7 22.5 26.775 21.425Q27.85 20.35 27.85 18.65Q27.85 16.95 26.775 15.875Q25.7 14.8 24 14.8Q22.3 14.8 21.225 15.875Q20.15 16.95 20.15 18.65Q20.15 20.35 21.225 21.425Q22.3 22.5 24 22.5ZM24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65ZM24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Z"
+                  />
+                </svg>
               </a>
               <ul data-show-logged-in="true" id="sub-navigation-2" class="closed sub-navigation">
                 <li class="text"><a href="settings.html">Settings</a></li>
@@ -125,34 +147,99 @@
           </header>
           <div>
             <button class="icon">
-              <span class="search"></span>
+              <svg
+                class="search"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 48 48"
+                style="enable-background: new 0 0 48 48"
+                xml:space="preserve"
+              >
+                <path
+                  d="M39.8,42L26.6,28.8c-1,0.9-2.2,1.5-3.5,2c-1.3,0.5-2.8,0.7-4.2,0.7c-3.6,0-6.6-1.3-9.1-3.8c-2.5-2.5-3.8-5.5-3.8-9
+             s1.2-6.5,3.8-9S15.3,6,18.9,6c3.5,0,6.5,1.2,9,3.8s3.7,5.5,3.7,9c0,1.4-0.2,2.8-0.7,4.1c-0.5,1.3-1.2,2.6-2.1,3.8L42,39.8L39.8,42z
+              M18.9,28.6c2.7,0,5-1,6.9-2.9s2.9-4.2,2.9-6.9s-1-5-2.9-6.9S21.6,9,18.9,9c-2.7,0-5.1,1-7,2.9S9,16.1,9,18.8s1,5,2.9,6.9
+             S16.1,28.6,18.9,28.6z"
+                />
+              </svg>
             </button>
             <button class="icon-primary">
-              <span class="info"></span>
+              <svg class="info" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path
+                  d="M22.65 34H25.65V22H22.65ZM24 18.3Q24.7 18.3 25.175 17.85Q25.65 17.4 25.65 16.7Q25.65 16 25.175 15.5Q24.7 15 24 15Q23.3 15 22.825 15.5Q22.35 16 22.35 16.7Q22.35 17.4 22.825 17.85Q23.3 18.3 24 18.3ZM24 44Q19.75 44 16.1 42.475Q12.45 40.95 9.75 38.25Q7.05 35.55 5.525 31.9Q4 28.25 4 24Q4 19.8 5.525 16.15Q7.05 12.5 9.75 9.8Q12.45 7.1 16.1 5.55Q19.75 4 24 4Q28.2 4 31.85 5.55Q35.5 7.1 38.2 9.8Q40.9 12.5 42.45 16.15Q44 19.8 44 24Q44 28.25 42.45 31.9Q40.9 35.55 38.2 38.25Q35.5 40.95 31.85 42.475Q28.2 44 24 44ZM24 24Q24 24 24 24Q24 24 24 24Q24 24 24 24Q24 24 24 24Q24 24 24 24Q24 24 24 24Q24 24 24 24Q24 24 24 24ZM24 41Q31 41 36 36Q41 31 41 24Q41 17 36 12Q31 7 24 7Q17 7 12 12Q7 17 7 24Q7 31 12 36Q17 41 24 41Z"
+                />
+              </svg>
             </button>
             <button class="icon-primary">
-              <span class="add"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="add">
+                <path d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z" />
+              </svg>
             </button>
             <button class="icon-primary">
-              <span class="remove"></span>
+              <svg class="remove" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M10 25.5V22.5H38V25.5Z" /></svg>
             </button>
             <button class="icon-primary">
-              <span class="bookmark"></span>
+              <!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg
+                class="bookmark"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 48 48"
+                style="enable-background: new 0 0 48 48"
+                xml:space="preserve"
+              >
+                <path
+                  d="M13,37.6l11-4.7l11,4.7V8.9l0,0l0,0H13l0,0l0,0V37.6z M10,42.1V8.9c0-0.8,0.3-1.5,0.9-2.1c0.6-0.6,1.3-0.9,2.1-0.9h22
+	c0.8,0,1.5,0.3,2.1,0.9C37.7,7.4,38,8.1,38,8.9v33.2l-14-6L10,42.1z M35,8.9H24H13l0,0l0,0H35L35,8.9L35,8.9z"
+                />
+              </svg>
             </button>
             <button class="icon">
-              <span class="menu"></span>
+              <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z" /></svg>
             </button>
             <button class="icon">
-              <span class="more"></span>
+              <svg class="more" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path
+                  d="M10.4 26.4Q9.4 26.4 8.7 25.7Q8 25 8 24Q8 23 8.7 22.3Q9.4 21.6 10.4 21.6Q11.4 21.6 12.1 22.3Q12.8 23 12.8 24Q12.8 25 12.1 25.7Q11.4 26.4 10.4 26.4ZM24 26.4Q23 26.4 22.3 25.7Q21.6 25 21.6 24Q21.6 23 22.3 22.3Q23 21.6 24 21.6Q25 21.6 25.7 22.3Q26.4 23 26.4 24Q26.4 25 25.7 25.7Q25 26.4 24 26.4ZM37.6 26.4Q36.6 26.4 35.9 25.7Q35.2 25 35.2 24Q35.2 23 35.9 22.3Q36.6 21.6 37.6 21.6Q38.6 21.6 39.3 22.3Q40 23 40 24Q40 25 39.3 25.7Q38.6 26.4 37.6 26.4Z"
+                />
+              </svg>
             </button>
             <button class="icon">
-              <span class="close"></span>
+              <!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg
+                class="close"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 48 48"
+                style="enable-background: new 0 0 48 48"
+                xml:space="preserve"
+              >
+                <path d="M12.4,37.7l-2.1-2.1L21.9,24L10.3,12.4l2.1-2.1L24,21.9l11.5-11.5l2.1,2.1L26.1,24l11.6,11.5l-2.1,2.1L24,26.1L12.4,37.7z" />
+              </svg>
             </button>
             <button class="icon">
-              <span class="account"></span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="account">
+                <path
+                  d="M11.1 35.25Q14.25 33.05 17.35 31.875Q20.45 30.7 24 30.7Q27.55 30.7 30.675 31.875Q33.8 33.05 36.95 35.25Q39.15 32.55 40.075 29.8Q41 27.05 41 24Q41 16.75 36.125 11.875Q31.25 7 24 7Q16.75 7 11.875 11.875Q7 16.75 7 24Q7 27.05 7.95 29.8Q8.9 32.55 11.1 35.25ZM24 25.5Q21.1 25.5 19.125 23.525Q17.15 21.55 17.15 18.65Q17.15 15.75 19.125 13.775Q21.1 11.8 24 11.8Q26.9 11.8 28.875 13.775Q30.85 15.75 30.85 18.65Q30.85 21.55 28.875 23.525Q26.9 25.5 24 25.5ZM24 44Q19.9 44 16.25 42.425Q12.6 40.85 9.875 38.125Q7.15 35.4 5.575 31.75Q4 28.1 4 24Q4 19.85 5.575 16.225Q7.15 12.6 9.875 9.875Q12.6 7.15 16.25 5.575Q19.9 4 24 4Q28.15 4 31.775 5.575Q35.4 7.15 38.125 9.875Q40.85 12.6 42.425 16.225Q44 19.85 44 24Q44 28.1 42.425 31.75Q40.85 35.4 38.125 38.125Q35.4 40.85 31.775 42.425Q28.15 44 24 44ZM24 41Q26.75 41 29.375 40.2Q32 39.4 34.55 37.4Q32 35.6 29.35 34.65Q26.7 33.7 24 33.7Q21.3 33.7 18.65 34.65Q16 35.6 13.45 37.4Q16 39.4 18.625 40.2Q21.25 41 24 41ZM24 22.5Q25.7 22.5 26.775 21.425Q27.85 20.35 27.85 18.65Q27.85 16.95 26.775 15.875Q25.7 14.8 24 14.8Q22.3 14.8 21.225 15.875Q20.15 16.95 20.15 18.65Q20.15 20.35 21.225 21.425Q22.3 22.5 24 22.5ZM24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65ZM24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Z"
+                />
+              </svg>
             </button>
             <button class="icon-primary-inverted">
-              <span class="star"></span>
+              <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+              </svg>
             </button>
             <button class="icon">
               <span class="arrow-back"></span>
@@ -161,13 +248,48 @@
               <span class="arrow-forward"></span>
             </button>
             <button class="icon-secondary">
-              <span class="filter"></span>
+              <svg class="filter" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path
+                  d="M6 37.9V34.9H18.35V37.9ZM6 13.1V10.1H26.65V13.1ZM21.35 42V30.75H24.35V34.9H42V37.9H24.35V42ZM15.35 29.6V25.5H6V22.5H15.35V18.3H18.35V29.6ZM21.35 25.5V22.5H42V25.5ZM29.65 17.25V6H32.65V10.1H42V13.1H32.65V17.25Z"
+                />
+              </svg>
             </button>
             <button class="icon">
-              <span class="edit"></span>
+              <svg
+                class="edit"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 48 48"
+                style="enable-background: new 0 0 48 48"
+                xml:space="preserve"
+              >
+                <path
+                  d="M8.7,39.3h2.2l24.2-24.3L34,14l-1.1-1.1L8.7,37.1V39.3z M5.7,42.3v-6.4L35.1,6.5c0.6-0.6,1.3-0.8,2.1-0.8
+             c0.8,0,1.6,0.3,2.1,0.9l2.1,2.1c0.6,0.6,0.9,1.3,0.9,2.1s-0.3,1.5-0.9,2.1L12.1,42.3H5.7z M39.2,10.8l-2-2.1L39.2,10.8z M35.1,15.1
+             L34,14l-1.1-1.1L35.1,15.1z"
+                />
+              </svg>
             </button>
             <button class="icon-secondary">
-              <span class="done"></span>
+              <!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg
+                class="done"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 48 48"
+                style="enable-background: new 0 0 48 48"
+                xml:space="preserve"
+              >
+                <path d="M18.9,35.8L7.7,24.5l2.2-2.1l9,9l19.2-19.2l2.2,2.1L18.9,35.8z" />
+              </svg>
             </button>
             <p>input icons</p>
             <i class="material-symbols-outlined">arrow_drop_down</i>
@@ -232,11 +354,13 @@
                   <label for="recipe-components">Recipe components</label>
                   <div class="form-flex">
                     <button class="icon-primary amount-btn" data-action="-" disabled>
-                      <span class="remove"></span>
+                      <svg class="remove" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M10 25.5V22.5H38V25.5Z" /></svg>
                     </button>
                     <input id="recipe-components" disabled type="number" min="1" max="10" value="1" required />
                     <button class="icon-primary amount-btn" data-action="+">
-                      <span class="add"></span>
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="add">
+                        <path d="M22.5 38V25.5H10V22.5H22.5V10H25.5V22.5H38V25.5H25.5V38Z" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -246,7 +370,25 @@
             <form class="search-form">
               <input type="search" placeholder="Recipe, ingredient, cuisine" />
               <button class="icon">
-                <span class="search"></span>
+                <svg
+                  class="search"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 48 48"
+                  style="enable-background: new 0 0 48 48"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M39.8,42L26.6,28.8c-1,0.9-2.2,1.5-3.5,2c-1.3,0.5-2.8,0.7-4.2,0.7c-3.6,0-6.6-1.3-9.1-3.8c-2.5-2.5-3.8-5.5-3.8-9
+               s1.2-6.5,3.8-9S15.3,6,18.9,6c3.5,0,6.5,1.2,9,3.8s3.7,5.5,3.7,9c0,1.4-0.2,2.8-0.7,4.1c-0.5,1.3-1.2,2.6-2.1,3.8L42,39.8L39.8,42z
+                M18.9,28.6c2.7,0,5-1,6.9-2.9s2.9-4.2,2.9-6.9s-1-5-2.9-6.9S21.6,9,18.9,9c-2.7,0-5.1,1-7,2.9S9,16.1,9,18.8s1,5,2.9,6.9
+               S16.1,28.6,18.9,28.6z"
+                  />
+                </svg>
               </button>
             </form>
           </header>
@@ -261,7 +403,24 @@
             </a>
             <form>
               <button class="icon-primary">
-                <span class="bookmark"></span>
+                <!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <svg
+                  class="bookmark"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 48 48"
+                  style="enable-background: new 0 0 48 48"
+                  xml:space="preserve"
+                >
+                  <path
+                    d="M13,37.6l11-4.7l11,4.7V8.9l0,0l0,0H13l0,0l0,0V37.6z M10,42.1V8.9c0-0.8,0.3-1.5,0.9-2.1c0.6-0.6,1.3-0.9,2.1-0.9h22
+	c0.8,0,1.5,0.3,2.1,0.9C37.7,7.4,38,8.1,38,8.9v33.2l-14-6L10,42.1z M35,8.9H24H13l0,0l0,0H35L35,8.9L35,8.9z"
+                  />
+                </svg>
               </button>
             </form>
             <div>

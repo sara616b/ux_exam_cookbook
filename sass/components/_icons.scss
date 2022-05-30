@@ -3,22 +3,6 @@
 @use "../abstracts/spacings" as spacing;
 @use "../abstracts/shadows" as shadow;
 
-$icon-search: url('../icons/search.svg');
-$icon-info: url('../icons/info.svg');
-$icon-add: url('../icons/add.svg');
-$icon-remove: url('../icons/remove.svg');
-$icon-bookmark: url('../icons/bookmark.svg');
-$icon-menu: url('../icons/menu.svg');
-$icon-more: url('../icons/more.svg');
-$icon-close: url('../icons/close.svg');
-$icon-account: url('../icons/account.svg');
-$icon-star: url('../icons/star.svg');
-$icon-arrow-back: url('../icons/arrow_back.svg');
-$icon-arrow-forward: url('../icons/arrow_forward.svg');
-$icon-filter: url('../icons/filter.svg');
-$icon-edit: url('../icons/edit.svg');
-$icon-done: url('../icons/done.svg');
-
 @mixin icon-btn-styles(
     $bg-color: color.$bg,
     $hover-bg: color.$bg,
@@ -38,6 +22,12 @@ $icon-done: url('../icons/done.svg');
     justify-content: center;
     align-items: center;
 
+    svg {
+        width: 90%;
+        height: 90%;
+        pointer-events: none;
+    }
+
     &:hover {
         background-color: $hover-bg;
         cursor: pointer;
@@ -45,18 +35,6 @@ $icon-done: url('../icons/done.svg');
     }
 }
 
-@mixin icon-settings(
-    $icon-src: url("")
-){
-    width: 90%;
-    height: 90%;
-    mask-image: $icon-src;
-    -webkit-mask-image: $icon-src;
-    mask-size: cover;
-    -webkit-mask-size: cover;
-    transition: inherit;
-    pointer-events: none;
-}
 
 .icon {
     @include icon-btn-styles(
@@ -67,13 +45,12 @@ $icon-done: url('../icons/done.svg');
         $box-shadow: none
     );
 
-    div, span {
-        background-color: color.$medium;
+    svg {
+        fill: color.$medium;
     }
 
-    &:hover div,
-    &:hover span {
-        background-color: color.$dark;
+    &:hover svg {
+        fill: color.$dark;
     }
 }
 
@@ -85,28 +62,24 @@ $icon-done: url('../icons/done.svg');
         $hover-border: none
     );
 
-    div,
-    span {
-        background-color: color.$light;
+    svg {
+        fill: color.$light;
     }
 
-    &:hover div,
-    &:hover span {
-        background-color: color.$light;
+    &:hover svg {
+        fill: color.$light;
     }
 }
 
 .icon-primary-inverted {
     @include icon-btn-styles($box-shadow: none);
 
-    div,
-    span {
-        background-color: color.$primary;
+    svg {
+        fill: color.$primary;
     }
 
-    &:hover div,
-    &:hover span {
-        background-color: color.$primary_light;
+    &:hover svg {
+        fill: color.$primary_light;
     }
 }
 
@@ -118,13 +91,11 @@ $icon-done: url('../icons/done.svg');
         $hover-border: color.$secondary_medium
     );
 
-    div,
-    span {
+    svg {
         background-color: color.$secondary_dark
     }
 
-    &:hover div,
-    &:hover span {
+    &:hover svg {
         background-color: color.$secondary_dark;
     }
 }
@@ -132,73 +103,11 @@ $icon-done: url('../icons/done.svg');
 .icon-secondary-inverted {
     @include icon-btn-styles($box-shadow: none);
 
-    div,
-    span {
+    svg {
         background-color: color.$secondary_light;
     }
 
-    &:hover div,
-    &:hover span {
+    &:hover svg {
         background-color: color.$secondary_medium;
     }
-}
-
-.search {
-    @include icon-settings($icon-src: $icon-search);
-}
-
-.info {
-    @include icon-settings($icon-src: $icon-info);
-}
-
-.add {
-    @include icon-settings($icon-src: $icon-add);
-}
-
-.remove {
-    @include icon-settings($icon-src: $icon-remove);
-}
-
-.bookmark {
-    @include icon-settings($icon-src: $icon-bookmark);
-}
-
-.menu {
-    @include icon-settings($icon-src: $icon-menu);
-}
-
-.more {
-    @include icon-settings($icon-src: $icon-more);
-}
-
-.close {
-    @include icon-settings($icon-src: $icon-close);
-}
-
-.account {
-    @include icon-settings($icon-src: $icon-account);
-}
-
-.star {
-    @include icon-settings($icon-src: $icon-star);
-}
-
-.arrow-back {
-    @include icon-settings($icon-src: $icon-arrow-back);
-}
-
-.arrow-forward {
-    @include icon-settings($icon-src: $icon-arrow-forward);
-}
-
-.filter {
-    @include icon-settings($icon-src: $icon-filter);
-}
-
-.edit {
-    @include icon-settings($icon-src: $icon-edit);
-}
-
-.done {
-    @include icon-settings($icon-src: $icon-done);
 }
