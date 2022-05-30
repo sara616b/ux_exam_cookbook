@@ -13,7 +13,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    section {
+    section:not(.modal) {
         padding: spacing.$small;
 
         .breadcrumbs {
@@ -42,7 +42,7 @@
     }
 
     @include breakpoint.medium {
-        section {
+        section:not(.modal) {
             padding: spacing.$medium;
 
             .breadcrumbs {
@@ -64,7 +64,7 @@
             grid-column: 1/2;
         }
 
-        section {
+        section:not(.modal) {
             grid-column: 2/5;
 
             .breadcrumbs {
@@ -77,41 +77,42 @@
         }
 
     }
-}
 
-.advertisement {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.modal {
-    transition: opacity .5s ease-in-out;
-    opacity: 0;
-
-    article {
-        background-color: color.$bg;
-        padding: spacing.$medium;
-        border-radius: border.$medium_radius;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        h3 {
-            display: block;
-            width: 100%;
-            text-align: center;
-            margin-bottom: spacing.$medium;
-        }
-
-        .icon-secondary-inverted {
-            margin: 0 auto;
-            transform: scale(1.5);
-            cursor: auto;
-
-            span {
-                background-color: color.$secondary_medium;
+    .advertisement {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    
+    .modal {
+        transition: opacity .5s ease-in-out;
+        opacity: 0;
+    
+        article {
+            background-color: color.$bg;
+            padding: spacing.$medium;
+            border-radius: border.$medium_radius;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+    
+            h3 {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: spacing.$medium;
+            }
+    
+            .icon-secondary-inverted {
+                margin: 0 auto;
+                transform: scale(1.5);
+                cursor: auto;
+    
+                span {
+                    background-color: color.$secondary_medium;
+                }
             }
         }
     }
 }
+
