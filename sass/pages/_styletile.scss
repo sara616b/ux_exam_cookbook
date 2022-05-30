@@ -9,11 +9,14 @@
     max-width: breakpoint.$max-width-content;
     margin: spacing.$medium auto;
   }
-  > main {
+  #main-content {
     max-width: breakpoint.$max-width-content;
     margin: 0 auto;
     display: grid;
     grid-gap: spacing.$medium;
+    section {
+      max-width: 100%;
+    }
     @include breakpoint.custom("1000px") {
       grid-template-columns: repeat(2, calc(50% - (spacing.$medium / 2)));
     }
@@ -28,7 +31,7 @@
     }
   }
   #button-section {
-    main {
+    div {
       display: grid;
       grid-gap: 1rem;
       button {
@@ -38,7 +41,7 @@
   }
 
   #shadows {
-    main {
+    div {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: spacing.$medium;
@@ -55,5 +58,8 @@
         box-shadow: shadow.$down;
       }
     }
+  }
+  .card {
+    height: auto;
   }
 }

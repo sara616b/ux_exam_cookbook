@@ -21,8 +21,8 @@
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
         </button>
-        <ul id="navigation" class="closed">
-          <div class="center">
+        <div id="navigation" class="closed">
+          <ul class="center">
             <li>
               <form class="search-form">
                 <input type="search" placeholder="Recipe, ingredient, cuisine" />
@@ -36,11 +36,11 @@
               <a href="/recipes.html" class="text has-sub-navigation"> Recipes </a>
 
               <ul id="sub-navigation" class="closed">
-                <a href="/recipes.html"><li class="text">Breakfast</li></a>
-                <a href="/recipes.html"><li class="text">Lunch</li></a>
-                <a href="/recipes.html"><li class="text">Dinner</li></a>
-                <a href="/recipes.html"><li class="text">Dessert</li></a>
-                <a href="/recipes.html"><li class="text">Snacks</li></a>
+                <li class="text"><a href="/recipes.html">Breakfast</a></li>
+                <li class="text"><a href="/recipes.html">Lunch</a></li>
+                <li class="text"><a href="/recipes.html">Dinner</a></li>
+                <li class="text"><a href="/recipes.html">Dessert</a></li>
+                <li class="text"><a href="/recipes.html">Snacks</a></li>
               </ul>
             </li>
           </div>
@@ -59,8 +59,8 @@
                 </li>
               </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </header>
     <main class="new-recipe">
@@ -137,12 +137,22 @@
                 <fieldset>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Mild italian sausage" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Mild italian sausage"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="8 ounce" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="8 ounce"
+                      />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -152,7 +162,12 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Chicken tenders or strips" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Chicken tenders or strips"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
@@ -167,12 +182,22 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Large shrimp" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Large shrimp"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="2 pounds" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="2 pounds"
+                      />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -182,37 +207,12 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Onion" />
-                      <p class="error-message">Pleace enter an ingredient</p>
-                      <p class="placeholder">Ingredient</p>
-                    </div>
-                    <div class="input-container">
-                      <input type="text" placeholder=" " required value="1" />
-                      <p class="error-message">Pleace enter an amount</p>
-                      <p class="placeholder">Amount</p>
-                    </div>
-                    <button class="icon" data-action="remove">
-                      <span class="close"></span>
-                    </button>
-                  </div>
-                  <div class="ingredient-input">
-                    <div class="input-container">
-                      <input type="text" placeholder=" " required value="Green bell pepper" />
-                      <p class="error-message">Pleace enter an ingredient</p>
-                      <p class="placeholder">Ingredient</p>
-                    </div>
-                    <div class="input-container">
-                      <input type="text" placeholder=" " required value="1" />
-                      <p class="error-message">Pleace enter an amount</p>
-                      <p class="placeholder">Amount</p>
-                    </div>
-                    <button class="icon" data-action="remove">
-                      <span class="close"></span>
-                    </button>
-                  </div>
-                  <div class="ingredient-input">
-                    <div class="input-container">
-                      <input type="text" placeholder=" " required value="Stalk celery with leaves" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Onion"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
@@ -227,12 +227,17 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Long grain rice" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Green bell pepper"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="2 cups" />
+                      <input type="text" placeholder=" " required value="1" />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -242,12 +247,17 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Peeled and diced tomatoes" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Stalk celery with leaves"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="2 (14.5 ounce) cans" />
+                      <input type="text" placeholder=" " required value="1" />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -257,7 +267,62 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Bay leaves" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Long grain rice"
+                      />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="2 cups"
+                      />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <span class="close"></span>
+                    </button>
+                  </div>
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Peeled and diced tomatoes"
+                      />
+                      <p class="error-message">Pleace enter an ingredient</p>
+                      <p class="placeholder">Ingredient</p>
+                    </div>
+                    <div class="input-container">
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="2 (14.5 ounce) cans"
+                      />
+                      <p class="error-message">Pleace enter an amount</p>
+                      <p class="placeholder">Amount</p>
+                    </div>
+                    <button class="icon" data-action="remove">
+                      <span class="close"></span>
+                    </button>
+                  </div>
+                  <div class="ingredient-input">
+                    <div class="input-container">
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Bay leaves"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
@@ -272,12 +337,22 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Salt" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Salt"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="2 teaspoons" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="2 teaspoons"
+                      />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -287,12 +362,22 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Dried oregano" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Dried oregano"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="1 teaspoon" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="1 teaspoon"
+                      />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -302,12 +387,22 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Ground turmeric" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Ground turmeric"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="3/4 teaspoon" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="3/4 teaspoon"
+                      />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
@@ -317,12 +412,22 @@
                   </div>
                   <div class="ingredient-input">
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="Chicken broth" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="Chicken broth"
+                      />
                       <p class="error-message">Pleace enter an ingredient</p>
                       <p class="placeholder">Ingredient</p>
                     </div>
                     <div class="input-container">
-                      <input type="text" placeholder=" " required value="3 1/2 cups" />
+                      <input
+                        type="text"
+                        placeholder=" "
+                        required
+                        value="3 1/2 cups"
+                      />
                       <p class="error-message">Pleace enter an amount</p>
                       <p class="placeholder">Amount</p>
                     </div>
