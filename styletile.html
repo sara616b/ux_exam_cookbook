@@ -107,9 +107,7 @@
             <h2>Logo</h2>
           </header>
           <main>
-            <button class="logo">
-              <img alt="cookbook logo" />
-            </button>
+            <img src="./image/logo.svg" alt="logo" />
           </main>
         </section>
         <section>
@@ -329,26 +327,33 @@
           <header>
             <h2>Components</h2>
           </header>
-          <article class="card" style="grid-area: biggest">
-            <a href="#">
-              <img src="image/paella.png" alt="paella" />
-              <span
-                class="material-symbols-outlined"
-                onclick="console.log('bookmark clicked')"
-              >
-                bookmark
-              </span>
-              <div>
-                <header>
-                  <h3>Lorem Ipsum</h3>
-                  <address class="author">By: John Doe</address>
-                </header>
-                <div class="rating">
-                  <i class="material-symbols-outlined">star</i>
-                  <div>4.9</div>
-                </div>
-              </div>
+          <article class="card">
+            <a href="/recipe.html">
+              <img src="../image/paella.png" alt="paella" />
             </a>
+            <form>
+              <button class="icon-primary">
+                <span class="bookmark"></span>
+              </button>
+            </form>
+            <div>
+              <header>
+                <h3>Lorem Ipsum</h3>
+                <address class="author">
+                  <a rel="author" href="/profile.html">By: John Doe</a>
+                </address>
+              </header>
+              <figure>
+                <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
+                  </svg>
+                </div>
+                <figcaption>4.9</figcaption>
+              </figure>
+            </div>
           </article>
         </section>
       </main>
