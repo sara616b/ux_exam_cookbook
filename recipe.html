@@ -8,6 +8,7 @@
     <script src="./js/navigation.js" defer></script>
     <script src="./js/forms.js" defer></script>
     <script src="./js/checkLogIn.js" defer></script>
+    <script src="./js/recipeDisplay.js" defer></script>
     <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body data-logged-in="false">
@@ -121,9 +122,7 @@
               </button>
               <ul class="closed sub-navigation">
                 <li class="text"><a href="/edit-recipe.html">Edit</a></li>
-                <li class="text">
-                  <a href="/index.html">Delete</a>
-                </li>
+                <li class="text" id="delete-recipe-button">Delete</li>
               </ul>
             </div>
           </div>
@@ -311,5 +310,17 @@
       </div>
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
+    <aside id="delete-modal" class="hidden">
+      <div class="background" onclick="closeModal()"></div>
+      <div id="content">
+        <p>Are you sure you wish to delete your recipe?</p>
+        <div>
+          <button class="button-primary-outlined">
+            <a href="/index.html">Delete recipe forever</a>
+          </button>
+          <button class="button-primary" onclick="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </aside>
   </body>
 </html>

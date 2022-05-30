@@ -197,7 +197,7 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
           <h2 class="recipe-control sub-header-2 closed">Saved recipes</h2>
         </header>
         <div id="recipe-section">
-          <div id="recipes-holder" class="main-grid"></div>
+          <div id="recipes-holder" class="main-grid my-recipes"></div>
         </div>
       </section>
     </main>
@@ -227,6 +227,15 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
         <a href="/recipe.html">
           <img src="../image/paella.png" alt="paella" />
         </a>
+        <div class="sub-nav-container">
+          <button class="has-sub-navigation icon">
+            <span class="more"></span>
+          </button>
+          <ul class="closed sub-navigation">
+            <li class="text"><a href="/edit-recipe.html">Edit</a></li>
+            <li class="text delete-recipe-button">Delete</li>
+          </ul>
+        </div>
         <div>
           <header>
             <h3>Lorem Ipsum</h3>
@@ -255,5 +264,17 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
         <button class="close" data-show-editing="true"></button>
       </section>
     </template>
+    <aside id="delete-modal" class="hidden">
+      <div class="background" onclick="closeModal()"></div>
+      <div id="content">
+        <p>Are you sure you wish to delete your recipe?</p>
+        <div>
+          <button class="button-primary-outlined" onclick="closeModal()">
+            Delete recipe forever
+          </button>
+          <button class="button-primary" onclick="closeModal()">Cancel</button>
+        </div>
+      </div>
+    </aside>
   </body>
 </html>
