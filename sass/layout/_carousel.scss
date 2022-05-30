@@ -6,8 +6,8 @@
 @use "../abstracts/breakpoints" as breakpoint;
 
 .carousel-section {
-    margin: 3.5rem auto 0 auto;
-    max-width: 1384px;
+    margin: spacing.$horizontal auto 0 auto;
+    max-width: calc(breakpoint.$max-width - spacing.$medium);
 
     h2 {
         margin-left: spacing.$medium;
@@ -54,7 +54,7 @@
           }
           @include breakpoint.large {
             overflow: hidden;
-            padding: spacing.$medium 0.5rem;
+            padding: spacing.$medium spacing.$small;
             transform: translateX(--scroll-value);
 
         }
@@ -64,7 +64,7 @@
     .slider {
         display: grid;
         grid-template-columns: repeat(8, 82%);
-        gap: 1.4rem;
+        gap: spacing.$card-gap;
         width: 100%; // 100% (cards) * 8 - a gap size
         @include breakpoint.small {
             grid-template-columns: repeat(8, 39%);
@@ -76,7 +76,7 @@
             grid-template-columns: repeat(8, calc(25% - 1.2rem));
             transition: transform 1.2s cubic-bezier(.46,0,.39,1);
             &.to-end {
-                transform: translateX(calc(-100% - 1rem));
+                transform: translateX(calc(-100% - spacing.$medium));
             }
         }
     }

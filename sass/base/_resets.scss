@@ -31,3 +31,12 @@ a {
   display: none !important;
   visibility: hidden;
 }
+
+input:focus, textarea:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  display: block;
+}

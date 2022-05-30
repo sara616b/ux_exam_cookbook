@@ -1,11 +1,12 @@
+@use "../abstracts/spacings" as spacing;
 @use "../abstracts/breakpoints" as breakpoint;
 
 .explore-section {
-    max-width: 1400px;
-    margin: 3.5rem auto 0 auto;
+    max-width: breakpoint.$max-width;
+    margin: spacing.$horizontal auto 0 auto;
 
     h2 {
-        margin-left: 1rem;
+        margin-left: spacing.$medium;
     }
     @include breakpoint.large {
         padding: 0 5rem;
@@ -18,8 +19,8 @@
     grid-template-columns: repeat(5, 82%);
     width: 100%;
     overflow-x: scroll;
-    gap: 1.4rem;
-    padding: 1rem;
+    gap: spacing.$card-gap;
+    padding: spacing.$medium;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;  //IE and Edge
     scrollbar-width: none;  // Firefox
