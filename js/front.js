@@ -25,14 +25,18 @@ function init() {
   });
 
   // sign in redirect
-  document.querySelector("#sign-in-modal .submit").addEventListener("click", () => {
-    document.querySelector("#sign-in-modal").classList.remove("show");
-  });
+  document
+    .querySelector("#sign-in-modal .submit")
+    .addEventListener("click", () => {
+      document.querySelector("#sign-in-modal").classList.remove("show");
+    });
 
   // sign up redirect
-  document.querySelector("#sign-up-modal .submit").addEventListener("click", () => {
-    document.querySelector("#sign-up-modal").classList.remove("show");
-  });
+  document
+    .querySelector("#sign-up-modal .submit")
+    .addEventListener("click", () => {
+      document.querySelector("#sign-up-modal").classList.remove("show");
+    });
 }
 
 function resetCarousel() {
@@ -48,7 +52,9 @@ function moveCarousel(e) {
   else slider.classList.remove("to-end");
 
   //   Enable btns
-  document.querySelectorAll(".carousel > button").forEach((btn) => btn.removeAttribute("disabled"));
+  document
+    .querySelectorAll(".carousel > button")
+    .forEach((btn) => btn.removeAttribute("disabled"));
   //   Disable target btn
   e.target.setAttribute("disabled", "");
 }
@@ -67,7 +73,9 @@ const heroSlideInterval = setInterval(() => {
   // Set new .current's
   try {
     slider.querySelector(`[data-nr="${dataNr + 1}"]`).classList.add("current");
-    container.querySelector(`.dot[data-nr="${dataNr + 1}"]`).classList.add("current");
+    container
+      .querySelector(`.dot[data-nr="${dataNr + 1}"]`)
+      .classList.add("current");
 
     slider.style.setProperty("--slide-x", dataNr * -33.33 + "%");
   } catch {
