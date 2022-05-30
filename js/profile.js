@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
       recipeControllers.forEach((button) => {
         button.classList.toggle("closed");
       });
+      document.querySelector("#recipes-holder").classList.toggle("my-recipes");
     });
   });
 
@@ -15,6 +16,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const dest = document.querySelector("#recipes-holder");
     const temp = document.querySelector("#recipe");
     const clone = temp.cloneNode(true).content;
+
+    // deleting own recipe
+    clone
+      .querySelector(".delete-recipe-button")
+      .addEventListener("click", () => deleteClick());
+    clone
+      .querySelector(".has-sub-navigation")
+      .addEventListener("click", (event) => {
+        event.target.nextElementSibling.classList.toggle("show");
+      });
+
     dest.appendChild(clone);
   }
 
@@ -27,6 +39,15 @@ window.addEventListener("DOMContentLoaded", () => {
     .querySelector("#add-preference")
     .addEventListener("click", () => addPreference());
 });
+
+const deleteClick = () => {
+  console.log("click delete");
+  document.querySelector("#delete-modal").classList.remove("hidden");
+};
+
+const closeModal = () => {
+  document.querySelector("#delete-modal").classList.add("hidden");
+};
 
 const startEditing = (event) => {
   // Change to correct text on button by 'saved' class and toggle class

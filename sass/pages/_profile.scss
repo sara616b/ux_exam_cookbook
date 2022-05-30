@@ -125,6 +125,71 @@ $border-color: lighten(color.$medium, 45%);
         background-color: color.$bg;
         padding: spacing.$medium;
         border-radius: border.$medium_radius;
+        &:not(.my-recipes) {
+          .card {
+            .sub-nav-container {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .card {
+      // Bookmark icon
+      .sub-nav-container {
+        width: auto;
+        position: absolute;
+        top: -0.75rem;
+        right: -0.75rem;
+        .icon {
+          background-color: color.$bg;
+        }
+
+        > * {
+          box-shadow: shadow.$main;
+        }
+      }
+      .has-sub-navigation {
+        // display dropdown on hover
+        &:hover {
+          cursor: pointer;
+          & + #sub-navigation,
+          & + .sub-navigation {
+            visibility: visible;
+          }
+        }
+        &.show .sub-navigation {
+          color: red !important;
+        }
+      }
+      .sub-navigation {
+        z-index: 3;
+        display: block !important;
+        visibility: hidden;
+        top: 80%;
+        background-color: color.$bg;
+        position: absolute;
+        width: auto;
+        margin: 0;
+        transform: translateX(-50%);
+        &:hover,
+        &.show {
+          visibility: visible;
+        }
+        li {
+          padding: spacing.$small !important;
+          border-radius: border.$rounded_radius;
+          &:hover {
+            cursor: pointer;
+            visibility: visible;
+            background-color: color.$primary;
+            color: color.$bg;
+            opacity: 1;
+            a {
+              color: color.$bg;
+            }
+          }
+        }
       }
     }
   }
