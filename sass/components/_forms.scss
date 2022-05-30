@@ -37,6 +37,15 @@ form {
         padding-bottom: 1rem;
     }
 
+    .recover-password {
+        font-size: 0.9rem;
+        color: color.$medium;
+        margin-top: spacing.$small;
+        a {
+            color: color.$primary;
+        }
+    }
+
     .center-button {
         margin-top: 2.5rem;
         display: flex;
