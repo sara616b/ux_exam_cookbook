@@ -2,7 +2,6 @@ window.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#delete-recipe-button")
     .addEventListener("click", () => deleteClick());
-  document.querySelector("");
 });
 
 const deleteClick = () => {
