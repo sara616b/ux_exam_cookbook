@@ -164,7 +164,7 @@
             </fieldset>
             </form>
         </aside>
-        <section>
+        <section class="main-grid">
             <header>
                 <h1>Recipes</h1>
                 <select></select>
@@ -173,26 +173,34 @@
         </section>
     </main>
     <template id="recipe">
-        <article class="card">
-          <a href="#">
-            <img src="image/paella.png" alt="paella" />
-            <button class="icon-primary">
-                <div class="bookmark"></div>
-            </button>
+      <article class="card">
+        <a href="/recipe.html">
+          <img src="./image/paella.png" alt="paella" />
+        </a>
+        <form>
+          <button class="icon-primary">
+            <span class="bookmark"></span>
+          </button>
+        </form>
+        <div>
+          <header>
+            <h3>Lorem Ipsum</h3>
+            <address class="author">
+              <a rel="author" href="/profile.html">By: John Doe</a>
+            </address>
+          </header>
+          <figure>
             <div>
-              <header>
-                <h3>Lorem Ipsum</h3>
-                <address class="author">By: John Doe</address>
-              </header>
-              <div class="rating">
-                <button class="icon-primary-inverted">
-                    <div class="star"></div>
-                </button>
-                <div>4.9</div>
-              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                <path
+                  d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                />
+              </svg>
             </div>
-          </a>
-        </article>
+            <figcaption>4.9</figcaption>
+          </figure>
+        </div>
+      </article>
 
     </template>
     <template id="include-temp">
