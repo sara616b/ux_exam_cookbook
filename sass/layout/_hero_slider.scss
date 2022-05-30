@@ -20,10 +20,11 @@
 
     a {
         width: 100%;
-    }
-
-    article {
-        position: relative;
+    
+        div,
+        article {
+            position: relative;
+        }
     }
 
     img {
@@ -80,6 +81,7 @@
     }
 
     .dot {
+        display: block;
         width: 0.55rem;
         height: 0.55rem;
         border: 1px solid color.$dark;
