@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes | CookBook</title>
-    <link rel="stylesheet" href="./css/main.css" />
-    <script src="./js/navigation.js" defer></script>
-    <script src="./js/filtering.js" defer></script>
-    <script src="./js/checkLogIn.js" defer></script>
-    <script src="./js/recipes.js" defer></script>
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="js/navigation.js" defer></script>
+    <script src="js/filtering.js" defer></script>
+    <script src="js/checkLogIn.js" defer></script>
+    <script src="js/recipes.js" defer></script>
   </head>
   <body data-logged-in="true">
     <header class="nav-container">
       <nav>
-        <a href="./index.html">
-          <img src="./image/logo.svg" alt="logo" />
+        <a href="index.html">
+          <img src="image/logo.svg" alt="logo" />
         </a>
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
@@ -23,10 +23,7 @@
           <ul class="center">
             <li>
               <form class="search-form">
-                <input
-                  type="search"
-                  placeholder="Recipe, ingredient, cuisine"
-                />
+                <input type="search" placeholder="Recipe, ingredient, cuisine" />
 
                 <button class="icon">
                   <span class="search"></span>
@@ -34,56 +31,26 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="./recipes.html" class="text has-sub-navigation">
-                Recipes
-              </a>
+              <a href="recipes.html" class="text has-sub-navigation"> Recipes </a>
               <ul id="sub-navigation" class="closed">
-                <li class="text"><a href="./recipes.html">Breakfast</a></li>
-                <li class="text"><a href="./recipes.html">Lunch</a></li>
-                <li class="text"><a href="./recipes.html">Dinner</a></li>
-                <li class="text"><a href="./recipes.html">Dessert</a></li>
-                <li class="text"><a href="./recipes.html">Snacks</a></li>
+                <li class="text"><a href="recipes.html">Breakfast</a></li>
+                <li class="text"><a href="recipes.html">Lunch</a></li>
+                <li class="text"><a href="recipes.html">Dinner</a></li>
+                <li class="text"><a href="recipes.html">Dessert</a></li>
+                <li class="text"><a href="recipes.html">Snacks</a></li>
               </ul>
             </li>
           </ul>
           <div class="buttons">
-            <button
-              id="login"
-              data-toggles-login="true"
-              data-show-logged-in="false"
-              class="button-primary-outlined"
-            >
-              Sign in
-            </button>
-            <button data-show-logged-in="false" class="button-secondary">
-              Sign up
-            </button>
-            <a
-              href="./new-recipe.html"
-              data-show-logged-in="true"
-              class="button-secondary hidden"
-            >
-              Create recipe
-            </a>
-            <div
-              data-show-logged-in="true"
-              class="hidden sub-nav-container profile-sub-nav"
-            >
-              <a
-                data-show-logged-in="true"
-                href="./profile.html"
-                class="text has-sub-navigation icon hidden"
-                id="profile-icon"
-                data-toggles-login="true"
-              >
+            <button id="login" data-toggles-login="true" data-show-logged-in="false" class="button-primary-outlined">Sign in</button>
+            <button data-show-logged-in="false" class="button-secondary">Sign up</button>
+            <a href="new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
+            <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
+              <a data-show-logged-in="true" href="profile.html" class="text has-sub-navigation icon hidden" id="profile-icon" data-toggles-login="true">
                 <span class="account"></span>
               </a>
-              <ul
-                data-show-logged-in="true"
-                id="sub-navigation-2"
-                class="closed sub-navigation"
-              >
-                <li class="text"><a href="./settings.html">Settings</a></li>
+              <ul data-show-logged-in="true" id="sub-navigation-2" class="closed sub-navigation">
+                <li class="text"><a href="settings.html">Settings</a></li>
                 <li class="text">
                   <a data-toggles-login="true">Log out</a>
                 </li>
@@ -94,22 +61,13 @@
       </nav>
     </header>
     <main id="recipes">
-      <button
-        id="recipes-filter-button"
-        class="icon-secondary"
-        data-toggle="collapse"
-        data-target="#recipes-filter"
-      >
+      <button id="recipes-filter-button" class="icon-secondary" data-toggle="collapse" data-target="#recipes-filter">
         <span class="filter"></span>
       </button>
       <aside id="recipes-filter" class="collapse">
         <header>
           <h3>Filters</h3>
-          <button
-            class="icon"
-            data-toggle="collapse"
-            data-target="#recipes-filter"
-          >
+          <button class="icon" data-toggle="collapse" data-target="#recipes-filter">
             <span class="close"></span>
           </button>
         </header>
@@ -159,11 +117,7 @@
           <fieldset>
             <legend>Include</legend>
             <div class="input-container">
-              <input
-                id="include-ingredient"
-                type="text"
-                placeholder="Type ingredient..."
-              />
+              <input id="include-ingredient" type="text" placeholder="Type ingredient..." />
               <button
                 class="icon-primary"
                 data-toggle="ingredient-filter"
@@ -180,11 +134,7 @@
           <fieldset>
             <legend>Exclude</legend>
             <div class="input-container">
-              <input
-                id="exclude-ingredient"
-                type="text"
-                placeholder="Type ingredient..."
-              />
+              <input id="exclude-ingredient" type="text" placeholder="Type ingredient..." />
               <button
                 class="icon-primary"
                 data-toggle="ingredient-filter"
@@ -257,7 +207,7 @@
             <li>Twitter</li>
           </ul>
         </div>
-        <img src="./image/logo.svg" alt="Cook Book logo" />
+        <img src="image/logo.svg" alt="Cook Book logo" />
       </div>
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
@@ -265,7 +215,7 @@
     <template id="recipe">
       <article class="card">
         <a href="/recipe.html">
-          <img src="./image/paella.jpg" alt="paella" />
+          <img src="image/paella.jpg" alt="paella" />
         </a>
         <form onsubmit="return false;">
           <button class="icon-primary">
@@ -282,9 +232,7 @@
           <figure>
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                <path
-                  d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
-                />
+                <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
               </svg>
             </div>
             <figcaption>4.9</figcaption>
@@ -293,21 +241,13 @@
       </article>
     </template>
     <template id="include-temp">
-      <button
-        class="button-secondary-outlined"
-        data-target="#include-container"
-        data-value=""
-      >
+      <button class="button-secondary-outlined" data-target="#include-container" data-value="">
         <span class="value"></span>
         <span class="close"></span>
       </button>
     </template>
     <template id="exclude-temp">
-      <button
-        class="button-primary-outlined"
-        data-target="#exclude-container"
-        data-value=""
-      >
+      <button class="button-primary-outlined" data-target="#exclude-container" data-value="">
         <span class="value"></span>
         <span class="close"></span>
       </button>

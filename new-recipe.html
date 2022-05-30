@@ -4,22 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/main.css" />
     <script src="js/forms.js" defer></script>
     <script src="js/recipe.js" defer></script>
-    <script src="./js/checkLogIn.js" defer></script>
-    <script src="./js/navigation.js" defer></script>
+    <script src="js/checkLogIn.js" defer></script>
+    <script src="js/navigation.js" defer></script>
     <title>New Recipe | CookBook</title>
   </head>
   <body data-logged-in="true">
     <header class="nav-container">
       <nav>
-        <a href="./index.html">
-          <img src="./image/logo.svg" alt="logo" />
+        <a href="index.html">
+          <img src="image/logo.svg" alt="logo" />
         </a>
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
@@ -28,10 +25,7 @@
           <ul class="center">
             <li>
               <form class="search-form">
-                <input
-                  type="search"
-                  placeholder="Recipe, ingredient, cuisine"
-                />
+                <input type="search" placeholder="Recipe, ingredient, cuisine" />
 
                 <button class="icon">
                   <span class="search"></span>
@@ -39,56 +33,26 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="./recipes.html" class="text has-sub-navigation">
-                Recipes
-              </a>
+              <a href="recipes.html" class="text has-sub-navigation"> Recipes </a>
               <ul id="sub-navigation" class="closed">
-                <li class="text"><a href="./recipes.html">Breakfast</a></li>
-                <li class="text"><a href="./recipes.html">Lunch</a></li>
-                <li class="text"><a href="./recipes.html">Dinner</a></li>
-                <li class="text"><a href="./recipes.html">Dessert</a></li>
-                <li class="text"><a href="./recipes.html">Snacks</a></li>
+                <li class="text"><a href="recipes.html">Breakfast</a></li>
+                <li class="text"><a href="recipes.html">Lunch</a></li>
+                <li class="text"><a href="recipes.html">Dinner</a></li>
+                <li class="text"><a href="recipes.html">Dessert</a></li>
+                <li class="text"><a href="recipes.html">Snacks</a></li>
               </ul>
             </li>
           </ul>
           <div class="buttons">
-            <button
-              id="login"
-              data-toggles-login="true"
-              data-show-logged-in="false"
-              class="button-primary-outlined"
-            >
-              Sign in
-            </button>
-            <button data-show-logged-in="false" class="button-secondary">
-              Sign up
-            </button>
-            <a
-              href="./new-recipe.html"
-              data-show-logged-in="true"
-              class="button-secondary hidden"
-            >
-              Create recipe
-            </a>
-            <div
-              data-show-logged-in="true"
-              class="hidden sub-nav-container profile-sub-nav"
-            >
-              <a
-                data-show-logged-in="true"
-                href="./profile.html"
-                class="text has-sub-navigation icon hidden"
-                id="profile-icon"
-                data-toggles-login="true"
-              >
+            <button id="login" data-toggles-login="true" data-show-logged-in="false" class="button-primary-outlined">Sign in</button>
+            <button data-show-logged-in="false" class="button-secondary">Sign up</button>
+            <a href="new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
+            <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
+              <a data-show-logged-in="true" href="profile.html" class="text has-sub-navigation icon hidden" id="profile-icon" data-toggles-login="true">
                 <span class="account"></span>
               </a>
-              <ul
-                data-show-logged-in="true"
-                id="sub-navigation-2"
-                class="closed sub-navigation"
-              >
-                <li class="text"><a href="./settings.html">Settings</a></li>
+              <ul data-show-logged-in="true" id="sub-navigation-2" class="closed sub-navigation">
+                <li class="text"><a href="settings.html">Settings</a></li>
                 <li class="text">
                   <a data-toggles-login="true">Log out</a>
                 </li>
@@ -119,13 +83,7 @@
               <p class="placeholder">Title</p>
             </div>
             <div class="input-container">
-              <textarea
-                rows="7"
-                minlength="10"
-                placeholder=" "
-                maxlength="250"
-                required
-              ></textarea>
+              <textarea rows="7" minlength="10" placeholder=" " maxlength="250" required></textarea>
               <p class="error-message">Please enter a valid text</p>
               <p class="counter"><span>0</span>/250</p>
               <p class="placeholder">Introduction</p>
@@ -139,28 +97,14 @@
             <div class="input-container">
               <label for="cooking-time">Cooking time</label>
               <div class="form-flex">
-                <input
-                  id="cooking-time"
-                  name="cooking-time"
-                  type="number"
-                  min="1"
-                  max="400"
-                  value="30"
-                />
+                <input id="cooking-time" name="cooking-time" type="number" min="1" max="400" value="30" />
                 <p>minutes</p>
               </div>
             </div>
             <div class="input-container">
               <label for="serves">Serves</label>
               <div class="form-flex">
-                <input
-                  id="serves"
-                  name="serves"
-                  type="number"
-                  min="1"
-                  max="400"
-                  value="2"
-                />
+                <input id="serves" name="serves" type="number" min="1" max="400" value="2" />
                 <p>people</p>
               </div>
             </div>
@@ -169,28 +113,11 @@
             <div class="input-container">
               <label>Recipe components</label>
               <div class="form-flex">
-                <button
-                  class="icon-primary"
-                  data-id="increment"
-                  data-action="-"
-                  disabled
-                >
+                <button class="icon-primary" data-id="increment" data-action="-" disabled>
                   <span class="remove"></span>
                 </button>
-                <input
-                  data-id="amount"
-                  disabled
-                  type="number"
-                  min="1"
-                  max="10"
-                  value="1"
-                  required
-                />
-                <button
-                  class="icon-primary"
-                  data-id="increment"
-                  data-action="+"
-                >
+                <input data-id="amount" disabled type="number" min="1" max="10" value="1" required />
+                <button class="icon-primary" data-id="increment" data-action="+">
                   <span class="add"></span>
                 </button>
               </div>
@@ -277,13 +204,7 @@
                 <fieldset>
                   <div class="instruction-input">
                     <div class="input-container">
-                      <textarea
-                        rows="4"
-                        minlength="5"
-                        placeholder=" "
-                        maxlength="250"
-                        required
-                      ></textarea>
+                      <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
                       <p class="error-message">Please enter an instruction</p>
                       <p class="counter"><span>0</span>/250</p>
                       <p class="placeholder">Instructions text here</p>
@@ -304,13 +225,7 @@
                 <template data-id="instruction">
                   <div class="instruction-input">
                     <div class="input-container">
-                      <textarea
-                        rows="4"
-                        minlength="5"
-                        placeholder=" "
-                        maxlength="250"
-                        required
-                      ></textarea>
+                      <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
                       <p class="error-message">Please enter an instruction</p>
                       <p class="counter"><span>0</span>/250</p>
                       <p class="placeholder">Instructions text here</p>
@@ -410,13 +325,7 @@
                 <fieldset data-id="instructions">
                   <div class="instruction-input">
                     <div class="input-container">
-                      <textarea
-                        rows="4"
-                        minlength="5"
-                        placeholder=" "
-                        maxlength="250"
-                        required
-                      ></textarea>
+                      <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
                       <p class="error-message">Please enter an instruction</p>
                       <p class="counter"><span>0</span>/250</p>
                       <p class="placeholder">Instructions text here</p>
@@ -439,13 +348,7 @@
                 <template data-id="instruction">
                   <div class="instruction-input">
                     <div class="input-container">
-                      <textarea
-                        rows="4"
-                        minlength="5"
-                        placeholder=" "
-                        maxlength="250"
-                        required
-                      ></textarea>
+                      <textarea rows="4" minlength="5" placeholder=" " maxlength="250" required></textarea>
                       <p class="error-message">Please enter an instruction</p>
                       <p class="counter"><span>0</span>/250</p>
                       <p class="placeholder">Instructions text here</p>
@@ -493,7 +396,7 @@
             <li>Twitter</li>
           </ul>
         </div>
-        <img src="./image/logo.svg" alt="Cook Book logo" />
+        <img src="image/logo.svg" alt="Cook Book logo" />
       </div>
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
