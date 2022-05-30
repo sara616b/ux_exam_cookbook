@@ -156,10 +156,19 @@ main.new-recipe {
       span {
         box-shadow: none;
 
+        &.add {
+          width: 1.8rem;
+          height: 1.8rem;
+          display: inline-block;
+          background-color: color.$secondary_dark;
+        }
+
         &:nth-child(2) {
           display: none;
         }
       }
+
+
 
       @include breakpoint.small {
         padding: 0.3rem 1rem;
