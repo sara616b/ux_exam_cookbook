@@ -1,0 +1,35 @@
+@use "../abstracts/breakpoints" as breakpoint;
+
+
+.form-buttons {
+  
+    a {
+        text-align: center;
+      width: 75%;
+      margin: auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+  
+      @include breakpoint.small {
+        width: auto;
+        margin: 0;
+        padding: 0.5rem 1rem;
+  
+        &:first-child {
+          grid-column: 2;
+        }
+        &:last-child {
+          grid-column: 1;
+        }
+      }
+  
+      span:last-child {
+        display: none;
+  
+        @include breakpoint.small {
+          display: initial;
+        }
+      }
+    }
+  }
+  
