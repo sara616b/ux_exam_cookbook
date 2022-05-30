@@ -47,7 +47,8 @@
       display: none;
     }
 
-    .center {
+    .center,
+    .sub-nav-container {
       // contains search field and links
       display: flex;
       flex-direction: column;
@@ -159,7 +160,7 @@
         flex-direction: row;
         align-items: center;
         flex-wrap: wrap;
-
+        padding: 0;
         li {
           // move search field after links
           &:first-of-type {
@@ -203,6 +204,7 @@
     #sub-navigation,
     .sub-navigation {
       z-index: 3;
+      top: spacing.$navigation-height - 1rem;
       display: block;
       visibility: hidden;
       position: absolute;
@@ -218,7 +220,6 @@
       }
     }
     .sub-navigation {
-      top: spacing.$navigation-height - 1rem;
       right: 0;
       button {
         padding: 0;
