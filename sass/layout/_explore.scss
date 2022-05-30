@@ -18,7 +18,7 @@
     grid-template-columns: repeat(5, 82%);
     width: 100%;
     overflow-x: scroll;
-    gap: 2rem;
+    gap: 1.4rem;
     padding: 1rem;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;  //IE and Edge
@@ -52,7 +52,6 @@
         "biggest biggest small1 small2"
         "ad ad small1 small2"
         "ad ad small1 small2";
-        gap: 2rem;
 
         > * {
             &:nth-child(1){

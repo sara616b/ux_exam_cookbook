@@ -12,6 +12,8 @@
     margin: auto;
  
     .slider {
+        transform: translateX(var(--slide-x));
+        transition: transform 1.2s cubic-bezier(.46,0,.39,1);
         display: flex;
         width: 300%;
     }

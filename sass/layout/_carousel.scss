@@ -41,7 +41,7 @@
           }
           @include breakpoint.large {
             overflow: hidden;
-            padding: spacing.$medium spacing.$small;
+            padding: spacing.$medium 0.5rem;
             transform: translateX(--scroll-value);
 
         }
@@ -51,7 +51,7 @@
     .slider {
         display: grid;
         grid-template-columns: repeat(8, 82%);
-        gap: spacing.$large;
+        gap: 1.4rem;
         width: 100%; // 100% (cards) * 8 - a gap size
         @include breakpoint.small {
             grid-template-columns: repeat(8, 39%);
@@ -60,10 +60,10 @@
             grid-template-columns: repeat(8, 27%);
         }
         @include breakpoint.large {
-            grid-template-columns: repeat(8, calc(25% - 1.84rem));
+            grid-template-columns: repeat(8, calc(25% - 1.2rem));
             transition: transform 1.2s cubic-bezier(.46,0,.39,1);
             &.to-end {
-                transform: translateX(-100%);
+                transform: translateX(calc(-100% - 1rem));
             }
         }
     }
