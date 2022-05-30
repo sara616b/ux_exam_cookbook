@@ -30,10 +30,10 @@
         background-size: cover;
         background-repeat: no-repeat;
         &:nth-child(1) {
-            background-image: url("../../icons/arrow_back.svg");
+            background-image: url("../icons/arrow_back.svg");
         }
         &:nth-child(3) {
-            background-image: url("../../icons/arrow_forward.svg");
+            background-image: url("../icons/arrow_forward.svg");
         }
         @include breakpoint.large {
             display: block;
