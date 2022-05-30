@@ -42,12 +42,14 @@
 
   #shadows {
     div {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-wrap: wrap;
       gap: spacing.$medium;
+      flex-direction: row;
 
       div {
         padding: spacing.$medium;
+        max-width: 200px;
       }
 
       .main-shadow {
