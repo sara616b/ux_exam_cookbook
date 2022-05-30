@@ -8,7 +8,8 @@
 #recipes {
     position: relative;
     max-width: breakpoint.$max-width;
-    margin: initial auto;
+    margin-left: auto;
+    margin-right: auto;
 
     section {
         padding: spacing.$small;
@@ -33,6 +34,13 @@
         .card .icon-primary {
             grid-area: image;
             margin-left: auto;
+        }
+    }
+
+    .main-grid {
+        padding-left: 0;
+        @include breakpoint.large {
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 

@@ -26,5 +26,9 @@
     @include breakpoint.large {
         grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
+    .advertisement {
+        min-height: 100px;
+    }
 }
 
