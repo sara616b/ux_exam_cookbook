@@ -9,39 +9,43 @@
 //       data-show-logged-in="true"
 ////////////////////
 
-window.addEventListener("DOMContentLoaded", ()=> {
-    setLayoutBasedOnLogInStatus();
-
-    document.querySelector("#login").addEventListener("click", ()=>toggleLogInStatus())
-    document.querySelector("#profile-icon").addEventListener("click", ()=>toggleLogInStatus())
+window.addEventListener("DOMContentLoaded", () => {
+  setLayoutBasedOnLogInStatus();
+  const buttonsToToggleLogin = document.querySelectorAll(
+    "[data-toggles-login='true']"
+  );
+  buttonsToToggleLogin.forEach((button) => {
+    button.addEventListener("click", () => toggleLogInStatus());
+  });
 });
 
 const setLayoutBasedOnLogInStatus = () => {
-    const isLoggedIn = document.body.dataset.loggedIn;
-    const toShow = document.querySelectorAll("[data-show-logged-in='true']");
-    const toHide = document.querySelectorAll("[data-show-logged-in='false']");
+  const isLoggedIn = document.body.dataset.loggedIn;
+  const toShow = document.querySelectorAll("[data-show-logged-in='true']");
+  const toHide = document.querySelectorAll("[data-show-logged-in='false']");
 
-    if (toShow) {
-        toShow.forEach((element) => {
-            if (isLoggedIn == 'true') {
-                element.classList.remove('hidden')
-            } else {
-                element.classList.add('hidden')
-            }
-        })
-    }
-    if (toHide) {
-        toHide.forEach((element) => {
-            if (isLoggedIn == 'false') {
-                element.classList.remove('hidden')
-            } else {
-                element.classList.add('hidden')
-            }
-        })
-    }
-}
+  if (toShow) {
+    toShow.forEach((element) => {
+      if (isLoggedIn == "true") {
+        element.classList.remove("hidden");
+      } else {
+        element.classList.add("hidden");
+      }
+    });
+  }
+  if (toHide) {
+    toHide.forEach((element) => {
+      if (isLoggedIn == "false") {
+        element.classList.remove("hidden");
+      } else {
+        element.classList.add("hidden");
+      }
+    });
+  }
+};
 
 const toggleLogInStatus = () => {
-    document.body.dataset.loggedIn = document.body.dataset.loggedIn == 'true' ? 'false' : 'true';
-    setLayoutBasedOnLogInStatus();
-}
+  document.body.dataset.loggedIn =
+    document.body.dataset.loggedIn == "true" ? "false" : "true";
+  setLayoutBasedOnLogInStatus();
+};
