@@ -164,14 +164,52 @@
             </fieldset>
             </form>
         </aside>
+        
         <section class="main-grid">
+          <nav class="breadcrumbs">
+            <ul>
+              <li class="small-text">
+                <a href="/">Cookbook</a>
+              </li>
+              <li class="small-text">
+                <a href="/recipes.html">Recipes</a>
+              </li>
+            </ul>
+          </nav>
             <header>
                 <h1>Recipes</h1>
-                <select></select>
+                <select>
+                  <option disabled selected>Sort recipes...</option>
+                  <option>Date (New to old)</option>
+                  <option>Date (Old to new)</option>
+                  <option>Rating</option>
+                </select>
             </header>
             
         </section>
     </main>
+    <footer>
+      <div>
+        <div class="flexer">
+          <ul>
+            <li>Practical:</li>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>Privacy policy</li>
+            <li>Cookie settings</li>
+          </ul>
+          <ul>
+            <li>Follow us:</li>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+          </ul>
+        </div>
+        <img src="./image/logo.svg" alt="Cook Book logo" />
+      </div>
+      <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
+    </footer>
+
     <template id="recipe">
       <article class="card">
         <a href="/recipe.html">

@@ -10,9 +10,9 @@
   position: fixed;
   top: spacing.$navigation-height;
   // left: -100%;
-  background-color: color.$light;
+  background-color: color.$bg;
   box-shadow: shadow.$right;
-  z-index: 5;
+  z-index: 11;
 
   &.collapse {
     display: none;
@@ -112,6 +112,7 @@
   position: fixed;
   top: spacing.$navigation-height + spacing.$small;
   left: spacing.$small;
+  z-index: 10;
 }
 
 button[data-toggle="collapse"][data-target="#recipes-filter"] {
