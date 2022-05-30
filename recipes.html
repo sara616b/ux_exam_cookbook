@@ -1,214 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes | CookBook</title>
     <link rel="stylesheet" href="./css/main.css" />
     <script src="./js/navigation.js" defer></script>
     <script src="./js/filtering.js" defer></script>
     <script src="./js/checkLogIn.js" defer></script>
     <script src="./js/recipes.js" defer></script>
-</head>
-<body data-logged-in="true">
-  <header class="nav-container">
-    <nav>
-      <a href="/">
-        <img src="./image/logo.svg" alt="logo" />
-      </a>
-      <button id="navigation-control" data-to-open="navigation" class="icon">
-        <span class="menu"></span>
-      </button>
-      <div id="navigation" class="closed">
-        <ul class="center">
-          <li>
-            <form class="search-form">
-              <input
-                type="search"
-                placeholder="Recipe, ingredient, cuisine"
-              />
+  </head>
+  <body data-logged-in="true">
+    <header class="nav-container">
+      <nav>
+        <a href="/">
+          <img src="./image/logo.svg" alt="logo" />
+        </a>
+        <button id="navigation-control" data-to-open="navigation" class="icon">
+          <span class="menu"></span>
+        </button>
+        <div id="navigation" class="closed">
+          <ul class="center">
+            <li>
+              <form class="search-form">
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
 
-              <button class="icon">
-                <span class="search"></span>
-              </button>
-            </form>
-          </li>
-          <li class="sub-nav-container">
-            <a href="/recipes.html" class="text has-sub-navigation">
-              Recipes
-            </a>
-            <ul id="sub-navigation" class="closed">
-              <li class="text"><a href="/recipes.html">Breakfast</a></li>
-              <li class="text"><a href="/recipes.html">Lunch</a></li>
-              <li class="text"><a href="/recipes.html">Dinner</a></li>
-              <li class="text"><a href="/recipes.html">Dessert</a></li>
-              <li class="text"><a href="/recipes.html">Snacks</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="buttons">
-          <button
-            id="login"
-            data-toggles-login="true"
-            data-show-logged-in="false"
-            class="button-primary-outlined"
-          >
-            Sign in
-          </button>
-          <button data-show-logged-in="false" class="button-secondary">
-            Sign up
-          </button>
-          <a
-            href="/new-recipe.html"
-            data-show-logged-in="true"
-            class="button-secondary hidden"
-          >
-            Create recipe
-          </a>
-          <div
-            data-show-logged-in="true"
-            class="hidden sub-nav-container profile-sub-nav"
-          >
-            <a
-              data-show-logged-in="true"
-              href="/profile.html"
-              class="text has-sub-navigation icon hidden"
-              id="profile-icon"
+                <button class="icon">
+                  <span class="search"></span>
+                </button>
+              </form>
+            </li>
+            <li class="sub-nav-container">
+              <a href="/recipes.html" class="text has-sub-navigation">
+                Recipes
+              </a>
+              <ul id="sub-navigation" class="closed">
+                <li class="text"><a href="/recipes.html">Breakfast</a></li>
+                <li class="text"><a href="/recipes.html">Lunch</a></li>
+                <li class="text"><a href="/recipes.html">Dinner</a></li>
+                <li class="text"><a href="/recipes.html">Dessert</a></li>
+                <li class="text"><a href="/recipes.html">Snacks</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="buttons">
+            <button
+              id="login"
               data-toggles-login="true"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
             >
-              <span class="account"></span>
-            </a>
-            <ul
+              Sign in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <a
+              href="/new-recipe.html"
               data-show-logged-in="true"
-              id="sub-navigation-2"
-              class="closed sub-navigation"
+              class="button-secondary hidden"
             >
-              <li class="text"><a href="/settings.html">Settings</a></li>
-              <li class="text">
-                <a data-toggles-login="true">Log out</a>
-              </li>
-            </ul>
+              Create recipe
+            </a>
+            <div
+              data-show-logged-in="true"
+              class="hidden sub-nav-container profile-sub-nav"
+            >
+              <a
+                data-show-logged-in="true"
+                href="/profile.html"
+                class="text has-sub-navigation icon hidden"
+                id="profile-icon"
+                data-toggles-login="true"
+              >
+                <span class="account"></span>
+              </a>
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
+                <li class="text"><a href="/settings.html">Settings</a></li>
+                <li class="text">
+                  <a data-toggles-login="true">Log out</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
     <main id="recipes">
-        <button id="recipes-filter-button" class="icon-secondary" data-toggle="collapse" data-target="#recipes-filter">
-            <span class="filter"></span>
-        </button>
-        <aside id="recipes-filter" class="collapse">
-            <header>
-                <h3>Filters</h3>
-                <button class="icon" data-toggle="collapse" data-target="#recipes-filter">
-                    <span class="close"></span>
-                </button>
-            </header>
-            <form onsubmit="return false;">
-                <fieldset>
-                    <div class="input-container">
-                        <label for="cuisine-selector">Select cuisine</label>
-                        <select id="cuisine-selector">
-                            <option disabled selected>Cuisines</option>
-                            <optgroup label="Asian">
-                                <option value="asian">All Asian</option>
-                                <option value="vietnamese">Vietnamese</option>
-                                <option value="thai">Thai</option>
-                                <option value="chinese">Chinese</option>
-                            </optgroup>
-                            <optgroup label="European">
-                                <option value="european">All European</option>
-                                <option value="french">French</option>
-                                <option value="italian">italian</option>
-                                <option value="spanish">Spanish</option>
-                            </optgroup>
-                        </select>
-                    </div>    
-                    <div class="input-container">
-                        <label for="dietary-selector">Select dietary constrains</label>
-                        <select id="dietary-selector">
-                            <option disabled selected>Dietary constrains</option>
-                            <option value="vegan">Vegan</option>
-                            <option value="vegetarian">Vegetarian</option>
-                            <option value="lactose-free">Lactose free</option>
-                            <option value="gluten-free">Gluten free</option>
-                        </select>
-                    </div>
-                    <div class="input-container">
-                        <label for="dish-selector">Select dish type</label>
-                        <select id="dish-selector">
-                            <option disabled selected>Dish types</option>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="brunch">Brunch</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
-                            <option value="desert">Desert</option>
-                            <option value="snacks">Snacks</option>
-                        </select>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Include</legend>
-                    <div class="input-container">
-                        <input id="include-ingredient" type="text" placeholder="Type ingredient...">
-                        <button class="icon-primary" data-toggle="ingredient-filter" data-target="#include-container" data-counter-target="#exclude-container" data-input="#include-ingredient" data-temp="#include-temp">
-                            <span class="add"></span>
-                        </button>
-                    </div>
-                    <div id="include-container"></div>
-                </fieldset>
-                <fieldset>
-                  <legend>Exclude</legend>
-                  <div class="input-container">
-                    <input id="exclude-ingredient" type="text" placeholder="Type ingredient...">
-                    <button class="icon-primary" data-toggle="ingredient-filter" data-target="#exclude-container" data-counter-target="#include-container" data-input="#exclude-ingredient" data-temp="#exclude-temp">
-                        <span class="add"></span>
-                    </button>
-                  </div>
-                  <div id="exclude-container"></div>
-                </fieldset>
-            </form>
-        </aside>
-        
-        <section>
-            <header>
-              <nav class="breadcrumbs">
-                <ul>
-                  <li class="small-text">
-                    <a href="/">Cookbook</a>
-                  </li>
-                  <li class="small-text">
-                    <a href="/recipes.html">Recipes</a>
-                  </li>
-                </ul>
-              </nav>
-              <div>
-                <h1>Recipes</h1>
-                <select>
-                  <option disabled selected>Sort recipes...</option>
-                  <option>Date (New to old)</option>
-                  <option>Date (Old to new)</option>
-                  <option>Rating</option>
-                </select>
-
-              </div>
-            </header>
-            
-            <div class="main-grid"></div>
-        </section>
-        <section class="modal">
-          <div class="">
-            <header class="">
-              <h3>Recipe added to favorites!</h3>
-            </header>
-            <div class="">
-              <button class="icon-secondary-inverted">
-                <span class="done"></span>
+      <button
+        id="recipes-filter-button"
+        class="icon-secondary"
+        data-toggle="collapse"
+        data-target="#recipes-filter"
+      >
+        <span class="filter"></span>
+      </button>
+      <aside id="recipes-filter" class="collapse">
+        <header>
+          <h3>Filters</h3>
+          <button
+            class="icon"
+            data-toggle="collapse"
+            data-target="#recipes-filter"
+          >
+            <span class="close"></span>
+          </button>
+        </header>
+        <form onsubmit="return false;">
+          <fieldset>
+            <div class="input-container">
+              <label for="cuisine-selector">Select cuisine</label>
+              <select id="cuisine-selector">
+                <option disabled selected>Cuisines</option>
+                <optgroup label="Asian">
+                  <option value="asian">All Asian</option>
+                  <option value="vietnamese">Vietnamese</option>
+                  <option value="thai">Thai</option>
+                  <option value="chinese">Chinese</option>
+                </optgroup>
+                <optgroup label="European">
+                  <option value="european">All European</option>
+                  <option value="french">French</option>
+                  <option value="italian">italian</option>
+                  <option value="spanish">Spanish</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="input-container">
+              <label for="dietary-selector">Select dietary constrains</label>
+              <select id="dietary-selector">
+                <option disabled selected>Dietary constrains</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="lactose-free">Lactose free</option>
+                <option value="gluten-free">Gluten free</option>
+              </select>
+            </div>
+            <div class="input-container">
+              <label for="dish-selector">Select dish type</label>
+              <select id="dish-selector">
+                <option disabled selected>Dish types</option>
+                <option value="breakfast">Breakfast</option>
+                <option value="brunch">Brunch</option>
+                <option value="lunch">Lunch</option>
+                <option value="dinner">Dinner</option>
+                <option value="desert">Desert</option>
+                <option value="snacks">Snacks</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Include</legend>
+            <div class="input-container">
+              <input
+                id="include-ingredient"
+                type="text"
+                placeholder="Type ingredient..."
+              />
+              <button
+                class="icon-primary"
+                data-toggle="ingredient-filter"
+                data-target="#include-container"
+                data-counter-target="#exclude-container"
+                data-input="#include-ingredient"
+                data-temp="#include-temp"
+              >
+                <span class="add"></span>
               </button>
             </div>
+            <div id="include-container"></div>
+          </fieldset>
+          <fieldset>
+            <legend>Exclude</legend>
+            <div class="input-container">
+              <input
+                id="exclude-ingredient"
+                type="text"
+                placeholder="Type ingredient..."
+              />
+              <button
+                class="icon-primary"
+                data-toggle="ingredient-filter"
+                data-target="#exclude-container"
+                data-counter-target="#include-container"
+                data-input="#exclude-ingredient"
+                data-temp="#exclude-temp"
+              >
+                <span class="add"></span>
+              </button>
+            </div>
+            <div id="exclude-container"></div>
+          </fieldset>
+        </form>
+      </aside>
 
+      <section>
+        <header>
+          <nav class="breadcrumbs">
+            <ul>
+              <li class="small-text">
+                <a href="/">Cookbook</a>
+              </li>
+              <li class="small-text">
+                <a href="/recipes.html">Recipes</a>
+              </li>
+            </ul>
+          </nav>
+          <div>
+            <h1>Recipes</h1>
+            <select>
+              <option disabled selected>Sort recipes...</option>
+              <option>Date (New to old)</option>
+              <option>Date (Old to new)</option>
+              <option>Rating</option>
+              <option>Cooking time</option>
+            </select>
           </div>
-        </section>
+        </header>
+
+        <div class="main-grid"></div>
+      </section>
+      <section class="modal">
+        <div class="">
+          <header class="">
+            <h3>Recipe added to favorites!</h3>
+          </header>
+          <div class="">
+            <button class="icon-secondary-inverted">
+              <span class="done"></span>
+            </button>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
       <div>
@@ -231,8 +261,6 @@
       </div>
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
-
-    
 
     <template id="recipe">
       <article class="card">
@@ -263,19 +291,26 @@
           </figure>
         </div>
       </article>
-
     </template>
     <template id="include-temp">
-        <button class="button-secondary-outlined" data-target="#include-container" data-value="">
-            <span class="value"></span>
-            <span class="close"></span>
-        </button>
+      <button
+        class="button-secondary-outlined"
+        data-target="#include-container"
+        data-value=""
+      >
+        <span class="value"></span>
+        <span class="close"></span>
+      </button>
     </template>
     <template id="exclude-temp">
-        <button class="button-primary-outlined" data-target="#exclude-container" data-value="">
-            <span class="value"></span>
-            <span class="close"></span>
-        </button>
+      <button
+        class="button-primary-outlined"
+        data-target="#exclude-container"
+        data-value=""
+      >
+        <span class="value"></span>
+        <span class="close"></span>
+      </button>
     </template>
-</body>
+  </body>
 </html>
