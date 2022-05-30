@@ -50,6 +50,7 @@
           <li class="buttons">
             <button
               id="login"
+              data-toggles-login="true"
               data-show-logged-in="false"
               class="button-primary-outlined"
             >
@@ -74,6 +75,7 @@
                 href="/profile.html"
                 class="text has-sub-navigation icon hidden"
                 id="profile-icon"
+                data-toggles-login="true"
               >
                 <span class="account"></span>
               </a>
@@ -84,7 +86,7 @@
               >
                 <li class="text"><a href="/settings.html">Settings</a></li>
                 <li class="text">
-                  <a onclick="toggleLogInStatus()">Log out</a>
+                  <a data-toggles-login="true">Log out</a>
                 </li>
               </ul>
             </div>
@@ -147,15 +149,15 @@
     </footer>
     <aside id="delete-modal" class="hidden">
       <div class="background" onclick="closeModal()"></div>
-      <section id="content">
+      <div id="content">
         <p>Are you sure you wish to delete your account?</p>
-        <section>
+        <div>
           <button class="button-primary-outlined" onclick="deleteAccount()">
             Delete account forever
           </button>
           <button class="button-primary" onclick="closeModal()">Cancel</button>
-        </section>
-      </section>
+        </div>
+      </div>
     </aside>
   </body>
 </html>

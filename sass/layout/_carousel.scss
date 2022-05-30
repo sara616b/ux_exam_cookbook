@@ -24,9 +24,22 @@
     
     > button {
         display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &:nth-child(1) {
+            background-image: url("../../icons/arrow_back.svg");
+        }
+        &:nth-child(3) {
+            background-image: url("../../icons/arrow_forward.svg");
+        }
         @include breakpoint.large {
             display: block;
-            margin: spacing.$large;
+            margin: 1.3rem;
+            padding: spacing.$medium;
+
         }
     }
 

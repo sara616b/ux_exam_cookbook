@@ -42,6 +42,7 @@
               <a href="/recipes.html" class="text has-sub-navigation">
                 Recipes
               </a>
+
               <ul id="sub-navigation" class="closed">
                 <a href="/recipes.html"><li class="text">Breakfast</li></a>
                 <a href="/recipes.html"><li class="text">Lunch</li></a>
@@ -54,6 +55,7 @@
           <li class="buttons">
             <button
               id="login"
+              data-toggles-login="true"
               data-show-logged-in="false"
               class="button-primary-outlined"
             >
@@ -78,6 +80,7 @@
                 href="/profile.html"
                 class="text has-sub-navigation icon hidden"
                 id="profile-icon"
+                data-toggles-login="true"
               >
                 <span class="account"></span>
               </a>
@@ -88,7 +91,7 @@
               >
                 <li class="text"><a href="/settings.html">Settings</a></li>
                 <li class="text">
-                  <a onclick="toggleLogInStatus()">Log out</a>
+                  <a data-toggles-login="true">Log out</a>
                 </li>
               </ul>
             </div>
@@ -97,11 +100,17 @@
       </nav>
     </header>
     <main class="new-recipe">
-      <ul class="breadcrumbs">
-        <li><a href="#">Cookbook</a></li>
-        <li><a href="#">Add recipe</a></li>
-      </ul>
-      <h1>Add a new recipe</h1>
+      <nav class="breadcrumbs">
+        <ul>
+          <li class="small-text">
+            <a href="/">Cookbook</a>
+          </li>
+          <li class="small-text">
+            <a href="/new-recipe.html">Create recipes</a>
+          </li>
+        </ul>
+      </nav>
+      <h1>Create a new recipe</h1>
       <form action="">
         <section class="recipe-info">
           <div>
@@ -471,5 +480,27 @@
         </section>
       </form>
     </main>
+
+    <footer>
+      <div>
+        <div class="flexer">
+          <ul>
+            <li>Practical:</li>
+            <li>About us</li>
+            <li>Contact us</li>
+            <li>Privacy policy</li>
+            <li>Cookie settings</li>
+          </ul>
+          <ul>
+            <li>Follow us:</li>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twitter</li>
+          </ul>
+        </div>
+        <img src="./image/logo.svg" alt="Cook Book logo" />
+      </div>
+      <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

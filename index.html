@@ -23,7 +23,10 @@
           <div class="center">
             <li>
               <form class="search-form">
-                <input type="search" placeholder="Recipe, ingredient, cuisine" />
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
 
                 <button class="icon">
                   <div class="search"></div>
@@ -31,7 +34,9 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="/recipes.html" class="text has-sub-navigation"> Recipes </a>
+              <a href="/recipes.html" class="text has-sub-navigation">
+                Recipes
+              </a>
               <ul id="sub-navigation" class="closed">
                 <a href="/recipes.html"><li class="text">Breakfast</li></a>
                 <a href="/recipes.html"><li class="text">Lunch</li></a>
@@ -42,17 +47,45 @@
             </li>
           </div>
           <li class="buttons">
-            <button id="login" data-show-logged-in="false" class="button-primary-outlined">Log in</button>
-            <button data-show-logged-in="false" class="button-secondary">Sign up</button>
-            <a href="/new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
-            <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
-              <a data-show-logged-in="true" href="/profile.html" class="text has-sub-navigation icon hidden" id="profile-icon">
+            <button
+              id="login"
+              data-toggles-login="true"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
+            >
+              Log in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <a
+              href="/new-recipe.html"
+              data-show-logged-in="true"
+              class="button-secondary hidden"
+            >
+              Create recipe
+            </a>
+            <div
+              data-show-logged-in="true"
+              class="hidden sub-nav-container profile-sub-nav"
+            >
+              <a
+                data-show-logged-in="true"
+                href="/profile.html"
+                class="text has-sub-navigation icon hidden"
+                id="profile-icon"
+                data-toggles-login="true"
+              >
                 <span class="account"></span>
               </a>
-              <ul data-show-logged-in="true" id="sub-navigation-2" class="closed sub-navigation">
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
                 <li class="text"><a href="/settings.html">Settings</a></li>
                 <li class="text">
-                  <a onclick="toggleLogInStatus()">Log out</a>
+                  <a data-toggles-login="true">Log out</a>
                 </li>
               </ul>
             </div>
@@ -63,31 +96,31 @@
     <main>
       <section class="hero-slider">
         <div class="slider">
-          <a href="">
+          <a href="recipe.html">
             <article data-nr="1" class="current">
               <img src="./image/paella_splash.jpg" alt="Classic Paella" />
-              <div class="text">
+              <header class="text">
                 <h1>Recipe of the day</h1>
                 <p>Classic paella</p>
-              </div>
+              </header>
             </article>
           </a>
-          <a href="">
+          <a href="recipe.html">
             <article data-nr="2">
               <img src="./image/ramen_splash.jpg" alt="Spicy ramen" />
-              <div class="text">
+              <header class="text">
                 <h2>Let's make soup</h2>
                 <p>Spicy ramen</p>
-              </div>
+              </header>
             </article>
           </a>
-          <a href="">
+          <a href="recipe.html">
             <article data-nr="3">
               <img src="./image/bolo_splash.jpg" alt="Veggie Bolognese" />
-              <div class="text">
+              <header class="text">
                 <h2>Veggie days</h2>
                 <p>Veggie Bolo</p>
-              </div>
+              </header>
             </article>
           </a>
         </div>
@@ -105,13 +138,15 @@
       </section>
 
       <section class="carousel-section">
-        <h2>Explore Asia</h2>
+        <header>
+          <h2>Explore Asia</h2>
+        </header>
         <div class="carousel">
-          <button disabled data-action="back"><</button>
+          <button disabled data-action="back"></button>
           <div class="overflow-container">
             <div class="slider">
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="./image/green_curry.jpg" alt="Green curry" />
                 </a>
                 <form>
@@ -128,8 +163,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.7</figcaption>
@@ -137,7 +177,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="./image/tuna_salad.jpg" alt="Tuna salad" />
                 </a>
                 <form>
@@ -154,8 +194,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>3.9</figcaption>
@@ -163,7 +208,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="./image/fried_rice.jpg" alt="Fried rice" />
                 </a>
                 <form>
@@ -180,8 +225,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -189,7 +239,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="./image/ramen.jpg" alt="Ramen" />
                 </a>
                 <form>
@@ -206,8 +256,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -215,7 +270,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="../image/paella.png" alt="paella" />
                 </a>
                 <form>
@@ -232,8 +287,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -241,7 +301,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="../image/paella.png" alt="paella" />
                 </a>
                 <form>
@@ -258,8 +318,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -267,7 +332,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="../image/paella.png" alt="paella" />
                 </a>
                 <form>
@@ -284,8 +349,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -293,7 +363,7 @@
                 </div>
               </article>
               <article class="card">
-                <a href="#">
+                <a href="recipe.html">
                   <img src="../image/paella.png" alt="paella" />
                 </a>
                 <form>
@@ -310,8 +380,13 @@
                   </header>
                   <figure>
                     <div>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                        <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                      >
+                        <path
+                          d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                        />
                       </svg>
                     </div>
                     <figcaption>4.9</figcaption>
@@ -320,15 +395,17 @@
               </article>
             </div>
           </div>
-          <button data-action="forward">></button>
+          <button data-action="forward"></button>
         </div>
       </section>
 
       <section class="explore-section">
-        <h2>Recommended for you</h2>
+        <header>
+          <h2>Recommended for you</h2>
+        </header>
         <div class="explore">
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -346,7 +423,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -355,7 +434,7 @@
           </article>
           <div style="background-color: beige"></div>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -373,7 +452,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -381,7 +462,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -399,7 +480,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -407,7 +490,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -425,7 +508,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -436,10 +521,12 @@
       </section>
 
       <section class="popular-recipes">
-        <h2>Popular recipes</h2>
+        <header>
+          <h2>Popular recipes</h2>
+        </header>
         <div class="main-grid">
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -457,7 +544,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -465,7 +554,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -483,7 +572,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -491,7 +582,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -509,7 +600,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -517,7 +610,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -535,7 +628,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -543,7 +638,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -561,7 +656,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -569,7 +666,7 @@
             </div>
           </article>
           <article class="card">
-            <a href="#">
+            <a href="recipe.html">
               <img src="../image/paella.png" alt="paella" />
             </a>
             <form>
@@ -587,7 +684,9 @@
               <figure>
                 <div>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                    <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
+                    <path
+                      d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
+                    />
                   </svg>
                 </div>
                 <figcaption>4.9</figcaption>
@@ -653,7 +752,9 @@
           </header>
           <div class="input-container">
             <input type="text" placeholder=" " minlength="2" required />
-            <p class="error-message">A username must contain at least 2 characters</p>
+            <p class="error-message">
+              A username must contain at least 2 characters
+            </p>
             <p class="placeholder">Username</p>
           </div>
           <div class="input-container">
