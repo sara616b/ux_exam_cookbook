@@ -29,6 +29,9 @@
     background-color: $hover-bg;
     cursor: pointer;
     @include border.border($hover-border);
+    * {
+      color: $hover-text;
+    }
   }
 }
 
