@@ -24,8 +24,8 @@
         <button id="navigation-control" data-to-open="navigation" class="icon">
           <span class="menu"></span>
         </button>
-        <ul id="navigation" class="closed">
-          <div class="center">
+        <div id="navigation" class="closed">
+          <ul class="center">
             <li>
               <form class="search-form">
                 <input
@@ -34,7 +34,7 @@
                 />
 
                 <button class="icon">
-                  <div class="search"></div>
+                  <span class="search"></span>
                 </button>
               </form>
             </li>
@@ -42,17 +42,16 @@
               <a href="/recipes.html" class="text has-sub-navigation">
                 Recipes
               </a>
-
               <ul id="sub-navigation" class="closed">
-                <a href="/recipes.html"><li class="text">Breakfast</li></a>
-                <a href="/recipes.html"><li class="text">Lunch</li></a>
-                <a href="/recipes.html"><li class="text">Dinner</li></a>
-                <a href="/recipes.html"><li class="text">Dessert</li></a>
-                <a href="/recipes.html"><li class="text">Snacks</li></a>
+                <li class="text"><a href="/recipes.html">Breakfast</a></li>
+                <li class="text"><a href="/recipes.html">Lunch</a></li>
+                <li class="text"><a href="/recipes.html">Dinner</a></li>
+                <li class="text"><a href="/recipes.html">Dessert</a></li>
+                <li class="text"><a href="/recipes.html">Snacks</a></li>
               </ul>
             </li>
-          </div>
-          <li class="buttons">
+          </ul>
+          <div class="buttons">
             <button
               id="login"
               data-toggles-login="true"
@@ -95,8 +94,8 @@
                 </li>
               </ul>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </header>
     <main class="new-recipe">
