@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="js/front.js"></script>
+    <script src="./js/preventFormSubmit.js" defer></script>
     <script src="./js/checkLogIn.js" defer></script>
     <script src="./js/navigation.js" defer></script>
     <title>CookBook</title>
@@ -42,8 +43,8 @@
             </li>
           </div>
           <li class="buttons">
-            <button id="login" data-toggles-login="true" data-show-logged-in="false" class="button-primary-outlined">Log in</button>
-            <button data-show-logged-in="false" class="button-secondary">Sign up</button>
+            <button id="login" data-toggles-login="false" data-show-logged-in="false" class="button-primary-outlined">Log in</button>
+            <button id="sign-up" data-show-logged-in="false" class="button-secondary">Sign up</button>
             <a href="/new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
             <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
               <a data-show-logged-in="true" href="/profile.html" class="text has-sub-navigation icon hidden" id="profile-icon" data-toggles-login="true">
