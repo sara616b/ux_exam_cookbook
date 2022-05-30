@@ -8,6 +8,7 @@
     <script src="./js/navigation.js" defer></script>
     <script src="./js/filtering.js" defer></script>
     <script src="./js/checkLogIn.js" defer></script>
+    <script src="./js/recipes.js" defer></script>
 </head>
 <body data-logged-in="false"><header class="nav-container">
     <nav>
@@ -213,12 +214,21 @@
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
 
+    <section class="modal">
+      <article class="">
+        <h3>Recipe added to favorites!</h3>
+        <button class="icon-secondary-inverted">
+          <span class="done"></span>
+        </button>
+      </article>
+    </section>
+
     <template id="recipe">
       <article class="card">
         <a href="/recipe.html">
           <img src="./image/paella.jpg" alt="paella" />
         </a>
-        <form>
+        <form onsubmit="return false;">
           <button class="icon-primary">
             <span class="bookmark"></span>
           </button>
@@ -257,21 +267,4 @@
         </button>
     </template>
 </body>
-<script>
-        window.addEventListener("DOMContentLoaded", () => {
-        for (let i = 0; i < 10; i++) {
-            const dest = document.querySelector(".main-grid");
-            const temp = document.querySelector("#recipe");
-            const clone = temp.cloneNode(true).content;
-            if (i === 4 || i === 9) {
-              const ad = document.createElement("article");
-              ad.classList.add("advertisement")
-              ad.innerHTML = "";
-              dest.appendChild(ad);
-            } else {
-              dest.appendChild(clone)
-            }  
-        }
-    })
-</script>
 </html>
