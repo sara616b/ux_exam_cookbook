@@ -18,11 +18,7 @@
           <img src="image/logo.svg" alt="logo" />
         </a>
         <button id="navigation-control" data-to-open="navigation" class="icon">
-          <svg
-            class="menu"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 48 48"
-          >
+          <svg class="menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
             <path d="M6 36V33H42V36ZM6 25.5V22.5H42V25.5ZM6 15V12H42V15Z" />
           </svg>
         </button>
@@ -30,10 +26,7 @@
           <ul class="center">
             <li>
               <form class="search-form">
-                <input
-                  type="search"
-                  placeholder="Recipe, ingredient, cuisine"
-                />
+                <input type="search" placeholder="Recipe, ingredient, cuisine" />
 
                 <button class="icon">
                   <svg
@@ -59,9 +52,7 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="recipes.html" class="text has-sub-navigation">
-                Recipes
-              </a>
+              <a href="recipes.html" class="text has-sub-navigation"> Recipes </a>
               <ul id="sub-navigation" class="closed">
                 <li class="text"><a href="recipes.html">Breakfast</a></li>
                 <li class="text"><a href="recipes.html">Lunch</a></li>
@@ -72,50 +63,18 @@
             </li>
           </ul>
           <div class="buttons">
-            <button
-              id="login"
-              data-toggles-login="true"
-              data-show-logged-in="false"
-              class="button-primary-outlined"
-            >
-              Sign in
-            </button>
-            <button data-show-logged-in="false" class="button-secondary">
-              Sign up
-            </button>
-            <a
-              href="new-recipe.html"
-              data-show-logged-in="true"
-              class="button-secondary hidden"
-            >
-              Create recipe
-            </a>
-            <div
-              data-show-logged-in="true"
-              class="hidden sub-nav-container profile-sub-nav"
-            >
-              <a
-                data-show-logged-in="true"
-                href="profile.html"
-                class="text has-sub-navigation icon hidden"
-                id="profile-icon"
-                data-toggles-login="true"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                  class="account"
-                >
+            <button id="login" data-toggles-login="true" data-show-logged-in="false" class="button-primary-outlined">Sign in</button>
+            <button data-show-logged-in="false" class="button-secondary">Sign up</button>
+            <a href="new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
+            <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
+              <a data-show-logged-in="true" href="profile.html" class="text has-sub-navigation icon hidden" id="profile-icon" data-toggles-login="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="account">
                   <path
                     d="M11.1 35.25Q14.25 33.05 17.35 31.875Q20.45 30.7 24 30.7Q27.55 30.7 30.675 31.875Q33.8 33.05 36.95 35.25Q39.15 32.55 40.075 29.8Q41 27.05 41 24Q41 16.75 36.125 11.875Q31.25 7 24 7Q16.75 7 11.875 11.875Q7 16.75 7 24Q7 27.05 7.95 29.8Q8.9 32.55 11.1 35.25ZM24 25.5Q21.1 25.5 19.125 23.525Q17.15 21.55 17.15 18.65Q17.15 15.75 19.125 13.775Q21.1 11.8 24 11.8Q26.9 11.8 28.875 13.775Q30.85 15.75 30.85 18.65Q30.85 21.55 28.875 23.525Q26.9 25.5 24 25.5ZM24 44Q19.9 44 16.25 42.425Q12.6 40.85 9.875 38.125Q7.15 35.4 5.575 31.75Q4 28.1 4 24Q4 19.85 5.575 16.225Q7.15 12.6 9.875 9.875Q12.6 7.15 16.25 5.575Q19.9 4 24 4Q28.15 4 31.775 5.575Q35.4 7.15 38.125 9.875Q40.85 12.6 42.425 16.225Q44 19.85 44 24Q44 28.1 42.425 31.75Q40.85 35.4 38.125 38.125Q35.4 40.85 31.775 42.425Q28.15 44 24 44ZM24 41Q26.75 41 29.375 40.2Q32 39.4 34.55 37.4Q32 35.6 29.35 34.65Q26.7 33.7 24 33.7Q21.3 33.7 18.65 34.65Q16 35.6 13.45 37.4Q16 39.4 18.625 40.2Q21.25 41 24 41ZM24 22.5Q25.7 22.5 26.775 21.425Q27.85 20.35 27.85 18.65Q27.85 16.95 26.775 15.875Q25.7 14.8 24 14.8Q22.3 14.8 21.225 15.875Q20.15 16.95 20.15 18.65Q20.15 20.35 21.225 21.425Q22.3 22.5 24 22.5ZM24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65Q24 18.65 24 18.65ZM24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Q24 37.35 24 37.35Z"
                   />
                 </svg>
               </a>
-              <ul
-                data-show-logged-in="true"
-                id="sub-navigation-2"
-                class="closed sub-navigation"
-              >
+              <ul data-show-logged-in="true" id="sub-navigation-2" class="closed sub-navigation">
                 <li class="text"><a href="settings.html">Settings</a></li>
                 <li class="text">
                   <a data-toggles-login="true">Log out</a>
@@ -144,82 +103,72 @@
         <section id="profile-details">
           <div class="top">
             <div class="input-container profile not-input">
-              <input
-                type="text"
-                placeholder=" "
-                required
-                value="Rikke P. Dahl"
-                disabled
-                class="main-header"
-              />
+              <input type="text" placeholder=" " required value="Rikke P. Dahl" disabled class="main-header" />
               <p class="error-message">Pleace enter a valid name</p>
               <p class="placeholder">Name</p>
             </div>
-            <button
-              id="edit-profile"
-              class="button-primary saved hidden"
-              data-show-logged-in="true"
-            >
-              Edit profile
-            </button>
+            <button id="edit-profile" class="button-primary saved hidden" data-show-logged-in="true">Edit profile</button>
           </div>
           <div id="bio" class="input-container profile not-input">
-            <textarea
-              minlength="10"
-              rows="4"
-              placeholder=" "
-              maxlength="250"
-              required
-              disabled
-              class="text"
-            >
+            <textarea minlength="10" rows="4" placeholder=" " maxlength="250" required disabled class="text">
 Hi! I love cooking and creating recipes from scratch. Right now my deep fascination is with the wondrous world of paella recipes.</textarea
             >
             <p class="error-message">Please enter a valid text</p>
             <p class="counter"><span>0</span>/250</p>
             <p class="placeholder">Bio</p>
           </div>
-          <h2 class="sub-header-2 hidden" data-show-logged-in="true">
-            Preferences
-          </h2>
-          <div
-            id="preferences-container"
-            data-show-logged-in="true"
-            class="hidden"
-          >
+          <h2 class="sub-header-2 hidden" data-show-logged-in="true">Preferences</h2>
+          <div id="preferences-container" data-show-logged-in="true" class="hidden">
             <div class="preference button-primary-outlined" data-delete="true">
               <a href="recipes.html">
                 <span class="value">Vegan</span>
               </a>
-              <button class="close hidden" data-show-editing="true"></button>
+              <button class="close hidden" data-show-editing="true">
+                <svg
+                  class="close"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 48 48"
+                  style="enable-background: new 0 0 48 48"
+                  xml:space="preserve"
+                >
+                  <path d="M12.4,37.7l-2.1-2.1L21.9,24L10.3,12.4l2.1-2.1L24,21.9l11.5-11.5l2.1,2.1L26.1,24l11.6,11.5l-2.1,2.1L24,26.1L12.4,37.7z" />
+                </svg>
+              </button>
             </div>
             <div class="preference button-primary-outlined" data-delete="true">
               <a href="recipes.html">
                 <span class="value">Gluten free</span>
               </a>
-              <button class="close hidden" data-show-editing="true"></button>
+              <button class="close hidden" data-show-editing="true">
+                <svg
+                  class="close"
+                  version="1.1"
+                  id="Layer_1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px"
+                  y="0px"
+                  viewBox="0 0 48 48"
+                  style="enable-background: new 0 0 48 48"
+                  xml:space="preserve"
+                >
+                  <path d="M12.4,37.7l-2.1-2.1L21.9,24L10.3,12.4l2.1-2.1L24,21.9l11.5-11.5l2.1,2.1L26.1,24l11.6,11.5l-2.1,2.1L24,26.1L12.4,37.7z" />
+                </svg>
+              </button>
             </div>
           </div>
           <div id="preference-input-container">
             <div class="input-container hidden" data-show-editing="true">
-              <input
-                id="preference-input"
-                type="text"
-                placeholder=" "
-                required
-                class="not-input"
-                disabled
-              />
+              <input id="preference-input" type="text" placeholder=" " required class="not-input" disabled />
               <p class="error-message">Pleace enter a preference</p>
               <p class="placeholder">Preference</p>
             </div>
-            <button
-              id="add-preference"
-              class="button-primary hidden"
-              data-show-editing="true"
-            >
-              Add
-            </button>
+            <button id="add-preference" class="button-primary hidden" data-show-editing="true">Add</button>
           </div>
         </section>
       </header>
@@ -261,11 +210,7 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
         </a>
         <div class="sub-nav-container">
           <button class="has-sub-navigation icon">
-            <svg
-              class="more"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 48 48"
-            >
+            <svg class="more" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
               <path
                 d="M10.4 26.4Q9.4 26.4 8.7 25.7Q8 25 8 24Q8 23 8.7 22.3Q9.4 21.6 10.4 21.6Q11.4 21.6 12.1 22.3Q12.8 23 12.8 24Q12.8 25 12.1 25.7Q11.4 26.4 10.4 26.4ZM24 26.4Q23 26.4 22.3 25.7Q21.6 25 21.6 24Q21.6 23 22.3 22.3Q23 21.6 24 21.6Q25 21.6 25.7 22.3Q26.4 23 26.4 24Q26.4 25 25.7 25.7Q25 26.4 24 26.4ZM37.6 26.4Q36.6 26.4 35.9 25.7Q35.2 25 35.2 24Q35.2 23 35.9 22.3Q36.6 21.6 37.6 21.6Q38.6 21.6 39.3 22.3Q40 23 40 24Q40 25 39.3 25.7Q38.6 26.4 37.6 26.4Z"
               />
@@ -286,9 +231,7 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
           <figure>
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-                <path
-                  d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z"
-                />
+                <path d="M11.65 44 16.3 28.8 4 20H19.2L24 4L28.8 20H44L31.7 28.8L36.35 44L24 34.6Z" />
               </svg>
             </div>
             <figcaption>4.9</figcaption>
@@ -301,7 +244,22 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
         <a href="recipes.html">
           <span class="value"></span>
         </a>
-        <button class="close" data-show-editing="true"></button>
+        <button class="close" data-show-editing="true">
+          <svg
+            class="close"
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 48 48"
+            style="enable-background: new 0 0 48 48"
+            xml:space="preserve"
+          >
+            <path d="M12.4,37.7l-2.1-2.1L21.9,24L10.3,12.4l2.1-2.1L24,21.9l11.5-11.5l2.1,2.1L26.1,24l11.6,11.5l-2.1,2.1L24,26.1L12.4,37.7z" />
+          </svg>
+        </button>
       </section>
     </template>
     <aside id="delete-modal" class="hidden">
@@ -309,9 +267,7 @@ Hi! I love cooking and creating recipes from scratch. Right now my deep fascinat
       <div id="content">
         <p>Are you sure you wish to delete your recipe?</p>
         <div>
-          <button class="button-primary-outlined" data-close-modal="true">
-            Delete recipe forever
-          </button>
+          <button class="button-primary-outlined" data-close-modal="true">Delete recipe forever</button>
           <button class="button-primary" data-close-modal="true">Cancel</button>
         </div>
       </div>

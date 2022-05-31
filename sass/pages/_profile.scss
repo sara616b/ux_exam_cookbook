@@ -57,8 +57,13 @@ $border-color: lighten(color.$medium, 45%);
         flex-direction: row;
         align-items: center;
         margin-right: spacing.$small;
+        button {
+          background: none;
+          border: none;
+          display: flex;
+          align-items: center;
+        }
         .close {
-          background-color: color.$primary;
           width: 20px;
         }
         &:disabled {
