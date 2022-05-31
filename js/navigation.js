@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".search-form").addEventListener("submit", (event) => {
     event.preventDefault();
     event.stopPropagation();
-    window.location.href = "/recipes.html";
+    window.location.href = "recipes.html";
   });
 });
 

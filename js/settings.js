@@ -15,6 +15,18 @@ window.addEventListener("DOMContentLoaded", () => {
   submitButton.addEventListener("click", (event, submitButton) => {
     saveChanges(event, submitButton);
   });
+  const closeModalButton = document.querySelectorAll(
+    "[data-close-modal='true']"
+  );
+  closeModalButton.forEach((button) => {
+    button.addEventListener("click", () => closeModal());
+  });
+  const deleteButtons = document.querySelectorAll(
+    "[data-delete-account='true']"
+  );
+  deleteButtons.forEach((button) => {
+    button.addEventListener("click", () => deleteClick());
+  });
 });
 
 const saveChanges = (event, submitButton) => {
@@ -33,9 +45,4 @@ const deleteClick = () => {
 
 const closeModal = () => {
   document.querySelector("#delete-modal").classList.add("hidden");
-};
-
-const deleteAccount = () => {
-  toggleLogInStatus();
-  window.location.href = "index.html";
 };
