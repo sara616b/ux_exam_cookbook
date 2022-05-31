@@ -45,9 +45,12 @@
         $box-shadow: none
     );
 
+    color: color.$medium;
+
     svg {
         fill: color.$medium;
     }
+
 
     &:hover svg {
         fill: color.$dark;
@@ -65,6 +68,7 @@
     svg {
         fill: color.$light;
     }
+    color: color.$light;
 
     &:hover svg {
         fill: color.$light;
@@ -73,6 +77,8 @@
 
 .icon-primary-inverted {
     @include icon-btn-styles($box-shadow: none);
+
+    color: color.$primary;
 
     svg {
         fill: color.$primary;
@@ -91,23 +97,27 @@
         $hover-border: color.$secondary_medium
     );
 
+    color: color.$secondary_dark;
+
     svg {
-        background-color: color.$secondary_dark
+        fill: color.$secondary_dark
     }
 
     &:hover svg {
-        background-color: color.$secondary_dark;
+        fill: color.$secondary_dark;
     }
 }
 
 .icon-secondary-inverted {
     @include icon-btn-styles($box-shadow: none);
 
+    color: color.$secondary_light;
+
     svg {
-        background-color: color.$secondary_light;
+        fill: color.$secondary_light;
     }
 
     &:hover svg {
-        background-color: color.$secondary_medium;
+        fill: color.$secondary_medium;
     }
 }

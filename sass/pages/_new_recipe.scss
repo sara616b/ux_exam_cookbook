@@ -153,19 +153,11 @@ main.new-recipe {
       margin-top: 0.5rem;
       padding: 0;
 
-      span {
-        box-shadow: none;
 
-        &.add {
-          width: 1.8rem;
-          height: 1.8rem;
-          display: inline-block;
-          background-color: color.$secondary_dark;
-        }
-
-        &:nth-child(2) {
-          display: none;
-        }
+      .add {
+        width: 1.8rem;
+        height: 1.8rem;
+        display: inline-block;
       }
 
 

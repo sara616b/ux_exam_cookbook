@@ -18,6 +18,7 @@
   font-size: font_size.$base;
   background-color: $bg-color;
   color: $text-color;
+  fill: $text-color;
   @include border.border($border);
 
   * {
@@ -26,11 +27,13 @@
 
   &:hover {
     color: $hover-text;
+    fill: $hover-text;
     background-color: $hover-bg;
     cursor: pointer;
     @include border.border($hover-border);
     * {
       color: $hover-text;
+      fill: $hover-text;
     }
   }
 }
