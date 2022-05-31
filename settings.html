@@ -24,7 +24,10 @@
           <ul class="center">
             <li>
               <form class="search-form">
-                <input type="search" placeholder="Recipe, ingredient, cuisine" />
+                <input
+                  type="search"
+                  placeholder="Recipe, ingredient, cuisine"
+                />
 
                 <button class="icon">
                   <span class="search"></span>
@@ -32,7 +35,9 @@
               </form>
             </li>
             <li class="sub-nav-container">
-              <a href="recipes.html" class="text has-sub-navigation"> Recipes </a>
+              <a href="recipes.html" class="text has-sub-navigation">
+                Recipes
+              </a>
               <ul id="sub-navigation" class="closed">
                 <li class="text"><a href="recipes.html">Breakfast</a></li>
                 <li class="text"><a href="recipes.html">Lunch</a></li>
@@ -43,14 +48,42 @@
             </li>
           </ul>
           <div class="buttons">
-            <button id="login" data-toggles-login="true" data-show-logged-in="false" class="button-primary-outlined">Sign in</button>
-            <button data-show-logged-in="false" class="button-secondary">Sign up</button>
-            <a href="new-recipe.html" data-show-logged-in="true" class="button-secondary hidden"> Create recipe </a>
-            <div data-show-logged-in="true" class="hidden sub-nav-container profile-sub-nav">
-              <a data-show-logged-in="true" href="profile.html" class="text has-sub-navigation icon hidden" id="profile-icon" data-toggles-login="true">
+            <button
+              id="login"
+              data-toggles-login="true"
+              data-show-logged-in="false"
+              class="button-primary-outlined"
+            >
+              Sign in
+            </button>
+            <button data-show-logged-in="false" class="button-secondary">
+              Sign up
+            </button>
+            <a
+              href="new-recipe.html"
+              data-show-logged-in="true"
+              class="button-secondary hidden"
+            >
+              Create recipe
+            </a>
+            <div
+              data-show-logged-in="true"
+              class="hidden sub-nav-container profile-sub-nav"
+            >
+              <a
+                data-show-logged-in="true"
+                href="profile.html"
+                class="text has-sub-navigation icon hidden"
+                id="profile-icon"
+                data-toggles-login="true"
+              >
                 <span class="account"></span>
               </a>
-              <ul data-show-logged-in="true" id="sub-navigation-2" class="closed sub-navigation">
+              <ul
+                data-show-logged-in="true"
+                id="sub-navigation-2"
+                class="closed sub-navigation"
+              >
                 <li class="text"><a href="settings.html">Settings</a></li>
                 <li class="text">
                   <a data-toggles-login="true">Log out</a>
@@ -71,14 +104,26 @@
         </div>
 
         <div class="input-container">
-          <input type="password" placeholder=" " minlength="8" required value="12345678" />
+          <input
+            type="password"
+            placeholder=" "
+            minlength="8"
+            required
+            value="12345678"
+          />
           <p class="requirements">A password must be at least 8 characters</p>
           <p class="placeholder">Password</p>
         </div>
-        <button type="submit" id="save-changes" disabled class="button-primary">Save changes</button>
-        <p class="small-text hidden" id="success-message">Changes have been saved!</p>
+        <button type="submit" id="save-changes" disabled class="button-primary">
+          Save changes
+        </button>
+        <p class="small-text hidden" id="success-message">
+          Changes have been saved!
+        </p>
       </form>
-      <button class="button-primary-outlined" onclick="deleteClick();">Delete account</button>
+      <a class="button-primary-outlined" data-delete-account="true">
+        Delete account
+      </a>
     </main>
 
     <footer>
@@ -103,12 +148,14 @@
       <p>© Copyright 2022 CookBook. All Rights Reserved.</p>
     </footer>
     <aside id="delete-modal" class="hidden">
-      <div class="background" onclick="closeModal()"></div>
+      <div class="background" data-close-modal="true"></div>
       <div id="content">
         <p>Are you sure you wish to delete your account?</p>
         <div>
-          <button class="button-primary-outlined" onclick="deleteAccount()">Delete account forever</button>
-          <button class="button-primary" onclick="closeModal()">Cancel</button>
+          <a class="button-primary-outlined" href="index.html">
+            Delete account forever
+          </a>
+          <button class="button-primary" data-close-modal="true">Cancel</button>
         </div>
       </div>
     </aside>

@@ -38,6 +38,12 @@ window.addEventListener("DOMContentLoaded", () => {
   document
     .querySelector("#add-preference")
     .addEventListener("click", () => addPreference());
+  const closeModalButton = document.querySelectorAll(
+    "[data-close-modal='true']"
+  );
+  closeModalButton.forEach((button) => {
+    button.addEventListener("click", () => closeModal());
+  });
 });
 
 const deleteClick = () => {
